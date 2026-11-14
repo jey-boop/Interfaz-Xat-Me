@@ -5397,59 +5397,51 @@ function actualizarPiezaPortafolio(tipo, index, campo, valor) {
 // ==========================================
 // CONTADOR GLOBAL DE VISITAS DIARIAS ÚNICAS (SIN REPETICIÓN)
 // ==========================================
-async function registrarVisitaDiariaUnica() {
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
+// CONTADOR UNIFICADO DE VISITAS POR CLIENTE Y UID
+async function registrarVisitaUnificada() {
     const viewsEl = document.getElementById('views-count');
     if (!viewsEl) return;
 
     try {
-        // 1. Obtener fecha actual (YYYY-MM-DD)
+        const usuario = await window.xatAuthReady;
+        if (!usuario || !usuario.uid) return;
+
+        const uid = usuario.uid;
+        const cliente = window.xatClienteId || 'default';
         const hoy = new Date().toISOString().slice(0, 10);
+        const db = window.xatFirebaseDb;
 
-        // 2. Generar huella única del visitante (IP + datos del navegador)
-        let ipHash = 'anon';
-        try {
-            const ipRes = await fetch('https://ipify.org');
-            if (ipRes.ok) {
-                const ipData = await ipRes.json();
-                ipHash = ipData.ip.replace(/\./g, '_');
-            }
-        } catch (e) {
-            // Respaldo si falla la consulta de IP
-            ipHash = 'dev_' + btoa(navigator.userAgent).replace(/[^a-zA-Z0-9]/g, '').slice(0, 16);
+        const visitaRef = db.ref(
+            `visitas_log/${cliente}/${hoy}/${uid}`
+        );
+
+        const contadorRef = db.ref(
+            `social_public/${cliente}/views`
+        );
+
+        const resultado = await visitaRef.transaction(
+            actual => actual === null ? true : undefined
+        );
+
+        if (resultado.committed) {
+            const total = await contadorRef.transaction(
+                actual => (Number(actual) || 0) + 1
+            );
+
+            viewsEl.textContent = total.snapshot.val();
+        } else {
+            const total = await contadorRef.once('value');
+            viewsEl.textContent = total.val() || 0;
         }
 
-        // 3. Verificar en Firebase si este usuario ya visitó hoy
-        const checkRes = await fetch(`${urlBase}/visitas_log/${hoy}/${ipHash}.json?nocache=${Date.now()}`);
-        const yaVisitoHoy = checkRes.ok ? await checkRes.json() : null;
-
-        // 4. Leer el total actual de visitas globales
-        const totalRes = await fetch(`${urlBase}/stats/views.json?nocache=${Date.now()}`);
-        let totalViews = (totalRes.ok && parseInt(await totalRes.json())) || 0;
-
-        // 5. Si es su primera vez hoy, registrar y sumar +1 en Firebase
-        if (!yaVisitoHoy) {
-            totalViews += 1;
-            await fetch(`${urlBase}/visitas_log/${hoy}/${ipHash}.json`, {
-                method: 'PUT',
-                body: JSON.stringify(true)
-            });
-            await fetch(`${urlBase}/stats/views.json`, {
-                method: 'PUT',
-                body: JSON.stringify(totalViews)
-            });
-        }
-
-        // 6. Mostrar el total real en la interfaz
-        viewsEl.textContent = totalViews;
-    } catch (err) {
-        console.error("Error en contador diario:", err);
+    } catch (error) {
+        console.error("Error en el contador unificado:", error);
     }
 }
 
-// Ejecutar al cargar la página
+// Ejecutar el contador al cargar la página
 window.addEventListener('load', () => {
-    setTimeout(registrarVisitaDiariaUnica, 500);
+    setTimeout(registrarVisitaUnificada, 500);
 });
 // ==========================================
 // FOLLOWERS, FAVORITOS Y REACCIONES 100% GLOBALES EN FIREBASE
@@ -7241,7 +7233,7 @@ document.addEventListener('input', function(e) {
         setTimeout(() => {
             reorganizarSocialMovil();
             centrarPostsImpares();
-            actualizarVisitasGlobalesReales();
+            
         }, 700);
     });
 })();
