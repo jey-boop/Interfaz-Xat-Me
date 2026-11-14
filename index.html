@@ -8721,4 +8721,29 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 
 </script>
 
+<!-- FIREBASE SDK - XAT SPACE -->
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-auth-compat.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA2G0aNQvgjhpN4-OKhDzj8QMAumfW_fx4",
+        authDomain: "xatsapce.firebaseapp.com",
+        databaseURL: "https://xatsapce-default-rtdb.firebaseio.com",
+        projectId: "xatsapce",
+        appId: "1:511511281392:web:fb8d2e6a7ae0c3bf8c0c35"
+    };
+
+    // Inicializar Firebase
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    // Conexión de autenticación
+    window.xatFirebaseAuth = firebase.auth();
+
+    console.log("Firebase Authentication preparado.");
+</script>
+<!-- FIN FIREBASE SDK -->
+
 <!-- ... existing code --></body></html>
