@@ -7910,6 +7910,7 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
         try {
             const params = new URLSearchParams(window.location.search);
             const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
+            window.xatClienteId = cliente;
             const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
                 ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
                 : "https://firebaseio.com";
