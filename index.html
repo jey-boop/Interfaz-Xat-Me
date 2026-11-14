@@ -8741,6 +8741,16 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 
     // Conexión de autenticación
     window.xatFirebaseAuth = firebase.auth();
+    // AUTENTICACIÓN ANÓNIMA DE VISITANTES
+window.xatAuthReady = window.xatFirebaseAuth.signInAnonymously()
+    .then((result) => {
+        console.log("Visitante autenticado:", result.user.uid);
+        return result.user;
+    })
+    .catch((error) => {
+        console.error("Error de autenticación:", error);
+        throw error;
+    });
 
     console.log("Firebase Authentication preparado.");
 </script>
