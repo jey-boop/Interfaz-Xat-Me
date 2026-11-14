@@ -5412,7 +5412,7 @@ async function registrarVisitaUnificada() {
         const db = window.xatFirebaseDb;
 
         const visitaRef = db.ref(
-            `visitas_log/${cliente}/${hoy}/${uid}`
+            `visitas_uid_log/${cliente}/${hoy}/${uid}`
         );
 
         const contadorRef = db.ref(
