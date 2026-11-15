@@ -3079,17 +3079,6 @@ async function openPinModal() {
         if (modal) modal.classList.add('hidden');
     }
 
-    function verifyPin() {
-        const pinInput = document.getElementById('pin-input');
-        const errorEl = document.getElementById('pin-error');
-        if (pinInput && pinInput.value === ADMIN_PIN) {
-            closePinModal();
-            openConfigDrawer();
-        } else {
-            if (errorEl) errorEl.classList.remove('hidden');
-        }
-    }
-
     function saveInteractionsToLocalStorage() {
         const data = {
             visitorActions,
