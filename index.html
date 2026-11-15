@@ -4661,11 +4661,19 @@ async function enviarDatosANube() {
     const urlLimpia = FIREBASE_DB_URL.trim().replace(/\/$/, "");
 
     try {
-        const res = await fetch(`${urlLimpia}/perfil.json`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datosCompletos)
-        });
+        const usuarioAdmin = window.xatAdminAuth.currentUser;
+
+if (!usuarioAdmin) {
+    throw new Error("El administrador no tiene una sesión autenticada.");
+}
+
+const tokenAdmin = await usuarioAdmin.getIdToken();
+
+const res = await fetch(`${urlLimpia}/perfil.json?auth=${tokenAdmin}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datosCompletos)
+});
         if (res.ok) {
             mostrarNotificacionNube("✅ ¡Cambios guardados! Ya son visibles para todos.");
         } else {
