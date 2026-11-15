@@ -7506,28 +7506,6 @@ window.addEventListener('load', () => {
             return datos;
         };
     }
-
-    // 4. Descargar el PIN actualizado directamente desde Firebase al abrir o refrescar
-    async function cargarPinDesdeNube() {
-        try {
-            if (typeof FIREBASE_DB_URL === 'undefined' || !FIREBASE_DB_URL) return;
-            const urlLimpia = FIREBASE_DB_URL.trim().replace(/\/$/, "");
-            const rutaPin = cliente !== 'default'
-                ? `${urlLimpia}/clientes/${cliente}/perfil/pin.json`
-                : `${urlLimpia}/perfil/pin.json`;
-
-            const res = await fetch(`${rutaPin}?nocache=${Date.now()}`);
-            if (res.ok) {
-                const pinNube = await res.json();
-                if (pinNube) {
-                    ADMIN_PIN = String(pinNube);
-                    const inputEl = document.getElementById('edit-cliente-pin');
-                    if (inputEl) inputEl.value = ADMIN_PIN;
-                }
-            }
-        } catch (e) {}
-    }
-    cargarPinDesdeNube();
 })();
 
 // =========================================================
