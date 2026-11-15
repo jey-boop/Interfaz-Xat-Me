@@ -8538,26 +8538,25 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
         window.STORAGE_KEY = "xat_perfil_" + cliente;
     }
 
-    // 1. Redirigir rutas por cliente (?u=nombre) e inyectar auth_pin al guardar en Firebase
-    const fetchSeguro = window.fetch;
-    window.fetch = function(url, opciones) {
-        if (typeof url === 'string' && url.includes('://firebaseio.com')) {
-            if (cliente !== 'default' && !url.includes(`/clientes/${cliente}/`) && !url.includes('/seguridad/')) {
-                url = url.replace('://firebaseio.com', `://firebaseio.comclientes/${cliente}/`);
-            }
-            if (opciones && (opciones.method === 'PUT' || opciones.method === 'PATCH') && opciones.body) {
-                if (url.includes('/modulos_final.json') || url.includes('/modulos_portafolio.json') || url.includes('/perfil.json')) {
-                    try {
-                        const datos = JSON.parse(opciones.body);
-                        delete datos.pin;
-                        datos.auth_pin = pinVerificadoSesion;
-                        opciones.body = JSON.stringify(datos);
-                    } catch (e) {}
-                }
-            }
+    // 1. Redirigir rutas por cliente (?u=nombre)
+const fetchSeguro = window.fetch;
+
+window.fetch = function(url, opciones) {
+    if (typeof url === 'string' && url.includes('xatsapce-default-rtdb.firebaseio.com')) {
+        if (
+            cliente !== 'default' &&
+            !url.includes(`/clientes/${cliente}/`) &&
+            !url.includes('/seguridad/')
+        ) {
+            url = url.replace(
+                'xatsapce-default-rtdb.firebaseio.com/',
+                `xatsapce-default-rtdb.firebaseio.com/clientes/${cliente}/`
+            );
         }
-        return fetchSeguro.call(this, url, opciones);
-    };
+    }
+
+    return fetchSeguro.call(this, url, opciones);
+};
 
 
     // 2. Validar el PIN directamente contra las reglas privadas de Firebase
