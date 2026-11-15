@@ -7956,11 +7956,13 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
         const modulo = document.getElementById('left-fixed-module');
         const inner = modulo ? modulo.firstElementChild : null;
         const viewPort = document.getElementById('view-portfolio');
-        const menuBar = viewPort ? viewPort.children : null;
+        const menuBar = viewPort ? Array.from(viewPort.children) : [];
 
-        [modulo, inner, viewPort, menuBar].forEach(el => {
-            if (el) el.style.setProperty('background-color', colorContenedorHoja2, 'important');
-        });
+        [modulo, inner, viewPort, ...menuBar].forEach(el => {
+    if (el) {
+        el.style.setProperty('background-color', colorContenedorHoja2, 'important');
+    }
+});
     }
 
     function limpiarAparienciaYConectarPortafolio() {
