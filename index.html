@@ -3053,18 +3053,26 @@ async function verificarAccesoPorIP() {
     return { ok: true };
 }
 
+
 async function openPinModal() {
-    const check = await verificarAccesoPorIP();
+    const modal = document.getElementById('pin-modal');
 
-    if (!check.ok) {
-        const drawer = document.getElementById('config-drawer');
-        const modal = document.getElementById('pin-modal');
-        if (drawer) drawer.remove();
-        if (modal) modal.remove();
+    if (!modal) return;
 
-        if (typeof mostrarNotificacionNube === 'function') {
-            mostrarNotificacionNube(`🔒 Acceso restringido (${check.motivo})`, true);
-        }
+    modal.classList.remove('hidden');
+
+    const emailInput = document.getElementById('admin-email');
+    const passwordInput = document.getElementById('pin-input');
+    const errorEl = document.getElementById('pin-error');
+
+    if (emailInput) {
+        emailInput.value = '';
+        emailInput.focus();
+    }
+
+    if (passwordInput) passwordInput.value = '';
+    if (errorEl) errorEl.classList.add('hidden');
+}
         return;
     }
 
