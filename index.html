@@ -8469,7 +8469,6 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 (function() {
     const params = new URLSearchParams(window.location.search);
     const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-    let pinVerificadoSesion = "";
 
     if (cliente !== 'default') {
         window.STORAGE_KEY = "xat_perfil_" + cliente;
