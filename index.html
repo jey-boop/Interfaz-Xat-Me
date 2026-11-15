@@ -4634,7 +4634,6 @@ async function enviarDatosANube() {
     } catch (e) {
         console.warn("Usando datos base completos:", e);
     }
-    datosCompletos.auth_pin = ADMIN_PIN;
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(datosCompletos)); } catch (e) {}
     const urlLimpia = FIREBASE_DB_URL.trim().replace(/\/$/, "");
 
