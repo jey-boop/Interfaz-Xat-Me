@@ -7469,47 +7469,42 @@ document.addEventListener('input', function(e) {
         };
     }
 
-    // 2. Establecer PIN inicial 102030 y permitir que cada cliente lo cambie desde su panel
-    ADMIN_PIN = "";
+    // 2. Información de seguridad y acceso del cliente
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const tabPub = document.getElementById('cfg-tab-publicidad');
 
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            try {
-                const guardado = JSON.parse(localStorage.getItem(window.STORAGE_KEY) || '{}');
-                if (guardado.pin) ADMIN_PIN = guardado.pin;
-            } catch (e) {}
+        if (tabPub && !document.getElementById('saas-pin-box')) {
+            const box = document.createElement('div');
 
-            // Inyectar campo para cambiar PIN en la pestaña Publicidad / Seguridad del panel
-            const tabPub = document.getElementById('cfg-tab-publicidad');
-            if (tabPub && !document.getElementById('saas-pin-box')) {
-                const box = document.createElement('div');
-                box.id = 'saas-pin-box';
-                box.className = 'space-y-2 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800 mt-3';
-                box.innerHTML = `
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-bold text-amber-400 uppercase tracking-wider text-[10px]">
-                            <i class="fa-solid fa-shield-halved mr-1"></i> Seguridad & Acceso
-                        </h4>
-                        <span class="text-[9px] font-mono text-zinc-400">ID: ${cliente}</span>
+            box.id = 'saas-pin-box';
+            box.className = 'space-y-2 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800 mt-3';
+
+            box.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <h4 class="font-bold text-amber-400 uppercase tracking-wider text-[10px]">
+                        <i class="fa-solid fa-shield-halved mr-1"></i> Seguridad & Acceso
+                    </h4>
+                    <span class="text-[9px] font-mono text-zinc-400">ID: ${cliente}</span>
+                </div>
+
+                <div class="mt-2 p-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 space-y-2 text-[10px]">
+                    <p class="text-zinc-300 leading-relaxed">
+                        <span class="text-emerald-400 font-semibold">● Autenticación protegida por Firebase.</span><br>
+                        Para solicitar asistencia o reportar problemas en la interfaz, contacta a soporte:
+                        <a href="https://xat.me/universo" target="_blank" class="text-purple-400 hover:underline font-medium">xat</a>
+                    </p>
+
+                    <div class="pt-1.5 border-t border-zinc-800/80 text-amber-400/90 leading-snug">
+                        <strong>IMPORTANTE:</strong> No compartas tu contraseña con nadie.
                     </div>
-                    <div class="mt-2 p-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 space-y-2 text-[10px]">
-    <p class="text-zinc-300 leading-relaxed">
-        <span class="text-emerald-400 font-semibold">● Sesión verificada en servidor.</span><br>
-        Para solicitar cambio de PIN o reportar problemas en la interfaz, contacta a soporte:
-        <a href="https://xat.me/universo" target="_blank" class="text-purple-400 hover:underline font-medium">xat</a>
-    </p>
-    <div class="pt-1.5 border-t border-zinc-800/80 text-amber-400/90 leading-snug">
-        <strong>IMPORTANTE:</strong> No compartas tu contraseña con nadie.
-        <input type="hidden" id="edit-cliente-pin" value="${ADMIN_PIN}">
-    </div>
-</div>
+                </div>
+            `;
 
-                `;
-                tabPub.appendChild(box);
-            }
-        }, 900);
-    });
-
+            tabPub.appendChild(box);
+        }
+    }, 900);
+});
         // 3. Guardar el nuevo PIN en Firebase y en localStorage al presionar "Guardar cambios"
     if (typeof recopilarTodoParaNube === 'function') {
         const recopilarPrevioPin = recopilarTodoParaNube;
