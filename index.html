@@ -8569,46 +8569,55 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 
 
     // 2. Validar el PIN directamente contra las reglas privadas de Firebase
-    window.verifyPin = async function() {
-        const input = document.getElementById('pin-input');
-        const errEl = document.getElementById('pin-error');
-        const clave = (input?.value || '').trim();
-        if (!clave) return;
+    
+window.verifyPin = async function() {
+    const emailInput = document.getElementById('admin-email');
+    const passwordInput = document.getElementById('pin-input');
+    const errEl = document.getElementById('pin-error');
+    const btn = document.getElementById('pin-submit-btn');
 
-        const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
-            ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
-            : "https://firebaseio.com";
+    const email = (emailInput?.value || '').trim();
+    const password = passwordInput?.value || '';
 
-        const rutaTest = cliente !== 'default'
-            ? `${base}/clientes/${cliente}/modulos_final.json`
-            : `${base}/modulos_final.json`;
-
-        try {
-            const resGet = await fetchSeguro(`${rutaTest}?nocache=${Date.now()}`);
-            const actual = (resGet.ok && await resGet.json()) || {};
-            actual.auth_pin = clave;
-
-            const resPut = await fetchSeguro(rutaTest, {
-                method: 'PUT',
-                body: JSON.stringify(actual)
-            });
-
-            if (resPut.ok) {
-                pinVerificadoSesion = clave;
-                ADMIN_PIN = clave;
-                if (errEl) errEl.classList.add('hidden');
-                if (typeof closePinModal === 'function') closePinModal();
-                if (typeof openConfigDrawer === 'function') openConfigDrawer();
-            } else {
-                if (errEl) {
-                    errEl.textContent = "Acceso denegado: PIN inválido.";
-                    errEl.classList.remove('hidden');
-                }
-            }
-        } catch (e) {
-            if (errEl) errEl.classList.remove('hidden');
+    if (!email || !password) {
+        if (errEl) {
+            errEl.textContent = "Introduce tu correo y contraseña.";
+            errEl.classList.remove('hidden');
         }
-    };
+        return;
+    }
+
+    try {
+        if (btn) btn.disabled = true;
+
+        const resultado = await window.xatAdminAuth
+            .signInWithEmailAndPassword(email, password);
+
+        if (!resultado.user) {
+            throw new Error("No se pudo verificar la cuenta.");
+        }
+
+        if (errEl) errEl.classList.add('hidden');
+
+        closePinModal();
+
+        if (typeof openConfigDrawer === 'function') {
+            openConfigDrawer();
+        }
+
+        console.log("Administrador autenticado correctamente.");
+
+    } catch (error) {
+        console.error("Error de autenticación administrativa:", error);
+
+        if (errEl) {
+            errEl.textContent = "Correo o contraseña incorrectos.";
+            errEl.classList.remove('hidden');
+        }
+    } finally {
+        if (btn) btn.disabled = false;
+    }
+};
 })();
 // =========================================================
 // DISPARADOR UNIVERSAL DE GUARDADO COMPLETO (PERFIL + MÓDULOS)
