@@ -3070,19 +3070,9 @@ async function openPinModal() {
         emailInput.focus();
     }
 
-    const modal = document.getElementById('pin-modal');
-    if (modal) {
-        modal.classList.remove('hidden');
-        const pinInput = document.getElementById('pin-input');
-        if (pinInput) {
-            pinInput.value = '';
-            pinInput.focus();
-        }
-        const errorEl = document.getElementById('pin-error');
-        if (errorEl) errorEl.classList.add('hidden');
-    }
+    if (passwordInput) passwordInput.value = '';
+    if (errorEl) errorEl.classList.add('hidden');
 }
-
 
     function closePinModal() {
         const modal = document.getElementById('pin-modal');
