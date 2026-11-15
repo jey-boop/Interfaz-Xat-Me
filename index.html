@@ -8871,6 +8871,14 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
     // Conexión de autenticación
     window.xatFirebaseAuth = firebase.auth();
     window.xatFirebaseDb = firebase.database();
+    // AUTENTICACIÓN INDEPENDIENTE DEL ADMINISTRADOR
+if (!firebase.apps.some(app => app.name === "xatAdminApp")) {
+    firebase.initializeApp(firebaseConfig, "xatAdminApp");
+}
+
+window.xatAdminApp = firebase.app("xatAdminApp");
+window.xatAdminAuth = window.xatAdminApp.auth();
+window.xatAdminDb = window.xatAdminApp.database();
     // AUTENTICACIÓN ANÓNIMA DE VISITANTES
 
 // AUTENTICACIÓN AUTOMÁTICA DE VISITANTES
