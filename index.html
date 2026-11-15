@@ -7364,17 +7364,6 @@ document.addEventListener('input', function(e) {
         }, 900);
     });
 
-        // 3. Guardar el nuevo PIN en Firebase y en localStorage al presionar "Guardar cambios"
-    if (typeof recopilarTodoParaNube === 'function') {
-        const recopilarPrevioPin = recopilarTodoParaNube;
-        recopilarTodoParaNube = function() {
-            const datos = recopilarPrevioPin ? recopilarPrevioPin() : {};
-            if (inputPin && inputPin.length >= 4) {
-                ADMIN_PIN = inputPin;
-                datos.pin = inputPin;
-            }
-            return datos;
-        };
     }
 
     // 4. Descargar el PIN actualizado directamente desde Firebase al abrir o refrescar
