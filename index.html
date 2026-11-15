@@ -5499,16 +5499,37 @@ async function cargarEstadoGlobalReacciones() {
         const cliente = window.xatClienteId || 'default';
         const uid = usuario.uid;
 
-        const publicRef = db.ref(`social_public/${cliente}`);
-        const privateRef = db.ref(`social_private/${cliente}/${uid}`);
+       const publicRefs = {
+    followers: db.ref(`social_public/${cliente}/followers`),
+    favs: db.ref(`social_public/${cliente}/favs`),
+    likes: db.ref(`social_public/${cliente}/likes`),
+    dislikes: db.ref(`social_public/${cliente}/dislikes`)
+};
 
-        const [publicSnapshot, privateSnapshot] = await Promise.all([
-            publicRef.once('value'),
-            privateRef.once('value')
-        ]);
+const privateRef = db.ref(`social_private/${cliente}/${uid}`);
 
-        const stats = publicSnapshot.val() || {};
-        const personal = privateSnapshot.val() || {};
+const [
+    followersSnapshot,
+    favsSnapshot,
+    likesSnapshot,
+    dislikesSnapshot,
+    privateSnapshot
+] = await Promise.all([
+    publicRefs.followers.once('value'),
+    publicRefs.favs.once('value'),
+    publicRefs.likes.once('value'),
+    publicRefs.dislikes.once('value'),
+    privateRef.once('value')
+]);
+
+const stats = {
+    followers: followersSnapshot.val(),
+    favs: favsSnapshot.val(),
+    likes: likesSnapshot.val(),
+    dislikes: dislikesSnapshot.val()
+};
+
+const personal = privateSnapshot.val() || {};
 
         // Restaurar estado individual desde Firebase
         visitorActions.followed = personal.followed === true;
