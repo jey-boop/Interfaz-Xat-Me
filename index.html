@@ -5443,156 +5443,269 @@ async function registrarVisitaUnificada() {
 window.addEventListener('load', () => {
     setTimeout(registrarVisitaUnificada, 500);
 });
-// ==========================================
-// FOLLOWERS, FAVORITOS Y REACCIONES 100% GLOBALES EN FIREBASE
-// ==========================================
-const CLAVE_MI_CLIC = "xat_mi_clic_reacciones_v1";
 
+// ==========================================
+// SISTEMA SOCIAL POR CLIENTE Y UID - XAT SPACE
+// ==========================================
+
+// Actualizar iconos de los controles
 function actualizarIconosReaccionesUI() {
     const iconFollow = document.getElementById('icon-follow');
-    if (iconFollow) iconFollow.className = visitorActions.followed ? "fa-solid fa-user text-sm text-purple-300" : "fa-regular fa-user text-sm text-purple-300";
+    if (iconFollow) {
+        iconFollow.className = visitorActions.followed
+            ? "fa-solid fa-user text-sm text-purple-300"
+            : "fa-regular fa-user text-sm text-purple-300";
+    }
 
     const iconFav = document.getElementById('icon-fav');
-    if (iconFav) iconFav.className = visitorActions.favorited ? "fa-solid fa-star text-amber-400 text-xs" : "fa-regular fa-star text-amber-400 text-xs";
+    if (iconFav) {
+        iconFav.className = visitorActions.favorited
+            ? "fa-solid fa-star text-amber-400 text-xs"
+            : "fa-regular fa-star text-amber-400 text-xs";
+    }
 
     const iconLike = document.getElementById('icon-like');
     const iconDislike = document.getElementById('icon-dislike');
-    if (iconLike) iconLike.className = currentReaction === 'like' ? 'fa-solid fa-thumbs-up text-xs text-emerald-400' : 'fa-regular fa-thumbs-up text-xs text-emerald-400';
-    if (iconDislike) iconDislike.className = currentReaction === 'dislike' ? 'fa-solid fa-thumbs-down text-xs text-rose-400' : 'fa-regular fa-thumbs-down text-xs text-rose-400';
 
-    if (typeof aplicarColoresReacciones === 'function') aplicarColoresReacciones();
-    if (typeof aplicarAcentoGlobal === 'function') aplicarAcentoGlobal();
+    if (iconLike) {
+        iconLike.className = currentReaction === 'like'
+            ? 'fa-solid fa-thumbs-up text-xs text-emerald-400'
+            : 'fa-regular fa-thumbs-up text-xs text-emerald-400';
+    }
+
+    if (iconDislike) {
+        iconDislike.className = currentReaction === 'dislike'
+            ? 'fa-solid fa-thumbs-down text-xs text-rose-400'
+            : 'fa-regular fa-thumbs-down text-xs text-rose-400';
+    }
+
+    if (typeof aplicarColoresReacciones === 'function') {
+        aplicarColoresReacciones();
+    }
+
+    if (typeof aplicarAcentoGlobal === 'function') {
+        aplicarAcentoGlobal();
+    }
 }
 
-function guardarMiClicLocal() {
-    try {
-        localStorage.setItem(CLAVE_MI_CLIC, JSON.stringify({
-            followed: !!visitorActions.followed,
-            favorited: !!visitorActions.favorited,
-            reaction: currentReaction || null
-        }));
-    } catch (e) {}
-}
-
-function restaurarMiClicLocal() {
-    try {
-        const guardado = JSON.parse(localStorage.getItem(CLAVE_MI_CLIC) || 'null');
-        if (guardado) {
-            visitorActions.followed = !!guardado.followed;
-            visitorActions.favorited = !!guardado.favorited;
-            currentReaction = guardado.reaction || null;
-            actualizarIconosReaccionesUI();
-        }
-    } catch (e) {}
-}
-
+// Cargar contadores públicos y estado privado del visitante
 async function cargarEstadoGlobalReacciones() {
-    // 1. Restaurar el clic del usuario inmediatamente desde su navegador
-    restaurarMiClicLocal();
-
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
     try {
-        const resStats = await fetch(`${urlBase}/stats.json?nocache=${Date.now()}`);
-        if (!resStats.ok) return;
-        const stats = (await resStats.json()) || {};
+        const usuario = await window.xatAuthReady;
 
-        if (document.getElementById('followers-count')) document.getElementById('followers-count').textContent = stats.followers || 0;
-        if (document.getElementById('fav-count')) document.getElementById('fav-count').textContent = stats.favs || 0;
-        if (document.getElementById('like-count')) document.getElementById('like-count').textContent = stats.likes || 0;
-        if (document.getElementById('dislike-count')) document.getElementById('dislike-count').textContent = stats.dislikes || 0;
-    } catch (e) {
-        console.error("Error cargando stats:", e);
-    }
-}
+        if (!usuario || !usuario.uid) return;
 
-async function sumarRestarStatGlobal(campo, delta) {
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
-    try {
-        const res = await fetch(`${urlBase}/stats/${campo}.json?nocache=${Date.now()}`);
-        const actual = (res.ok && parseInt(await res.json())) || 0;
-        const nuevo = Math.max(0, actual + delta);
-        await fetch(`${urlBase}/stats/${campo}.json`, {
-            method: 'PUT',
-            body: JSON.stringify(nuevo)
+        const db = window.xatFirebaseDb;
+        const cliente = window.xatClienteId || 'default';
+        const uid = usuario.uid;
+
+        const publicRef = db.ref(`social_public/${cliente}`);
+        const privateRef = db.ref(`social_private/${cliente}/${uid}`);
+
+        const [publicSnapshot, privateSnapshot] = await Promise.all([
+            publicRef.once('value'),
+            privateRef.once('value')
+        ]);
+
+        const stats = publicSnapshot.val() || {};
+        const personal = privateSnapshot.val() || {};
+
+        // Restaurar estado individual desde Firebase
+        visitorActions.followed = personal.followed === true;
+        visitorActions.favorited = personal.favorited === true;
+
+        currentReaction =
+            personal.reaction === 'like' ||
+            personal.reaction === 'dislike'
+                ? personal.reaction
+                : null;
+
+        // Actualizar contadores públicos
+        const campos = {
+            followers: 'followers-count',
+            favs: 'fav-count',
+            likes: 'like-count',
+            dislikes: 'dislike-count'
+        };
+
+        Object.entries(campos).forEach(([campo, id]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = Number(stats[campo]) || 0;
         });
-        return nuevo;
-    } catch (e) {
-        return null;
+
+        actualizarIconosReaccionesUI();
+
+    } catch (error) {
+        console.error("Error cargando estado social:", error);
     }
 }
 
+// Actualizar un contador público mediante transacción
+async function actualizarContadorSocial(campo, delta) {
+    if (!delta) return null;
+
+    const db = window.xatFirebaseDb;
+    const cliente = window.xatClienteId || 'default';
+
+    const contadorRef = db.ref(
+        `social_public/${cliente}/${campo}`
+    );
+
+    const resultado = await contadorRef.transaction(actual => {
+        const numero = Number(actual) || 0;
+
+        // Evitar contadores negativos
+        if (delta < 0 && numero <= 0) return;
+
+        return Math.max(0, numero + delta);
+    });
+
+    if (resultado.committed) {
+        return Number(resultado.snapshot.val()) || 0;
+    }
+
+    const snapshot = await contadorRef.once('value');
+    return Number(snapshot.val()) || 0;
+}
+
+// Aplicar una acción social al estado privado
 let bloqueandoClick = false;
 
-toggleFollow = async function() {
+async function modificarEstadoSocial(tipo) {
     if (bloqueandoClick) return;
+
     bloqueandoClick = true;
 
-    visitorActions.followed = !visitorActions.followed;
-    const delta = visitorActions.followed ? 1 : -1;
+    try {
+        const usuario = await window.xatAuthReady;
 
-    const el = document.getElementById('followers-count');
-    if (el) el.textContent = Math.max(0, (parseInt(el.textContent) || 0) + delta);
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
+        if (!usuario || !usuario.uid) {
+            throw new Error("Visitante sin autenticación.");
+        }
 
-    const nuevoTotal = await sumarRestarStatGlobal('followers', delta);
-    if (el && nuevoTotal !== null) el.textContent = nuevoTotal;
+        const db = window.xatFirebaseDb;
+        const cliente = window.xatClienteId || 'default';
+        const uid = usuario.uid;
 
-    bloqueandoClick = false;
+        const privateRef = db.ref(
+            `social_private/${cliente}/${uid}`
+        );
+
+        let deltas = {};
+
+        const resultado = await privateRef.transaction(actual => {
+            const anterior = actual || {
+                favorited: false,
+                followed: false,
+                reaction: ''
+            };
+
+            const nuevo = {
+                favorited: anterior.favorited === true,
+                followed: anterior.followed === true,
+                reaction:
+                    anterior.reaction === 'like' ||
+                    anterior.reaction === 'dislike'
+                        ? anterior.reaction
+                        : ''
+            };
+
+            deltas = {};
+
+            if (tipo === 'follow') {
+                nuevo.followed = !nuevo.followed;
+                deltas.followers = nuevo.followed ? 1 : -1;
+            }
+
+            if (tipo === 'favorite') {
+                nuevo.favorited = !nuevo.favorited;
+                deltas.favs = nuevo.favorited ? 1 : -1;
+            }
+
+            if (tipo === 'like' || tipo === 'dislike') {
+                const anteriorReaccion = nuevo.reaction;
+
+                nuevo.reaction =
+                    anteriorReaccion === tipo ? '' : tipo;
+
+                if (anteriorReaccion === 'like') {
+                    deltas.likes = -1;
+                }
+
+                if (anteriorReaccion === 'dislike') {
+                    deltas.dislikes = -1;
+                }
+
+                if (nuevo.reaction === 'like') {
+                    deltas.likes = (deltas.likes || 0) + 1;
+                }
+
+                if (nuevo.reaction === 'dislike') {
+                    deltas.dislikes = (deltas.dislikes || 0) + 1;
+                }
+            }
+
+            return nuevo;
+        });
+
+        if (!resultado.committed) {
+            throw new Error("No se pudo guardar el estado privado.");
+        }
+
+        // Actualizar el estado visual desde el registro confirmado
+        const personal = resultado.snapshot.val();
+
+        visitorActions.followed = personal.followed === true;
+        visitorActions.favorited = personal.favorited === true;
+        currentReaction = personal.reaction || null;
+
+        actualizarIconosReaccionesUI();
+
+        // Actualizar los contadores públicos
+        const elementos = {
+            followers: 'followers-count',
+            favs: 'fav-count',
+            likes: 'like-count',
+            dislikes: 'dislike-count'
+        };
+
+        for (const [campo, delta] of Object.entries(deltas)) {
+            if (!delta) continue;
+
+            const total = await actualizarContadorSocial(campo, delta);
+            const el = document.getElementById(elementos[campo]);
+
+            if (el && total !== null) {
+                el.textContent = total;
+            }
+        }
+
+    } catch (error) {
+        console.error("Error actualizando acción social:", error);
+
+        // Recuperar el estado guardado en Firebase
+        await cargarEstadoGlobalReacciones();
+
+    } finally {
+        bloqueandoClick = false;
+    }
+}
+
+// Funciones utilizadas por los botones existentes
+toggleFollow = async function() {
+    await modificarEstadoSocial('follow');
 };
 
 toggleFavorite = async function() {
-    if (bloqueandoClick) return;
-    bloqueandoClick = true;
-
-    visitorActions.favorited = !visitorActions.favorited;
-    const delta = visitorActions.favorited ? 1 : -1;
-
-    const el = document.getElementById('fav-count');
-    if (el) el.textContent = Math.max(0, (parseInt(el.textContent) || 0) + delta);
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
-
-    const nuevoTotal = await sumarRestarStatGlobal('favs', delta);
-    if (el && nuevoTotal !== null) el.textContent = nuevoTotal;
-
-    bloqueandoClick = false;
+    await modificarEstadoSocial('favorite');
 };
 
 handleReaction = async function(type) {
-    if (bloqueandoClick) return;
-    bloqueandoClick = true;
-
-    let deltaLike = 0, deltaDislike = 0;
-
-    if (type === 'like') {
-        if (currentReaction === 'like') { currentReaction = null; deltaLike = -1; }
-        else { if (currentReaction === 'dislike') deltaDislike = -1; currentReaction = 'like'; deltaLike = 1; }
-    } else {
-        if (currentReaction === 'dislike') { currentReaction = null; deltaDislike = -1; }
-        else { if (currentReaction === 'like') deltaLike = -1; currentReaction = 'dislike'; deltaDislike = 1; }
-    }
-
-    const elLike = document.getElementById('like-count');
-    const elDislike = document.getElementById('dislike-count');
-    if (elLike && deltaLike !== 0) elLike.textContent = Math.max(0, (parseInt(elLike.textContent) || 0) + deltaLike);
-    if (elDislike && deltaDislike !== 0) elDislike.textContent = Math.max(0, (parseInt(elDislike.textContent) || 0) + deltaDislike);
-
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
-
-    if (deltaLike !== 0) {
-        const totalL = await sumarRestarStatGlobal('likes', deltaLike);
-        if (elLike && totalL !== null) elLike.textContent = totalL;
-    }
-    if (deltaDislike !== 0) {
-        const totalD = await sumarRestarStatGlobal('dislikes', deltaDislike);
-        if (elDislike && totalD !== null) elDislike.textContent = totalD;
-    }
-
-    bloqueandoClick = false;
+    if (type !== 'like' && type !== 'dislike') return;
+    await modificarEstadoSocial(type);
 };
 
+// Cargar estado social al iniciar
 window.addEventListener('load', () => {
     setTimeout(cargarEstadoGlobalReacciones, 600);
 });
