@@ -3033,25 +3033,6 @@ function renderLeftModuleSlide() {
 
     const STORAGE_KEY = "xat_profile_data_v3";
     const INTERACTION_STORAGE_KEY = "xat_profile_interactions_" + visitorDeviceId;
-async function verificarAccesoPorIP() {
-    const params = new URLSearchParams(window.location.search);
-    const llaveUrl = params.get('admin');
-
-    // Si entras con ?admin=TU_LLAVE, autoriza este navegador y limpia la URL
-    if (llaveUrl && llaveUrl.trim().length >= 4) {
-        localStorage.setItem('xat_llave_maestra_admin', llaveUrl.trim());
-        window.history.replaceState({}, document.title, window.location.pathname + (params.get('u') ? `?u=${params.get('u')}` : ''));
-    }
-
-    const llaveGuardada = localStorage.getItem('xat_llave_maestra_admin');
-    if (!llaveGuardada) {
-        return { ok: false, motivo: "Dispositivo no autorizado" };
-    }
-
-    // Permitir abrir el modal del PIN (donde Firebase validará la contraseña real en el servidor)
-    return { ok: true };
-}
-
 
 async function openPinModal() {
     const modal = document.getElementById('pin-modal');
