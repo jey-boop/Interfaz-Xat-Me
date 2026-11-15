@@ -739,18 +739,39 @@ body {
     All rights reserved
 </div>
 
-<!-- MODAL DE PIN DE SEGURIDAD -->
+
+<!-- MODAL DE AUTENTICACIÓN DEL ADMINISTRADOR -->
 <div id="pin-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-zinc-900/70 backdrop-blur-md border border-zinc-800 rounded-2xl p-6 pt-10 w-full max-w-xs shadow-2xl text-center relative space-y-4">
+
         <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-zinc-900 border border-zinc-800 text-amber-400 rounded-full flex items-center justify-center text-xl shadow-lg">
-            <i class="fa-solid fa-key"></i>
+            <i class="fa-solid fa-shield-halved"></i>
         </div>
+
         <div>
-            <h3 class="text-sm font-bold text-white uppercase tracking-wider">ADMIN</h3>
-            <p class="text-xs text-zinc-400 mt-1">Ingresa tu contraseña asignada (Ej. <span class="text-purple-300 font-mono">1234...</span>)</p>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider">ADMINISTRADOR</h3>
+            <p class="text-xs text-zinc-400 mt-1">Identifícate para acceder al panel.</p>
         </div>
-        <input type="password" id="pin-input" maxlength="24" onkeydown="if(event.key === 'Enter') verifyPin()" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-lg font-mono tracking-widest focus:border-purple-500 focus:outline-none">
-        <p id="pin-error" class="text-[11px] text-rose-400 hidden font-medium">Contraseña incorrecta. Inténtalo de nuevo.</p>
+
+        <input
+            type="email"
+            id="admin-email"
+            autocomplete="username"
+            placeholder="Correo electrónico"
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-sm focus:border-purple-500 focus:outline-none"
+        >
+
+        <input
+            type="password"
+            id="pin-input"
+            autocomplete="current-password"
+            placeholder="Contraseña"
+            onkeydown="if(event.key === 'Enter') verifyPin()"
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-sm focus:border-purple-500 focus:outline-none"
+        >
+
+        <p id="pin-error" class="text-[11px] text-rose-400 hidden font-medium">No se pudo verificar el acceso.</p>
+
         <div class="flex gap-2">
             <button onclick="closePinModal()" class="flex-1 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer">Salir</button>
             <button onclick="verifyPin()" id="pin-submit-btn" class="flex-1 py-2 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold rounded-lg transition-colors shadow-lg shadow-purple-900/40 cursor-pointer">Ingresar</button>
