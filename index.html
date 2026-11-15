@@ -5562,6 +5562,8 @@ const personal = privateSnapshot.val() || {};
 }
 
 // Actualizar un contador público mediante transacción
+
+// Actualizar un contador público mediante transacción
 async function actualizarContadorSocial(campo, delta) {
     if (!delta) return null;
 
@@ -5575,9 +5577,7 @@ async function actualizarContadorSocial(campo, delta) {
     const resultado = await contadorRef.transaction(actual => {
         const numero = Number(actual) || 0;
 
-        // Evitar contadores negativos
-        if (delta < 0 && numero <= 0) return;
-
+        // Evitar contadores negativos sin cancelar la transacción
         return Math.max(0, numero + delta);
     });
 
@@ -5585,8 +5585,9 @@ async function actualizarContadorSocial(campo, delta) {
         return Number(resultado.snapshot.val()) || 0;
     }
 
-    const snapshot = await contadorRef.once('value');
-    return Number(snapshot.val()) || 0;
+    throw new Error(
+        `No se pudo actualizar el contador ${campo}.`
+    );
 }
 
 // Aplicar una acción social al estado privado
