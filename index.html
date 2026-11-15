@@ -7986,8 +7986,8 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
             );
 
             // Tomar el primer selector de color de fondo dentro de Portafolio (Hoja #2)
-            const pickerHoja2 = pickersPort;
-            const hexHoja2 = textsPort;
+           const pickerHoja2 = pickersPort[0] || null;
+            const hexHoja2 = textsPort[0] || null;
 
             if (pickerHoja2 && !pickerHoja2.dataset.conectadoHoja2) {
                 pickerHoja2.dataset.conectadoHoja2 = 'true';
