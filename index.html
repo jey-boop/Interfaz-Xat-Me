@@ -4646,8 +4646,10 @@ const res = await fetch(`${urlLimpia}/perfil.json?auth=${tokenAdmin}`, {
         if (res.ok) {
             mostrarNotificacionNube("✅ ¡Cambios guardados! Ya son visibles para todos.");
         } else {
-            mostrarNotificacionNube("❌ Error " + res.status + " al guardar en Firebase.", true);
-        }
+    const detalle = await res.text();
+    console.error("ERROR REAL DE FIREBASE:", res.status, detalle);
+    mostrarNotificacionNube("❌ Error " + res.status + " al guardar en Firebase.", true);
+}
     } catch (err) {
         mostrarNotificacionNube("❌ Fallo de red: " + err.message, true);
     }
@@ -7299,57 +7301,6 @@ document.addEventListener('input', function(e) {
         if (renderStdPrevio) renderStdPrevio();
         centrarPostsImpares();
     };
-
-    // 4. Contador Global de Visitas Únicas corregido (usando api.ipify.org?format=json)
-    async function actualizarVisitasGlobalesReales() {
-        if (typeof FIREBASE_DB_URL === 'undefined' || !FIREBASE_DB_URL) return;
-        const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
-        const viewsEl = document.getElementById('views-count');
-        if (!viewsEl) return;
-
-        try {
-            const hoy = new Date().toISOString().slice(0, 10);
-            let uid = localStorage.getItem('xat_uid_visita_unica');
-
-            if (!uid) {
-                try {
-                    const ipRes = await fetch('https://ipify.org');
-                    if (ipRes.ok) {
-                        const ipData = await ipRes.json();
-                        uid = 'ip_' + ipData.ip.replace(/\./g, '_');
-                    }
-                } catch (e) {}
-                if (!uid) {
-                    uid = 'dev_' + Math.random().toString(36).substring(2, 12);
-                }
-                localStorage.setItem('xat_uid_visita_unica', uid);
-            }
-
-            // Consultar si ya contó hoy en Firebase
-            const checkRes = await fetch(`${urlBase}/visitas_log/${hoy}/${uid}.json?nocache=${Date.now()}`);
-            const yaConto = checkRes.ok ? await checkRes.json() : null;
-
-            // Leer total global de Firebase
-            const totalRes = await fetch(`${urlBase}/stats/views.json?nocache=${Date.now()}`);
-            let totalGlobal = (totalRes.ok && parseInt(await totalRes.json())) || 0;
-
-            if (!yaConto) {
-                totalGlobal += 1;
-                await fetch(`${urlBase}/visitas_log/${hoy}/${uid}.json`, {
-                    method: 'PUT',
-                    body: JSON.stringify(true)
-                });
-                await fetch(`${urlBase}/stats/views.json`, {
-                    method: 'PUT',
-                    body: JSON.stringify(totalGlobal)
-                });
-            }
-
-            viewsEl.textContent = totalGlobal;
-        } catch (err) {
-            console.error("Error sincronizando visitas globales:", err);
-        }
-    }
 
     window.addEventListener('resize', reorganizarSocialMovil);
     window.addEventListener('load', () => {
