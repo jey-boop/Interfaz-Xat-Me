@@ -91,10 +91,10 @@ body {
 <div id="ext-bg-image" class="fixed inset-0 bg-cover bg-center opacity-30 pointer-events-none transition-all duration-500" style="background-image: none; display: none;"></div>
 
 <!-- MÓDULO FIJO LATERAL IZQUIERDO (PORTAFOLIO) -->
-<div id="left-fixed-module" class="fixed left-[calc(45%-547px)] top-[calc(50%+2px)] -translate-y-1/2 w-80 h-[670px] max-h-[85vh] bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl z-30 overflow-hidden transition-all duration-300 hidden xl:flex flex-col justify-between backdrop-blur-md">
+<div id="left-fixed-module" class="fixed left-[calc(45%-547px)] top-[calc(50%+2px)] -translate-y-1/2 w-80 h-[670px] max-h-[85vh] bg-zinc-900  rounded-2xl shadow-2xl z-30 overflow-hidden transition-all duration-300 hidden xl:flex flex-col justify-between backdrop-blur-md">
     
     <!-- CONTENEDOR PRINCIPAL FIJO QUE CONTIENE LAS VISTAS DE TU PORTAFOLIO -->
-    <div class="w-full h-full bg-[#18181b] border border-zinc-800/80 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col">
+    <div class="w-full h-full bg-[#18181b] rounded-2xl shadow-2xl relative overflow-hidden flex flex-col">
         
         <!-- ================= VISTA 1: PORTADA ================= -->
         <div id="view-cover" class="absolute inset-0 w-full h-full bg-zinc-900 flex flex-col justify-between p-6 transition-transform duration-500 ease-in-out z-20 overflow-hidden" style="transform: translateX(0px);">
@@ -246,40 +246,155 @@ body {
         </div>
 
         <!-- ================= VISTA 3: HOJA 2 DE CONTENIDOS ================= -->
-        <div id="view-page2" class="absolute inset-0 w-full h-full p-0 flex flex-col justify-between items-center transition-transform duration-500 ease-in-out translate-x-full z-20 overflow-hidden bg-zinc-950" style="transform: translateX(100%);">
-            <div class="absolute inset-0 dot-grid z-10 pointer-events-none opacity-40"></div>
-            
-            <div class="relative z-20 flex items-center justify-between w-full px-5 pt-5">
-                <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase">PORTAFOLIO • PÁGINA 2</span>
-                <button onclick="switchToLeftModulePage(0)" class="text-zinc-400 hover:text-white text-xs transition-colors cursor-pointer" title="Volver al inicio">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
+        
+<!-- ================= VISTA 3: HOJA 3 DE CONTENIDOS ================= -->
+<div id="view-page2" class="absolute inset-0 w-full h-full p-0 flex flex-col justify-between items-center transition-transform duration-500 ease-in-out translate-x-full z-20 overflow-hidden" style="transform: translateX(100%);">
 
-            <!-- CONTENEDOR GRIS DE MENÚ -->
-            <div class="relative z-20 w-full px-5 my-auto flex flex-col items-center justify-center text-center">
-                <div id="page2-gray-container" class="w-full bg-[#18181b] p-6 rounded-2xl border border-zinc-800 text-center shadow-xl transition-all duration-300" style="background-color: rgb(24, 24, 27);">
-                    <h2 class="text-sm font-bold text-white uppercase tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] mb-4">
-                        CONTENEDOR GRIS DE MENÚ
-                    </h2>
-                    
-                    <!-- MENÚ DE CATEGORÍAS EN HOJA 2 -->
-                    <div class="w-full bg-transparent flex items-center justify-between px-1"><button onclick="currentCategory='xat'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="color: #ffffff;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer"><i class="fa-solid fa-wand-magic-sparkles text-[10px]"></i> XAT</button><button onclick="currentCategory='branding'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="color: #a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer"><svg class="w-2.5 h-2.5 fill-current transition-transform duration-300" viewBox="0 0 24 24"><path d="M13.966 22h6.034l-6.034-14.394zM0 2h7.828l6.326 15.084h-3.952l-2.071-5.111h-4.322l-1.921 5.111h-1.888zm4.846 6.837l-1.408 3.738h2.802zM16.172 2h7.828v20z"></path></svg> BRANDING</button><button onclick="currentCategory='epks'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="color: #a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer"><i class="fa-solid fa-compact-disc text-[10px]"></i> EPKS</button><button onclick="currentCategory='graficos'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="color: #a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer"><i class="fa-solid fa-pen-nib text-[10px]"></i> GRÁFICOS</button><button onclick="currentCategory='arte'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="color: #a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer"><i class="fa-solid fa-image text-[10px]"></i> ARTE</button></div>
+    <!-- PANEL SUPERIOR -->
+    <div id="page3-panel-top" class="relative w-full h-[210px] bg-zinc-900 rounded-t-2xl rounded-b-[22px] overflow-hidden flex flex-col justify-between p-4 shrink-0 transition-all duration-500 shadow-lg">
+
+        <div id="page3-bg-top-layer" class="absolute inset-0 bg-cover bg-center transition-all duration-500 z-0 blur-[14px] scale-110 brightness-75"></div>
+        <div class="absolute inset-0 dot-grid z-10 pointer-events-none opacity-40"></div>
+
+        <!-- CABECERA: PORTAFOLIO + RRSS -->
+        <div class="relative z-20 flex items-center justify-between w-full shrink-0">
+
+            <div class="flex items-center gap-1.5" id="page3-top-container">
+                <i class="fa-solid fa-briefcase text-white text-sm drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"></i>
+                <div class="flex flex-col leading-none">
+                    <span class="text-[9px] font-black text-white tracking-widest uppercase">PORTA</span>
+                    <span class="text-[9px] font-black text-white tracking-widest uppercase">FOLIO</span>
                 </div>
             </div>
 
-            <div class="relative z-20 flex items-center justify-between w-full px-5 pb-5 pt-2">
-                <button onclick="prevLeftModuleSlide()" class="text-white/80 hover:text-white text-xs transition-all cursor-pointer flex items-center gap-1 font-semibold">
-                    <i class="fa-solid fa-arrow-left"></i> Anterior
-                </button>
-                <span class="text-[9px] font-bold text-zinc-500 tracking-widest">2 / 2</span>
-                <button id="left-module-next-btn-page2" onclick="nextLeftModuleSlide()" class="text-white/80 hover:text-white text-xs transition-all cursor-pointer flex items-center gap-1 font-semibold hidden" style="display: inline-flex;">
-                    Siguiente <i class="fa-solid fa-arrow-right"></i>
-                </button>
+            <div class="flex items-center gap-2" id="page3-rrss-container">
+                <a href="#" target="_blank" class="text-white hover:text-purple-300 text-xs transition-transform hover:scale-125"><i class="fa-brands fa-behance"></i></a>
+                <a href="#" target="_blank" class="text-white hover:text-purple-300 text-xs transition-transform hover:scale-125"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#" target="_blank" class="text-white hover:text-purple-300 text-xs transition-transform hover:scale-125"><i class="fa-brands fa-deviantart"></i></a>
+                <a href="#" target="_blank" class="text-white hover:text-purple-300 text-xs transition-transform hover:scale-125"><i class="fa-brands fa-tumblr"></i></a>
             </div>
         </div>
 
+        <!-- CONTENIDO SUPERIOR -->
+        <div class="relative z-20 w-full my-auto flex flex-col items-center justify-center py-1">
+
+            <div id="page3-top-title-container" class="text-center">
+
+                <div class="flex items-center justify-center gap-1.5 group/edit">
+                    <span id="page3-top-tag" class="text-[10px] font-semibold text-purple-400 tracking-wider block drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d) d.tag=this.innerText;">XAT.COM GRAPHICS</span>
+                    <i class="fa-solid fa-feather text-purple-400 text-[9px] opacity-40 group-hover/edit:opacity-100"></i>
+                </div>
+
+                <div class="flex items-center justify-center gap-1.5 group/edit mt-0.5">
+                    <h4 id="page3-top-title" class="text-sm font-bold text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d?.topPhotos[topPhotoIndex]) d.topPhotos[topPhotoIndex].title=this.innerText;">Mundo Xat Banner</h4>
+                    <i class="fa-solid fa-feather text-purple-400 text-[10px] opacity-40 group-hover/edit:opacity-100"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 mt-1.5">
+                <button onclick="changePhotoHoja3('top', -1)" class="text-white/70 hover:text-white text-[10px] transition-transform hover:scale-125 cursor-pointer"><i class="fa-solid fa-chevron-left"></i></button>
+                <span id="page3-top-counter" class="text-[8px] font-bold text-zinc-300 tracking-widest">1 / 5</span>
+                <button onclick="changePhotoHoja3('top', 1)" class="text-white/70 hover:text-white text-[10px] transition-transform hover:scale-125 cursor-pointer"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="mt-2 flex items-center gap-1.5 text-white/80 text-[10px] font-bold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] group/edit">
+                <button onclick="openLightbox('top')" class="cursor-pointer hover:text-white transition-all hover:scale-105 flex items-center gap-1.5">
+                    <i class="fa-solid fa-magnifying-glass text-[11px] pointer-events-none"></i>
+                </button>
+       <span id="page3-top-view-text" class="outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d) d.topViewText=this.innerText;">ver</span>
+                <i class="fa-solid fa-feather text-purple-400 text-[9px] opacity-40 group-hover/edit:opacity-100"></i>
+            </div>
+        </div>
+
+        <div class="w-full shrink-0"></div>
     </div>
+
+    <!-- MENÚ CENTRAL -->
+    <div id="page3-category-menu" class="w-full h-[40px] bg-transparent flex items-center justify-between px-2.5 shrink-0 z-20">
+
+        <button onclick="currentCategory='xat'; topPhotoIndex=0; bottomPhotoIndex=0; renderModuleHoja3(); switchToLeftModulePage(2);" style="color:#ffffff;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-wand-magic-sparkles text-[10px]"></i> XAT
+        </button>
+
+        <button onclick="currentCategory='branding'; topPhotoIndex=0; bottomPhotoIndex=0; renderModuleHoja3(); switchToLeftModulePage(2);" style="color:#a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">
+            <svg class="w-2.5 h-2.5 fill-current transition-transform duration-300" viewBox="0 0 24 24"><path d="M13.966 22h6.034l-6.034-14.394zM0 2h7.828l6.326 15.084h-3.952l-2.071-5.111h-4.322l-1.921 5.111h-1.888zm4.846 6.837l-1.408 3.738h2.802zM16.172 2h7.828v20z"></path></svg>
+            BRANDING
+        </button>
+
+        <button onclick="currentCategory='epks'; topPhotoIndex=0; bottomPhotoIndex=0; renderModuleHoja3(); switchToLeftModulePage(2);" style="color:#a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-compact-disc text-[10px]"></i> EPKS
+        </button>
+
+        <button onclick="currentCategory='graficos'; topPhotoIndex=0; bottomPhotoIndex=0; renderModuleHoja3(); switchToLeftModulePage(2);" style="color:#a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-pen-nib text-[10px]"></i> GRÁFICOS
+        </button>
+
+        <button onclick="currentCategory='arte'; topPhotoIndex=0; bottomPhotoIndex=0; renderModuleHoja3(); switchToLeftModulePage(2);" style="color:#a1a1aa;" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">
+            <i class="fa-solid fa-image text-[10px]"></i> ARTE
+        </button>
+    </div>
+
+    <!-- PANEL INFERIOR -->
+    <div id="page3-panel-bottom" class="relative w-full h-[210px] bg-zinc-900 rounded-t-[22px] rounded-b-2xl overflow-hidden flex flex-col justify-between p-4 shrink-0 transition-all duration-500 shadow-lg">
+
+        <div id="page3-bg-bottom-layer" class="absolute inset-0 bg-cover bg-center transition-all duration-500 z-0 blur-[14px] scale-110 brightness-75"></div>
+        <div class="absolute inset-0 dot-grid z-10 pointer-events-none opacity-40"></div>
+
+        <!-- CONTENIDO INFERIOR -->
+        <div class="relative z-20 w-full my-auto flex flex-col items-center justify-center py-1">
+
+            <div id="page3-bottom-title-container" class="text-center">
+
+                <div class="flex items-center justify-center gap-1.5 group/edit">
+                    <span id="page3-bottom-tag" class="text-[10px] font-semibold text-purple-400 tracking-wider block drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d) d.tag=this.innerText;">XAT.COM GRAPHICS</span>
+                    <i class="fa-solid fa-feather text-purple-400 text-[9px] opacity-40 group-hover/edit:opacity-100"></i>
+                </div>
+
+                <div class="flex items-center justify-center gap-1.5 group/edit mt-0.5">
+                    <h4 id="page3-bottom-title" class="text-sm font-bold text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d?.bottomPhotos[bottomPhotoIndex]) d.bottomPhotos[bottomPhotoIndex].title=this.innerText;">Xat Avatar Showcase</h4>
+                    <i class="fa-solid fa-feather text-purple-400 text-[10px] opacity-40 group-hover/edit:opacity-100"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 mt-1.5">
+                <button onclick="changePhotoHoja3('bottom', -1)" class="text-white/70 hover:text-white text-[10px] transition-transform hover:scale-125 cursor-pointer"><i class="fa-solid fa-chevron-left"></i></button>
+                <span id="page3-bottom-counter" class="text-[8px] font-bold text-zinc-300 tracking-widest">1 / 5</span>
+                <button onclick="changePhotoHoja3('bottom', 1)" class="text-white/70 hover:text-white text-[10px] transition-transform hover:scale-125 cursor-pointer"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="mt-2 flex items-center gap-1.5 text-white/80 text-[10px] font-bold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] group/edit">
+                <button onclick="openLightbox('bottom')" class="cursor-pointer hover:text-white transition-all hover:scale-105 flex items-center gap-1.5">
+                    <i class="fa-solid fa-magnifying-glass text-[11px] pointer-events-none"></i>
+                </button>
+               <span id="page3-bottom-view-text" class="outline-none rounded px-1 transition-colors hover:bg-zinc-800/40 cursor-text" contenteditable="true" oninput="const d=portfolioSheets[1]?.data?.[currentCategory]; if(d) d.bottomViewText=this.innerText;">VER / VIEW</span>
+                <i class="fa-solid fa-feather text-purple-400 text-[9px] opacity-40 group-hover/edit:opacity-100"></i>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN + CLIENTES -->
+        <div class="relative z-20 grid grid-cols-3 items-center w-full mt-auto pt-2 shrink-0">
+
+            <button id="page3-btn-to-portfolio" onclick="prevLeftModuleSlide()" class="text-white/80 hover:text-white transition-all cursor-pointer text-sm hover:scale-125 justify-self-start" title="Página anterior">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="flex flex-col items-center gap-1 justify-self-center" id="page3-clients-container">
+                <span class="text-[7.5px] font-bold text-zinc-400 tracking-widest uppercase leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">CLIENT</span>
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-apple text-white/90 hover:text-white text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform hover:scale-125" title="Apple"></i>
+                    <i class="fa-brands fa-google text-white/90 hover:text-white text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform hover:scale-125" title="Google"></i>
+                    <i class="fa-brands fa-spotify text-white/90 hover:text-white text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform hover:scale-125" title="Spotify"></i>
+                    <i class="fa-brands fa-figma text-white/90 hover:text-white text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform hover:scale-125" title="Figma"></i>
+                </div>
+            </div>
+
+            <button id="page3-next-btn" onclick="nextLeftModuleSlide()" class="text-white/80 hover:text-white transition-all cursor-pointer text-sm hover:scale-125 justify-self-end" title="Siguiente página">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 
 <!-- CONTENEDOR PRINCIPAL QUE AGRUPA EL BANNER PUBLICITARIO Y EL PERFIL -->
@@ -739,18 +854,39 @@ body {
     All rights reserved
 </div>
 
-<!-- MODAL DE PIN DE SEGURIDAD -->
+
+<!-- MODAL DE AUTENTICACIÓN DEL ADMINISTRADOR -->
 <div id="pin-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-zinc-900/70 backdrop-blur-md border border-zinc-800 rounded-2xl p-6 pt-10 w-full max-w-xs shadow-2xl text-center relative space-y-4">
+
         <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-zinc-900 border border-zinc-800 text-amber-400 rounded-full flex items-center justify-center text-xl shadow-lg">
-            <i class="fa-solid fa-key"></i>
+            <i class="fa-solid fa-shield-halved"></i>
         </div>
+
         <div>
-            <h3 class="text-sm font-bold text-white uppercase tracking-wider">ADMIN</h3>
-            <p class="text-xs text-zinc-400 mt-1">Ingresa tu contraseña asignada (Ej. <span class="text-purple-300 font-mono">1234...</span>)</p>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider">ADMINISTRADOR</h3>
+            <p class="text-xs text-zinc-400 mt-1">Identifícate para acceder al panel.</p>
         </div>
-        <input type="password" id="pin-input" maxlength="24" onkeydown="if(event.key === 'Enter') verifyPin()" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-lg font-mono tracking-widest focus:border-purple-500 focus:outline-none">
-        <p id="pin-error" class="text-[11px] text-rose-400 hidden font-medium">Contraseña incorrecta. Inténtalo de nuevo.</p>
+
+        <input
+            type="email"
+            id="admin-email"
+            autocomplete="username"
+            placeholder="Correo electrónico"
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-sm focus:border-purple-500 focus:outline-none"
+        >
+
+        <input
+            type="password"
+            id="pin-input"
+            autocomplete="current-password"
+            placeholder="Contraseña"
+            onkeydown="if(event.key === 'Enter') verifyPin()"
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-center text-white text-sm focus:border-purple-500 focus:outline-none"
+        >
+
+        <p id="pin-error" class="text-[11px] text-rose-400 hidden font-medium">No se pudo verificar el acceso.</p>
+
         <div class="flex gap-2">
             <button onclick="closePinModal()" class="flex-1 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer">Salir</button>
             <button onclick="verifyPin()" id="pin-submit-btn" class="flex-1 py-2 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold rounded-lg transition-colors shadow-lg shadow-purple-900/40 cursor-pointer">Ingresar</button>
@@ -2406,8 +2542,10 @@ body {
     const tabButtons = document.querySelectorAll('#left-fixed-module .tab-btn');
 
     function renderModule() {
-        const data = portfolioData[currentCategory];
-        if (!data) return;
+        const idxHoja = Math.max(0, currentLeftModuleIndex - 1);
+const datosHojaActiva = portfolioSheets?.[idxHoja]?.data;
+const data = datosHojaActiva?.[currentCategory] || portfolioData[currentCategory];
+if (!data) return;
         
         const topTag = document.getElementById('top-tag');
         const topTitle = document.getElementById('top-title');
@@ -2433,42 +2571,64 @@ body {
         if (bottomCounter) bottomCounter.textContent = `${bottomPhotoIndex + 1} / ${MAX_PHOTOS}`;
         if (bgBottomLayer) bgBottomLayer.style.background = data.bottomPhotos[bottomPhotoIndex].bg;
     }
+// Recordar la categoría seleccionada en cada hoja
+window.__categoriaPorHoja = window.__categoriaPorHoja || {};
+function renderModuleHoja3() {
+    const data = portfolioSheets?.[1]?.data?.[currentCategory];
+    if (!data) return;
 
-    function liveUpdatePortfolioTitleColors() {
-        const colorTop = document.getElementById('edit-color-top-title')?.value;
-        const colorBottom = document.getElementById('edit-color-bottom-title')?.value;
-        const topTitle = document.getElementById('top-title');
-        const bottomTitle = document.getElementById('bottom-title');
-        if (topTitle && colorTop) topTitle.style.color = colorTop;
-        if (bottomTitle && colorBottom) bottomTitle.style.color = colorBottom;
+    const topPhoto = data.topPhotos?.[topPhotoIndex];
+    const bottomPhoto = data.bottomPhotos?.[bottomPhotoIndex];
+
+    if (!topPhoto || !bottomPhoto) return;
+
+    const topTag = document.getElementById('page3-top-tag');
+    const topTitle = document.getElementById('page3-top-title');
+    const topCounter = document.getElementById('page3-top-counter');
+    const bgTop = document.getElementById('page3-bg-top-layer');
+    const topViewText = document.getElementById('page3-top-view-text');
+
+    const bottomTag = document.getElementById('page3-bottom-tag');
+    const bottomTitle = document.getElementById('page3-bottom-title');
+    const bottomCounter = document.getElementById('page3-bottom-counter');
+    const bgBottom = document.getElementById('page3-bg-bottom-layer');
+    const bottomViewText = document.getElementById('page3-bottom-view-text');
+
+    if (topTag) topTag.textContent = data.tag;
+    if (topTitle) topTitle.textContent = topPhoto.title;
+    if (topCounter) topCounter.textContent = `${topPhotoIndex + 1} / ${MAX_PHOTOS}`;
+    if (bgTop) bgTop.style.background = topPhoto.bg;
+    if (topViewText) topViewText.textContent = data.topViewText || 'ver';
+
+    if (bottomTag) bottomTag.textContent = data.tag;
+    if (bottomTitle) bottomTitle.textContent = bottomPhoto.title;
+    if (bottomCounter) bottomCounter.textContent = `${bottomPhotoIndex + 1} / ${MAX_PHOTOS}`;
+    if (bgBottom) bgBottom.style.background = bottomPhoto.bg;
+    if (bottomViewText) bottomViewText.textContent = data.bottomViewText || 'VER / VIEW';
+}
+function changePhoto(position, direction) {
+    if (position === 'top') {
+        topPhotoIndex = (topPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    } else {
+        bottomPhotoIndex = (bottomPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
     }
 
-    function changePhoto(position, direction) {
-        if (position === 'top') {
-            topPhotoIndex = (topPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
-        } else {
-            bottomPhotoIndex = (bottomPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
-        }
+    if (currentLeftModuleIndex === 2) {
+        renderModuleHoja3();
+    } else {
         renderModule();
     }
+}
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            currentCategory = button.getAttribute('data-target');
-            topPhotoIndex = 0;
-            bottomPhotoIndex = 0;
+function changePhotoHoja3(position, direction) {
+    if (position === 'top') {
+        topPhotoIndex = (topPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    } else {
+        bottomPhotoIndex = (bottomPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    }
 
-            tabButtons.forEach(btn => {
-                btn.classList.remove('active', 'text-white');
-                btn.classList.add('text-zinc-400');
-            });
-            button.classList.add('active', 'text-white');
-            button.classList.remove('text-zinc-400');
-
-            renderModule();
-        });
-    });
-
+    renderModuleHoja3();
+}
     const lightbox = document.getElementById('lightbox') || createLightboxElement();
 
     function createLightboxElement() {
@@ -2494,60 +2654,63 @@ body {
     }
 
     function updateLightboxView() {
-        const data = portfolioData[currentCategory];
-        let currentIndex = activeLightboxPosition === 'top' ? topPhotoIndex : bottomPhotoIndex;
-        let currentPhoto = activeLightboxPosition === 'top' ? data.topPhotos[currentIndex] : data.bottomPhotos[currentIndex];
-        
-        const lbContent = document.getElementById('lightbox-content');
-        
-        if (lbContent) {
-            let imageUrl = '';
-            let gradientBg = '';
-            if (currentPhoto.bg && currentPhoto.bg.includes('url(')) {
-                const match = currentPhoto.bg.match(/url\(['"]?(.*?)['"]?\)/);
-                if (match && match[1]) imageUrl = match[1];
-            } else if (currentPhoto.bg && !currentPhoto.bg.startsWith('linear-gradient')) {
-                imageUrl = currentPhoto.bg;
-            } else {
-                gradientBg = currentPhoto.bg;
-            }
+    const idxHoja = Math.max(0, currentLeftModuleIndex - 1);
+    const datosHoja = portfolioSheets?.[idxHoja]?.data || portfolioData;
+    const data = datosHoja[currentCategory];
 
-            if (imageUrl) {
-                lbContent.innerHTML = `<img src="${imageUrl}" alt="${currentPhoto.title || 'Portfolio Image'}" class="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-none shadow-2xl" onerror="this.parentElement.innerHTML='<div class=\'w-96 h-64 flex items-center justify-center text-zinc-400 text-xs\'>Error al cargar imagen</div>'">`;
-            } else {
-                lbContent.innerHTML = `<div class="w-[500px] h-[350px] max-w-[90vw] max-h-[75vh] rounded-none shadow-2xl flex flex-col items-center justify-center p-6 text-center" style="background: ${gradientBg || 'linear-gradient(to top right, #18181b, #09090b)'};"><h3 class="text-white font-bold text-base drop-shadow-md">${currentPhoto.title || ''}</h3></div>`;
-            }
-        }
-    }
+    if (!data) return;
 
-    function lightboxNavigate(direction) {
-        if (activeLightboxPosition === 'top') {
-            topPhotoIndex = (topPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    let currentIndex = activeLightboxPosition === 'top'
+        ? topPhotoIndex
+        : bottomPhotoIndex;
+
+    let currentPhoto = activeLightboxPosition === 'top'
+        ? data.topPhotos[currentIndex]
+        : data.bottomPhotos[currentIndex];
+
+    if (!currentPhoto) return;
+
+    const lbContent = document.getElementById('lightbox-content');
+
+    if (lbContent) {
+        let imageUrl = '';
+        let gradientBg = '';
+
+        if (currentPhoto.bg && currentPhoto.bg.includes('url(')) {
+            const match = currentPhoto.bg.match(/url\(['"]?(.*?)['"]?\)/);
+            if (match && match[1]) imageUrl = match[1];
+        } else if (currentPhoto.bg && !currentPhoto.bg.startsWith('linear-gradient')) {
+            imageUrl = currentPhoto.bg;
         } else {
-            bottomPhotoIndex = (bottomPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+            gradientBg = currentPhoto.bg;
         }
+
+        if (imageUrl) {
+            lbContent.innerHTML = `<img src="${imageUrl}" alt="${currentPhoto.title || 'Portfolio Image'}" class="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-none shadow-2xl" onerror="this.parentElement.innerHTML='<div class=\'w-96 h-64 flex items-center justify-center text-zinc-400 text-xs\'>Error al cargar imagen</div>'">`;
+        } else {
+            lbContent.innerHTML = `<div class="w-[500px] h-[350px] max-w-[90vw] max-h-[75vh] rounded-none shadow-2xl flex flex-col items-center justify-center p-6 text-center" style="background: ${gradientBg || 'linear-gradient(to top right, #18181b, #09090b)'};"><h3 class="text-white font-bold text-base drop-shadow-md">${currentPhoto.title || ''}</h3></div>`;
+        }
+    }
+}
+
+function lightboxNavigate(direction) {
+    if (activeLightboxPosition === 'top') {
+        topPhotoIndex = (topPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    } else {
+        bottomPhotoIndex = (bottomPhotoIndex + direction + MAX_PHOTOS) % MAX_PHOTOS;
+    }
+
+    if (currentLeftModuleIndex === 2) {
+        renderModuleHoja3();
+    } else {
         renderModule();
-        updateLightboxView();
     }
 
-    function closeLightbox() {
-        lightbox.classList.remove('flex');
-        lightbox.classList.add('hidden');
-    }
-
-    if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-    }
-
-    renderModule();
+    updateLightboxView();
+}
 </script>
 
 <script>
-    let ADMIN_PIN = "";
     let visitorActions = { viewed: false, favorited: false, liked: false, disliked: false, followed: false };
     let currentReaction = null;
     let activeBadgeEditingIndex = null;
@@ -2584,127 +2747,208 @@ body {
         { key: 'arte', label: 'ARTE', icon: 'fa-solid fa-image text-[10px]', textColor: '#a1a1aa' }
     ];
 
-    function renderPortfolioMenuEditor() {
-        const list = document.getElementById('portfolio-menu-editor-list');
-        if (!list) return;
+ 
+function obtenerCategoriasHojaActiva() {
+    const idxHoja = Math.max(0, currentLeftModuleIndex - 1);
+    const hoja = portfolioSheets[idxHoja];
 
-        list.innerHTML = portfolioMenuCategories.map((cat, idx) => `
-            <div class="space-y-1.5 bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
-                <div class="flex items-center justify-between">
-                    <span class="text-[10px] font-bold text-purple-300 uppercase">Categoría #${idx + 1} (${cat.key})</span>
-                </div>
-                <div>
-                    <label class="text-[9px] text-zinc-400">Nombre Menú</label>
-                    <input type="text" oninput="portfolioMenuCategories[${idx}].label=this.value; renderPortfolioMenu();" value="${cat.label}" class="w-full bg-zinc-950 border border-zinc-800 rounded px-2 py-0.5 text-white text-[10px]">
-                </div>
-                <div class="flex items-center gap-2 pt-1">
-                    <span class="text-[9px] text-zinc-400">Color Texto:</span>
-                    <input type="color" value="${cat.textColor || '#ffffff'}" oninput="portfolioMenuCategories[${idx}].textColor=this.value; renderPortfolioMenu();" class="w-5 h-5 rounded cursor-pointer border-0 bg-transparent">
-                    <input type="text" value="${cat.textColor || '#ffffff'}" oninput="portfolioMenuCategories[${idx}].textColor=this.value; renderPortfolioMenu();" class="w-20 bg-zinc-950 border border-zinc-800 rounded px-1.5 py-0.5 text-white text-[9px] font-mono uppercase">
-                </div>
-            </div>
-        `).join('');
+    if (!hoja) return portfolioMenuCategories;
+
+    if (!Array.isArray(hoja.portfolioMenuCategories)) {
+        hoja.portfolioMenuCategories =
+            JSON.parse(JSON.stringify(portfolioMenuCategories));
     }
 
-    function renderPortfolioMenu() {
-        // Actualiza el menú central del módulo de portafolio principal y hoja 2
-        const container = document.querySelector('#view-portfolio .w-full.h-\\[40px\\]');
-        const containerPage2 = document.querySelector('#view-page2 #page2-gray-container .w-full.bg-transparent');
-        
-        const buildMenuHTML = (isPage2 = false) => {
-            return portfolioMenuCategories.map(cat => {
-                const isActive = currentCategory === cat.key;
-                const textColorStyle = `color: ${cat.textColor || (isActive ? '#ffffff' : '#a1a1aa')};`;
-                const iconHtml = cat.icon === 'svg-branding' 
-                    ? `<svg class="w-2.5 h-2.5 fill-current transition-transform duration-300" viewBox="0 0 24 24"><path d="M13.966 22h6.034l-6.034-14.394zM0 2h7.828l6.326 15.084h-3.952l-2.071-5.111h-4.322l-1.921 5.111h-1.888zm4.846 6.837l-1.408 3.738h2.802zM16.172 2h7.828v20z"/></svg>`
-                    : `<i class="${cat.icon}"></i>`;
-                
-                if (isPage2) {
-                    return `<button onclick="currentCategory='${cat.key}'; topPhotoIndex=0; bottomPhotoIndex=0; renderModule(); switchToLeftModulePage(1);" style="${textColorStyle}" class="text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">${iconHtml} ${cat.label}</button>`;
-                } else {
-                    return `<button data-target="${cat.key}" style="${textColorStyle}" class="tab-btn text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">${iconHtml} ${cat.label}</button>`;
-                }
-            }).join('');
-        };
+    return hoja.portfolioMenuCategories;
+}
 
-        if (container) container.innerHTML = buildMenuHTML(false);
-        if (containerPage2) containerPage2.innerHTML = buildMenuHTML(true);
+function actualizarCategoriaMenuHoja(idx, propiedad, valor) {
+    const categorias = obtenerCategoriasHojaActiva();
 
-        // Re-vincular eventos para los botones principales
-        document.querySelectorAll('#view-portfolio .tab-btn').forEach(button => {
+    if (!categorias[idx]) return;
+
+    categorias[idx][propiedad] = valor;
+
+    renderPortfolioMenu();
+}
+   
+function renderPortfolioMenuEditor() {
+    const list = document.getElementById('portfolio-menu-editor-list');
+    if (!list) return;
+
+    const categorias = obtenerCategoriasHojaActiva();
+
+    list.innerHTML = categorias.map((cat, idx) => `
+        <div class="space-y-1.5 bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold text-purple-300 uppercase">Categoría #${idx + 1} (${cat.key})</span>
+            </div>
+            <div>
+                <label class="text-[9px] text-zinc-400">Nombre Menú</label>
+                <input type="text"
+                    oninput="actualizarCategoriaMenuHoja(${idx}, 'label', this.value)"
+                    value="${cat.label}"
+                    class="w-full bg-zinc-950 border border-zinc-800 rounded px-2 py-0.5 text-white text-[10px]">
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+                <span class="text-[9px] text-zinc-400">Color Texto:</span>
+                <input type="color"
+                    value="${cat.textColor || '#ffffff'}"
+                    oninput="actualizarCategoriaMenuHoja(${idx}, 'textColor', this.value)"
+                    class="w-5 h-5 rounded cursor-pointer border-0 bg-transparent">
+                <input type="text"
+                    value="${cat.textColor || '#ffffff'}"
+                    oninput="actualizarCategoriaMenuHoja(${idx}, 'textColor', this.value)"
+                    class="w-20 bg-zinc-950 border border-zinc-800 rounded px-1.5 py-0.5 text-white text-[9px] font-mono uppercase">
+            </div>
+        </div>
+    `).join('');
+}
+
+
+function renderPortfolioMenu() {
+    const container = document.querySelector('#view-portfolio .w-full.h-\\[40px\\]');
+
+    window.__categoriaPorHoja = window.__categoriaPorHoja || {};
+
+    if (currentLeftModuleIndex > 0) {
+        currentCategory =
+            window.__categoriaPorHoja[currentLeftModuleIndex] || 'xat';
+    }
+
+    // Obtener las categorías propias de la hoja activa
+    const categorias = obtenerCategoriasHojaActiva();
+
+    const buildMenuHTML = () => {
+        return categorias.map(cat => {
+            const isActive = currentCategory === cat.key;
+
+            const textColorStyle = `color: ${cat.textColor || '#a1a1aa'};`;
+
+            const iconHtml = cat.icon === 'svg-branding'
+                ? `<svg class="w-2.5 h-2.5 fill-current transition-transform duration-300" viewBox="0 0 24 24"><path d="M13.966 22h6.034l-6.034-14.394zM0 2h7.828l6.326 15.084h-3.952l-2.071-5.111h-4.322l-1.921 5.111h-1.888zm4.846 6.837l-1.408 3.738h2.802zM16.172 2h7.828v20z"/></svg>`
+                : `<i class="${cat.icon}"></i>`;
+
+            return `<button data-target="${cat.key}" style="${textColorStyle}" class="tab-btn text-[8.5px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 hover:text-white cursor-pointer">${iconHtml} ${cat.label}</button>`;
+        }).join('');
+    };
+
+    if (container) {
+        container.innerHTML = buildMenuHTML();
+
+        container.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
                 currentCategory = button.getAttribute('data-target');
+
+                window.__categoriaPorHoja[currentLeftModuleIndex] = currentCategory;
+
                 topPhotoIndex = 0;
                 bottomPhotoIndex = 0;
 
+                renderPortfolioMenu();
                 renderModule();
             });
         });
     }
+}
 
-    function renderPortfolioPhotosEditor() {
-        const list = document.getElementById('portfolio-photos-editor-list');
-        if (!list) return;
+function renderPortfolioPhotosEditor() {
+    const list = document.getElementById('portfolio-photos-editor-list');
+    if (!list) return;
 
-        const categories = [
-            { key: 'xat', label: 'XAT' },
-            { key: 'branding', label: 'BRANDING' },
-            { key: 'epks', label: 'EPKS' },
-            { key: 'graficos', label: 'GRÁFICOS' },
-            { key: 'arte', label: 'ARTE' }
-        ];
+    const idxHoja = Math.max(0, currentLeftModuleIndex - 1);
 
-        list.innerHTML = categories.map(cat => {
-            const catData = portfolioData[cat.key];
-            return `
-                <div class="space-y-2 bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
-                    <span class="text-[10px] font-bold text-purple-300 uppercase block border-b border-zinc-800 pb-1">${cat.label}</span>
-                    
-                    <div class="space-y-1.5 pt-1">
-                        <span class="text-[9px] font-semibold text-zinc-300 uppercase">Módulo Superior (Top 5)</span>
-                        ${catData.topPhotos.map((photo, pIdx) => {
-                            let rawUrl = '';
-                            if (photo.bg && photo.bg.includes('url(')) {
-                                const match = photo.bg.match(/url\(['"]?(.*?)['"]?\)/);
-                                if (match && match[1]) rawUrl = match[1];
-                            } else if (photo.bg && !photo.bg.startsWith('linear-gradient')) {
-                                rawUrl = photo.bg;
-                            }
-                            return `
+    // Obtener los datos de la hoja seleccionada
+    const datosHoja = portfolioSheets?.[idxHoja]?.data || portfolioData;
+
+    const categories = [
+        { key: 'xat', label: 'XAT' },
+        { key: 'branding', label: 'BRANDING' },
+        { key: 'epks', label: 'EPKS' },
+        { key: 'graficos', label: 'GRÁFICOS' },
+        { key: 'arte', label: 'ARTE' }
+    ];
+
+    list.innerHTML = categories.map(cat => {
+        const catData = datosHoja[cat.key];
+        if (!catData) return '';
+
+        return `
+            <div class="space-y-2 bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
+                <span class="text-[10px] font-bold text-purple-300 uppercase block border-b border-zinc-800 pb-1">${cat.label}</span>
+
+                <div class="space-y-1.5 pt-1">
+                    <span class="text-[9px] font-semibold text-zinc-300 uppercase">Módulo Superior (Top 5)</span>
+
+                    ${catData.topPhotos.map((photo, pIdx) => {
+                        let rawUrl = '';
+                        if (photo.bg && photo.bg.includes('url(')) {
+                            const match = photo.bg.match(/url\(['"]?(.*?)['"]?\)/);
+                            if (match && match[1]) rawUrl = match[1];
+                        } else if (photo.bg && !photo.bg.startsWith('linear-gradient')) {
+                            rawUrl = photo.bg;
+                        }
+
+                        return `
                             <div class="space-y-1 bg-zinc-950 p-2 rounded border border-zinc-800/80">
                                 <div class="flex items-center justify-between text-[9px] text-zinc-400 font-semibold">
-                                    <span>Pieza Sup #${pIdx+1}</span>
+                                    <span>Pieza Sup #${pIdx + 1}</span>
                                 </div>
-                                <input type="text" oninput="portfolioData['${cat.key}'].topPhotos[${pIdx}].title=this.value; renderModule();" value="${photo.title || ''}" placeholder="Texto / Título Módulo Superior #${pIdx+1}" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
-                                <input type="text" oninput="const val=this.value.trim(); portfolioData['${cat.key}'].topPhotos[${pIdx}].bg=val ? (val.startsWith('linear-gradient') ? val : 'url(\\''+val+'\\') center/cover no-repeat') : ''; renderModule();" value="${rawUrl}" placeholder="URL Imagen Módulo Superior #${pIdx+1}" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
-                            </div>
-                        `;}).join('')}
-                    </div>
 
-                    <div class="space-y-1.5 pt-2">
-                        <span class="text-[9px] font-semibold text-zinc-300 uppercase">Módulo Inferior (Bottom 5)</span>
-                        ${catData.bottomPhotos.map((photo, pIdx) => {
-                            let rawUrl = '';
-                            if (photo.bg && photo.bg.includes('url(')) {
-                                const match = photo.bg.match(/url\(['"]?(.*?)['"]?\)/);
-                                if (match && match[1]) rawUrl = match[1];
-                            } else if (photo.bg && !photo.bg.startsWith('linear-gradient')) {
-                                rawUrl = photo.bg;
-                            }
-                            return `
-                            <div class="space-y-1 bg-zinc-950 p-2 rounded border border-zinc-800/80">
-                                <div class="flex items-center justify-between text-[9px] text-zinc-400 font-semibold">
-                                    <span>Pieza Inf #${pIdx+1}</span>
-                                </div>
-                                <input type="text" oninput="portfolioData['${cat.key}'].bottomPhotos[${pIdx}].title=this.value; renderModule();" value="${photo.title || ''}" placeholder="Texto / Título Módulo Inferior #${pIdx+1}" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
-                                <input type="text" oninput="const val=this.value.trim(); portfolioData['${cat.key}'].bottomPhotos[${pIdx}].bg=val ? (val.startsWith('linear-gradient') ? val : 'url(\\''+val+'\\') center/cover no-repeat') : ''; renderModule();" value="${rawUrl}" placeholder="URL Imagen Módulo Inferior #${pIdx+1}" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
+                                <input type="text"
+                                    oninput="actualizarPiezaPortafolio('${cat.key}', 'topPhotos', ${pIdx}, 'title', this.value)"
+                                    value="${photo.title || ''}"
+                                    placeholder="Texto / Título Módulo Superior #${pIdx + 1}"
+                                    class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
+
+                                <input type="text"
+                                    oninput="actualizarPiezaPortafolio('${cat.key}', 'topPhotos', ${pIdx}, 'bg', this.value)"
+                                    value="${rawUrl}"
+                                    placeholder="URL Imagen Módulo Superior #${pIdx + 1}"
+                                    class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
                             </div>
-                        `;}).join('')}
-                    </div>
+                        `;
+                    }).join('')}
                 </div>
-            `;
-        }).join('');
-    }
+
+                <div class="space-y-1.5 pt-2">
+                    <span class="text-[9px] font-semibold text-zinc-300 uppercase">Módulo Inferior (Bottom 5)</span>
+
+                    ${catData.bottomPhotos.map((photo, pIdx) => {
+                        let rawUrl = '';
+                        if (photo.bg && photo.bg.includes('url(')) {
+                            const match = photo.bg.match(/url\(['"]?(.*?)['"]?\)/);
+                            if (match && match[1]) rawUrl = match[1];
+                        } else if (photo.bg && !photo.bg.startsWith('linear-gradient')) {
+                            rawUrl = photo.bg;
+                        }
+
+                        return `
+                            <div class="space-y-1 bg-zinc-950 p-2 rounded border border-zinc-800/80">
+                                <div class="flex items-center justify-between text-[9px] text-zinc-400 font-semibold">
+                                    <span>Pieza Inf #${pIdx + 1}</span>
+                                </div>
+
+                                <input type="text"
+                                    oninput="actualizarPiezaPortafolio('${cat.key}', 'bottomPhotos', ${pIdx}, 'title', this.value)"
+                                    value="${photo.title || ''}"
+                                    placeholder="Texto / Título Módulo Inferior #${pIdx + 1}"
+                                    class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
+
+                                <input type="text"
+                                    oninput="actualizarPiezaPortafolio('${cat.key}', 'bottomPhotos', ${pIdx}, 'bg', this.value)"
+                                    value="${rawUrl}"
+                                    placeholder="URL Imagen Módulo Inferior #${pIdx + 1}"
+                                    class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 
     function renderPortfolioClientsEditor() {
         const list = document.getElementById('portfolio-clients-editor-list');
@@ -2820,14 +3064,20 @@ body {
     }
 
     function addLeftModulePage() {
-        leftModulePages.push({
-            img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
-            title: "NUEVO TÍTULO<br>EN DOS LÍNEAS",
-            desc: "Descripción descriptiva de esta hoja del portafolio."
-        });
-        renderLeftModulePagesEditor();
-        renderLeftModuleSlide();
-    }
+    // Crear una copia independiente de los datos actuales de Hoja #2
+    const nuevaHoja = {
+        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+        title: "NUEVO TÍTULO<br>EN DOS LÍNEAS",
+        desc: "Descripción descriptiva de esta hoja del portafolio.",
+        portfolioData: JSON.parse(JSON.stringify(portfolioData)),
+        portfolioMenuCategories: JSON.parse(JSON.stringify(portfolioMenuCategories))
+    };
+
+    leftModulePages.push(nuevaHoja);
+
+    renderLeftModulePagesEditor();
+    renderLeftModuleSlide();
+}
 
     function switchToLeftModulePage(pageIndex) {
         currentLeftModuleIndex = pageIndex;
@@ -2850,11 +3100,15 @@ body {
             viewPortfolio.style.transform = 'translateX(-100%)';
             viewPage2.style.transform = 'translateX(0)';
         }
+                if (pageIndex === 2) {
+            renderModuleHoja3();
+        }
+
         renderLeftModuleSlide();
     }
 
     function nextLeftModuleSlide() {
-        currentLeftModuleIndex = Math.min(currentLeftModuleIndex + 1, leftModulePages.length - 1);
+        currentLeftModuleIndex = Math.min(currentLeftModuleIndex + 1, 2);
         switchToLeftModulePage(currentLeftModuleIndex);
     }
 
@@ -2867,20 +3121,50 @@ function renderLeftModuleSlide() {
     const viewCover = document.getElementById('view-cover');
     const viewPortfolio = document.getElementById('view-portfolio');
 
-    // Asegurar que la portada (#view-cover) se muestre cuando currentLeftModuleIndex es 0
-    if (viewCover && viewPortfolio) {
-        if (currentLeftModuleIndex === 0) {
-            viewCover.classList.remove('hidden');
-            viewCover.style.display = 'flex';
-            viewPortfolio.classList.add('hidden');
-            viewPortfolio.style.display = 'none';
-        } else {
-            viewCover.classList.add('hidden');
-            viewCover.style.display = 'none';
-            viewPortfolio.classList.remove('hidden');
-            viewPortfolio.style.display = 'flex';
-        }
+    // Controlar correctamente las tres hojas del módulo izquierdo
+const viewPage2 = document.getElementById('view-page2');
+
+if (currentLeftModuleIndex === 0) {
+    if (viewCover) {
+        viewCover.classList.remove('hidden');
+        viewCover.style.display = 'flex';
     }
+    if (viewPortfolio) {
+        viewPortfolio.classList.add('hidden');
+        viewPortfolio.style.display = 'none';
+    }
+    if (viewPage2) {
+        viewPage2.classList.add('hidden');
+        viewPage2.style.display = 'none';
+    }
+} else if (currentLeftModuleIndex === 1) {
+    if (viewCover) {
+        viewCover.classList.add('hidden');
+        viewCover.style.display = 'none';
+    }
+    if (viewPortfolio) {
+        viewPortfolio.classList.remove('hidden');
+        viewPortfolio.style.display = 'flex';
+    }
+    if (viewPage2) {
+        viewPage2.classList.add('hidden');
+        viewPage2.style.display = 'none';
+    }
+} else if (currentLeftModuleIndex === 2) {
+    if (viewCover) {
+        viewCover.classList.add('hidden');
+        viewCover.style.display = 'none';
+    }
+    if (viewPortfolio) {
+        viewPortfolio.classList.add('hidden');
+        viewPortfolio.style.display = 'none';
+    }
+   if (viewPage2) {
+    viewPage2.classList.remove('hidden');
+    viewPage2.style.display = 'flex';
+    viewPage2.style.transform = 'translateX(0)';
+}
+}
 
     // Leer datos de la portada sin importar si leftModulePages es Array u Objeto
     const page = Array.isArray(leftModulePages)
@@ -2934,8 +3218,8 @@ function renderLeftModuleSlide() {
     if (gearContainerEl) gearContainerEl.style.display = currentLeftModuleIndex === 0 ? 'flex' : 'none';
     if (prevBtnEl) prevBtnEl.style.display = currentLeftModuleIndex > 0 ? 'flex' : 'none';
 
-    const totalHojas = Array.isArray(leftModulePages) ? leftModulePages.length : (1 + (Array.isArray(portfolioSheets) ? portfolioSheets.length : 1));
-    const hasNextPage = currentLeftModuleIndex < totalHojas - 1;
+   const totalHojas = 3;
+const hasNextPage = currentLeftModuleIndex < totalHojas - 1;
 
     if (nextBtnCover) nextBtnCover.style.display = hasNextPage ? 'flex' : 'none';
     if (nextBtnPortfolio) nextBtnPortfolio.style.display = hasNextPage ? 'inline-block' : 'none';
@@ -3013,53 +3297,26 @@ function renderLeftModuleSlide() {
 
     const STORAGE_KEY = "xat_profile_data_v3";
     const INTERACTION_STORAGE_KEY = "xat_profile_interactions_" + visitorDeviceId;
-async function verificarAccesoPorIP() {
-    const params = new URLSearchParams(window.location.search);
-    const llaveUrl = params.get('admin');
-
-    // Si entras con ?admin=TU_LLAVE, autoriza este navegador y limpia la URL
-    if (llaveUrl && llaveUrl.trim().length >= 4) {
-        localStorage.setItem('xat_llave_maestra_admin', llaveUrl.trim());
-        window.history.replaceState({}, document.title, window.location.pathname + (params.get('u') ? `?u=${params.get('u')}` : ''));
-    }
-
-    const llaveGuardada = localStorage.getItem('xat_llave_maestra_admin');
-    if (!llaveGuardada) {
-        return { ok: false, motivo: "Dispositivo no autorizado" };
-    }
-
-    // Permitir abrir el modal del PIN (donde Firebase validará la contraseña real en el servidor)
-    return { ok: true };
-}
 
 async function openPinModal() {
-    const check = await verificarAccesoPorIP();
-
-    if (!check.ok) {
-        const drawer = document.getElementById('config-drawer');
-        const modal = document.getElementById('pin-modal');
-        if (drawer) drawer.remove();
-        if (modal) modal.remove();
-
-        if (typeof mostrarNotificacionNube === 'function') {
-            mostrarNotificacionNube(`🔒 Acceso restringido (${check.motivo})`, true);
-        }
-        return;
-    }
-
     const modal = document.getElementById('pin-modal');
-    if (modal) {
-        modal.classList.remove('hidden');
-        const pinInput = document.getElementById('pin-input');
-        if (pinInput) {
-            pinInput.value = '';
-            pinInput.focus();
-        }
-        const errorEl = document.getElementById('pin-error');
-        if (errorEl) errorEl.classList.add('hidden');
-    }
-}
 
+    if (!modal) return;
+
+    modal.classList.remove('hidden');
+
+    const emailInput = document.getElementById('admin-email');
+    const passwordInput = document.getElementById('pin-input');
+    const errorEl = document.getElementById('pin-error');
+
+    if (emailInput) {
+        emailInput.value = '';
+        emailInput.focus();
+    }
+
+    if (passwordInput) passwordInput.value = '';
+    if (errorEl) errorEl.classList.add('hidden');
+}
 
     function closePinModal() {
         const modal = document.getElementById('pin-modal');
@@ -3696,6 +3953,7 @@ async function openPinModal() {
                 if (data.portfolioClientsList) portfolioClientsList = data.portfolioClientsList;
                 if (data.portfolioMenuCategories) portfolioMenuCategories = data.portfolioMenuCategories;
                 if (data.portfolioData) Object.assign(portfolioData, data.portfolioData);
+if (Array.isArray(data.portfolioSheets)) portfolioSheets = data.portfolioSheets;
                 if (data.leftModulePages) leftModulePages = data.leftModulePages;
 
                 if (data.modulesOrder && Array.isArray(data.modulesOrder)) {
@@ -4465,7 +4723,6 @@ async function openPinModal() {
     window.onload = function() {
         loadProfileFromLocalStorage();
         loadInteractionsFromLocalStorage();
-        initUniqueVisitCounter();
         renderHobbies();
         renderBadges();
         renderFriends();
@@ -4619,8 +4876,10 @@ function recopilarTodoParaNube() {
         standardPostsList,
         tracksData,
         portfolioData,
-        leftModulePages,
-        portfolioClientsList,
+portfolioSheets: JSON.parse(JSON.stringify(portfolioSheets)),
+categoriasPorHoja: JSON.parse(JSON.stringify(window.__categoriaPorHoja || {})),
+leftModulePages,
+portfolioClientsList,
         portfolioMenuCategories,
         modulesOrder: Array.from(document.querySelectorAll('#module-reorder-list [data-mod]')).map(el => el.getAttribute('data-mod'))
     };
@@ -4638,16 +4897,26 @@ async function enviarDatosANube() {
     const urlLimpia = FIREBASE_DB_URL.trim().replace(/\/$/, "");
 
     try {
-        const res = await fetch(`${urlLimpia}/perfil.json`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datosCompletos)
-        });
+        const usuarioAdmin = window.xatAdminAuth.currentUser;
+
+if (!usuarioAdmin) {
+    throw new Error("El administrador no tiene una sesión autenticada.");
+}
+
+const tokenAdmin = await usuarioAdmin.getIdToken();
+
+const res = await fetch(`${urlLimpia}/perfil.json?auth=${tokenAdmin}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datosCompletos)
+});
         if (res.ok) {
             mostrarNotificacionNube("✅ ¡Cambios guardados! Ya son visibles para todos.");
         } else {
-            mostrarNotificacionNube("❌ Error " + res.status + " al guardar en Firebase.", true);
-        }
+    const detalle = await res.text();
+    console.error("ERROR REAL DE FIREBASE:", res.status, detalle);
+    mostrarNotificacionNube("❌ Error " + res.status + " al guardar en Firebase.", true);
+}
     } catch (err) {
         mostrarNotificacionNube("❌ Fallo de red: " + err.message, true);
     }
@@ -4683,6 +4952,11 @@ window.onload = async function() {
 
                 try { localStorage.setItem(STORAGE_KEY, JSON.stringify(datosNube)); } catch (e) {}
                 if (datosNube.portfolioData) Object.assign(portfolioData, datosNube.portfolioData);
+if (datosNube.portfolioSheets && Array.isArray(datosNube.portfolioSheets)) {
+    portfolioSheets = datosNube.portfolioSheets;
+}
+
+window.__categoriaPorHoja = datosNube.categoriasPorHoja || {};
                 if (datosNube.leftModulePages) leftModulePages = datosNube.leftModulePages;
                 if (datosNube.portfolioClientsList) portfolioClientsList = datosNube.portfolioClientsList;
                 if (datosNube.portfolioMenuCategories) portfolioMenuCategories = datosNube.portfolioMenuCategories;
@@ -5129,7 +5403,7 @@ renderLeftModulePagesEditor = function() {
                 <span class="text-[9px] text-zinc-400">5 categorías • 10 piezas editables abajo</span>
             </div>
             <div class="flex items-center gap-1.5">
-                <button type="button" onclick="switchToLeftModulePage(${sIdx + 1}); renderPortfolioPhotosEditor();" class="px-2 py-1 rounded bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 text-[9px] font-bold cursor-pointer">Editar Fotos</button>
+                <button type="button" onclick="switchToLeftModulePage(${sIdx + 1}); renderPortfolioMenuEditor(); renderPortfolioPhotosEditor();" class="px-2 py-1 rounded bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 text-[9px] font-bold cursor-pointer">Editar</button>
                 ${sIdx > 0 ? `<button type="button" onclick="portfolioSheets.splice(${sIdx}, 1); switchToLeftModulePage(Math.min(currentLeftModuleIndex, portfolioSheets.length)); renderLeftModulePagesEditor(); renderPortfolioPhotosEditor();" class="text-rose-400 p-1 text-[10px] cursor-pointer"><i class="fa-solid fa-trash"></i></button>` : ''}
             </div>
         </div>
@@ -5150,120 +5424,47 @@ addLeftModulePage = function() {
     renderPortfolioPhotosEditor();
 };
 
+
+// ==========================================
+// NAVEGACIÓN DINÁMICA DE TODAS LAS HOJAS
+// Hoja 1 = Portada
+// Hoja 2 en adelante = portfolioSheets
+// ==========================================
+
+
+
 switchToLeftModulePage = function(pageIndex) {
+    const totalPaginas = portfolioSheets.length + 1;
+
+    pageIndex = Math.max(0, Math.min(pageIndex, totalPaginas - 1));
+
+    // Inicializar el registro de categorías independientes
+    window.__categoriaPorHoja = window.__categoriaPorHoja || {};
+
+    // Guardar la categoría de la hoja que estamos abandonando
+    if (currentLeftModuleIndex > 0) {
+        window.__categoriaPorHoja[currentLeftModuleIndex] = currentCategory;
+    }
+
+    // Cambiar de hoja
     currentLeftModuleIndex = pageIndex;
+
+    // Recuperar la categoría propia de la nueva hoja
+    if (pageIndex > 0) {
+        currentCategory = window.__categoriaPorHoja[pageIndex] || 'xat';
+    }
+
     topPhotoIndex = 0;
     bottomPhotoIndex = 0;
-    const viewCover = document.getElementById('view-cover');
-    const viewPortfolio = document.getElementById('view-portfolio');
-    const viewPage2 = document.getElementById('view-page2');
-    if (!viewCover || !viewPortfolio) return;
 
-    if (pageIndex === 0) {
-        viewCover.style.transform = 'translateX(0)';
-        viewPortfolio.style.transform = 'translateX(100%)';
-        if (viewPage2) viewPage2.style.transform = 'translateX(100%)';
-    } else {
-        viewCover.style.transform = 'translateX(-100%)';
-        viewPortfolio.style.transform = 'translateX(0)';
-        if (viewPage2) viewPage2.style.transform = 'translateX(100%)';
-    }
     renderLeftModuleSlide();
-    renderModule();
-};
 
-nextLeftModuleSlide = function() {
-    if (currentLeftModuleIndex < portfolioSheets.length) {
-        switchToLeftModulePage(currentLeftModuleIndex + 1);
+    if (pageIndex > 0) {
+        renderModule();
+        renderPortfolioMenu();
     }
 };
 
-prevLeftModuleSlide = function() {
-    if (currentLeftModuleIndex > 0) {
-        switchToLeftModulePage(currentLeftModuleIndex - 1);
-    }
-};
-
-const renderSlideCloneOriginal = renderLeftModuleSlide;
-renderLeftModuleSlide = function() {
-    if (renderSlideCloneOriginal) renderSlideCloneOriginal();
-    const viewPortfolio = document.getElementById('view-portfolio');
-    if (!viewPortfolio) return;
-
-     // 1. Limpiar evento original de volver directo a portada y asignar retroceso paso a paso
-    const btnBackOriginal = document.getElementById('btn-to-cover');
-    if (btnBackOriginal && !btnBackOriginal.dataset.limpiado) {
-        const btnBackLimpio = btnBackOriginal.cloneNode(true);
-        btnBackLimpio.dataset.limpiado = 'true';
-        btnBackLimpio.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            prevLeftModuleSlide();
-        });
-        btnBackOriginal.parentNode.replaceChild(btnBackLimpio, btnBackOriginal);
-    }
-
-
-    // 2. Ubicar la flecha derecha (→) simétrica en la esquina inferior derecha
-    let navRight = document.getElementById('portfolio-sheet-next-controls');
-    if (!navRight) {
-        navRight = document.createElement('button');
-        navRight.id = 'portfolio-sheet-next-controls';
-        navRight.type = 'button';
-        navRight.className = 'absolute bottom-4 right-4 z-30 text-white/80 hover:text-white transition-all hover:translate-x-1 cursor-pointer drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]';
-        navRight.innerHTML = '<i class="fa-solid fa-arrow-right text-base"></i>';
-        navRight.onclick = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            nextLeftModuleSlide();
-        };
-        viewPortfolio.appendChild(navRight);
-    }
-
-    // Mostrar flecha derecha solo si hay una hoja siguiente disponible
-    const haySiguiente = currentLeftModuleIndex < portfolioSheets.length;
-    navRight.style.display = haySiguiente ? 'block' : 'none';
-};
-
-// Conectar el editor de fotos del panel con la hoja que esté seleccionada actualmente
-const renderPhotosEditorOriginal = renderPortfolioPhotosEditor;
-renderPortfolioPhotosEditor = function() {
-    const hojaActiva = obtenerHojaActivaData();
-    const backup = JSON.parse(JSON.stringify(portfolioData));
-    Object.assign(portfolioData, hojaActiva);
-    if (renderPhotosEditorOriginal) renderPhotosEditorOriginal();
-    // Sincronizar edición hacia la hoja activa
-    const list = document.getElementById('portfolio-photos-editor-list');
-    if (list) {
-        list.oninput = function() {
-            Object.assign(hojaActiva, JSON.parse(JSON.stringify(portfolioData)));
-            renderModule();
-        };
-    }
-    Object.assign(portfolioData, backup);
-};
-
-// Guardar y cargar todas las hojas completas en Firebase
-const recopilarOriginalSheets = recopilarTodoParaNube;
-recopilarTodoParaNube = function() {
-    const datos = recopilarOriginalSheets ? recopilarOriginalSheets() : {};
-    datos.portfolioSheets = portfolioSheets;
-    return datos;
-};
-
-const onloadSheets = window.onload;
-window.onload = async function() {
-    if (onloadSheets) await onloadSheets();
-    try {
-        const guardado = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-        if (guardado.portfolioSheets && Array.isArray(guardado.portfolioSheets) && guardado.portfolioSheets.length > 0) {
-            portfolioSheets = guardado.portfolioSheets;
-        }
-    } catch (e) {}
-    renderLeftModulePagesEditor();
-    renderPortfolioPhotosEditor();
-    renderModule();
-};
 // ==========================================
 // BLOQUEO DEFINITIVO DE SALTO A PORTADA EN FLECHA IZQUIERDA
 // ==========================================
@@ -5385,210 +5586,337 @@ function actualizarPiezaPortafolio(tipo, index, campo, valor) {
 // ==========================================
 // CONTADOR GLOBAL DE VISITAS DIARIAS ÚNICAS (SIN REPETICIÓN)
 // ==========================================
-async function registrarVisitaDiariaUnica() {
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
+// CONTADOR UNIFICADO DE VISITAS POR CLIENTE Y UID
+async function registrarVisitaUnificada() {
     const viewsEl = document.getElementById('views-count');
     if (!viewsEl) return;
 
     try {
-        // 1. Obtener fecha actual (YYYY-MM-DD)
+        const usuario = await window.xatAuthReady;
+        if (!usuario || !usuario.uid) return;
+
+        const uid = usuario.uid;
+        const cliente = window.xatClienteId || 'default';
         const hoy = new Date().toISOString().slice(0, 10);
+        const db = window.xatFirebaseDb;
 
-        // 2. Generar huella única del visitante (IP + datos del navegador)
-        let ipHash = 'anon';
-        try {
-            const ipRes = await fetch('https://ipify.org');
-            if (ipRes.ok) {
-                const ipData = await ipRes.json();
-                ipHash = ipData.ip.replace(/\./g, '_');
-            }
-        } catch (e) {
-            // Respaldo si falla la consulta de IP
-            ipHash = 'dev_' + btoa(navigator.userAgent).replace(/[^a-zA-Z0-9]/g, '').slice(0, 16);
+        const visitaRef = db.ref(
+            `visitas_uid_log/${cliente}/${hoy}/${uid}`
+        );
+
+        const contadorRef = db.ref(
+            `social_public/${cliente}/views`
+        );
+
+        const resultado = await visitaRef.transaction(
+            actual => actual === null ? true : undefined
+        );
+
+        if (resultado.committed) {
+            const total = await contadorRef.transaction(
+                actual => (Number(actual) || 0) + 1
+            );
+
+            viewsEl.textContent = total.snapshot.val();
+        } else {
+            const total = await contadorRef.once('value');
+            viewsEl.textContent = total.val() || 0;
         }
 
-        // 3. Verificar en Firebase si este usuario ya visitó hoy
-        const checkRes = await fetch(`${urlBase}/visitas_log/${hoy}/${ipHash}.json?nocache=${Date.now()}`);
-        const yaVisitoHoy = checkRes.ok ? await checkRes.json() : null;
-
-        // 4. Leer el total actual de visitas globales
-        const totalRes = await fetch(`${urlBase}/stats/views.json?nocache=${Date.now()}`);
-        let totalViews = (totalRes.ok && parseInt(await totalRes.json())) || 0;
-
-        // 5. Si es su primera vez hoy, registrar y sumar +1 en Firebase
-        if (!yaVisitoHoy) {
-            totalViews += 1;
-            await fetch(`${urlBase}/visitas_log/${hoy}/${ipHash}.json`, {
-                method: 'PUT',
-                body: JSON.stringify(true)
-            });
-            await fetch(`${urlBase}/stats/views.json`, {
-                method: 'PUT',
-                body: JSON.stringify(totalViews)
-            });
-        }
-
-        // 6. Mostrar el total real en la interfaz
-        viewsEl.textContent = totalViews;
-    } catch (err) {
-        console.error("Error en contador diario:", err);
+    } catch (error) {
+        console.error("Error en el contador unificado:", error);
     }
 }
 
-// Ejecutar al cargar la página
+// Ejecutar el contador al cargar la página
 window.addEventListener('load', () => {
-    setTimeout(registrarVisitaDiariaUnica, 500);
+    setTimeout(registrarVisitaUnificada, 500);
 });
-// ==========================================
-// FOLLOWERS, FAVORITOS Y REACCIONES 100% GLOBALES EN FIREBASE
-// ==========================================
-const CLAVE_MI_CLIC = "xat_mi_clic_reacciones_v1";
 
+// ==========================================
+// SISTEMA SOCIAL POR CLIENTE Y UID - XAT SPACE
+// ==========================================
+
+// Actualizar iconos de los controles
 function actualizarIconosReaccionesUI() {
     const iconFollow = document.getElementById('icon-follow');
-    if (iconFollow) iconFollow.className = visitorActions.followed ? "fa-solid fa-user text-sm text-purple-300" : "fa-regular fa-user text-sm text-purple-300";
+    if (iconFollow) {
+        iconFollow.className = visitorActions.followed
+            ? "fa-solid fa-user text-sm text-purple-300"
+            : "fa-regular fa-user text-sm text-purple-300";
+    }
 
     const iconFav = document.getElementById('icon-fav');
-    if (iconFav) iconFav.className = visitorActions.favorited ? "fa-solid fa-star text-amber-400 text-xs" : "fa-regular fa-star text-amber-400 text-xs";
+    if (iconFav) {
+        iconFav.className = visitorActions.favorited
+            ? "fa-solid fa-star text-amber-400 text-xs"
+            : "fa-regular fa-star text-amber-400 text-xs";
+    }
 
     const iconLike = document.getElementById('icon-like');
     const iconDislike = document.getElementById('icon-dislike');
-    if (iconLike) iconLike.className = currentReaction === 'like' ? 'fa-solid fa-thumbs-up text-xs text-emerald-400' : 'fa-regular fa-thumbs-up text-xs text-emerald-400';
-    if (iconDislike) iconDislike.className = currentReaction === 'dislike' ? 'fa-solid fa-thumbs-down text-xs text-rose-400' : 'fa-regular fa-thumbs-down text-xs text-rose-400';
 
-    if (typeof aplicarColoresReacciones === 'function') aplicarColoresReacciones();
-    if (typeof aplicarAcentoGlobal === 'function') aplicarAcentoGlobal();
+    if (iconLike) {
+        iconLike.className = currentReaction === 'like'
+            ? 'fa-solid fa-thumbs-up text-xs text-emerald-400'
+            : 'fa-regular fa-thumbs-up text-xs text-emerald-400';
+    }
+
+    if (iconDislike) {
+        iconDislike.className = currentReaction === 'dislike'
+            ? 'fa-solid fa-thumbs-down text-xs text-rose-400'
+            : 'fa-regular fa-thumbs-down text-xs text-rose-400';
+    }
+
+    if (typeof aplicarColoresReacciones === 'function') {
+        aplicarColoresReacciones();
+    }
+
+    if (typeof aplicarAcentoGlobal === 'function') {
+        aplicarAcentoGlobal();
+    }
 }
 
-function guardarMiClicLocal() {
-    try {
-        localStorage.setItem(CLAVE_MI_CLIC, JSON.stringify({
-            followed: !!visitorActions.followed,
-            favorited: !!visitorActions.favorited,
-            reaction: currentReaction || null
-        }));
-    } catch (e) {}
-}
-
-function restaurarMiClicLocal() {
-    try {
-        const guardado = JSON.parse(localStorage.getItem(CLAVE_MI_CLIC) || 'null');
-        if (guardado) {
-            visitorActions.followed = !!guardado.followed;
-            visitorActions.favorited = !!guardado.favorited;
-            currentReaction = guardado.reaction || null;
-            actualizarIconosReaccionesUI();
-        }
-    } catch (e) {}
-}
-
+// Cargar contadores públicos y estado privado del visitante
 async function cargarEstadoGlobalReacciones() {
-    // 1. Restaurar el clic del usuario inmediatamente desde su navegador
-    restaurarMiClicLocal();
-
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
     try {
-        const resStats = await fetch(`${urlBase}/stats.json?nocache=${Date.now()}`);
-        if (!resStats.ok) return;
-        const stats = (await resStats.json()) || {};
+        const usuario = await window.xatAuthReady;
 
-        if (document.getElementById('followers-count')) document.getElementById('followers-count').textContent = stats.followers || 0;
-        if (document.getElementById('fav-count')) document.getElementById('fav-count').textContent = stats.favs || 0;
-        if (document.getElementById('like-count')) document.getElementById('like-count').textContent = stats.likes || 0;
-        if (document.getElementById('dislike-count')) document.getElementById('dislike-count').textContent = stats.dislikes || 0;
-    } catch (e) {
-        console.error("Error cargando stats:", e);
-    }
-}
+        if (!usuario || !usuario.uid) return;
 
-async function sumarRestarStatGlobal(campo, delta) {
-    const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
-    try {
-        const res = await fetch(`${urlBase}/stats/${campo}.json?nocache=${Date.now()}`);
-        const actual = (res.ok && parseInt(await res.json())) || 0;
-        const nuevo = Math.max(0, actual + delta);
-        await fetch(`${urlBase}/stats/${campo}.json`, {
-            method: 'PUT',
-            body: JSON.stringify(nuevo)
+        const db = window.xatFirebaseDb;
+        const cliente = window.xatClienteId || 'default';
+        const uid = usuario.uid;
+
+       const publicRefs = {
+    followers: db.ref(`social_public/${cliente}/followers`),
+    favs: db.ref(`social_public/${cliente}/favs`),
+    likes: db.ref(`social_public/${cliente}/likes`),
+    dislikes: db.ref(`social_public/${cliente}/dislikes`)
+};
+
+const privateRef = db.ref(`social_private/${cliente}/${uid}`);
+
+const [
+    followersSnapshot,
+    favsSnapshot,
+    likesSnapshot,
+    dislikesSnapshot,
+    privateSnapshot
+] = await Promise.all([
+    publicRefs.followers.once('value'),
+    publicRefs.favs.once('value'),
+    publicRefs.likes.once('value'),
+    publicRefs.dislikes.once('value'),
+    privateRef.once('value')
+]);
+
+const stats = {
+    followers: followersSnapshot.val(),
+    favs: favsSnapshot.val(),
+    likes: likesSnapshot.val(),
+    dislikes: dislikesSnapshot.val()
+};
+
+const personal = privateSnapshot.val() || {};
+
+        // Restaurar estado individual desde Firebase
+        visitorActions.followed = personal.followed === true;
+        visitorActions.favorited = personal.favorited === true;
+
+        currentReaction =
+            personal.reaction === 'like' ||
+            personal.reaction === 'dislike'
+                ? personal.reaction
+                : null;
+
+        // Actualizar contadores públicos
+        const campos = {
+            followers: 'followers-count',
+            favs: 'fav-count',
+            likes: 'like-count',
+            dislikes: 'dislike-count'
+        };
+
+        Object.entries(campos).forEach(([campo, id]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = Number(stats[campo]) || 0;
         });
-        return nuevo;
-    } catch (e) {
-        return null;
+
+        actualizarIconosReaccionesUI();
+
+    } catch (error) {
+        console.error("Error cargando estado social:", error);
     }
 }
 
+// Actualizar un contador público mediante transacción
+
+// Actualizar un contador público mediante transacción
+async function actualizarContadorSocial(campo, delta) {
+    if (!delta) return null;
+
+    const db = window.xatFirebaseDb;
+    const cliente = window.xatClienteId || 'default';
+
+    const contadorRef = db.ref(
+        `social_public/${cliente}/${campo}`
+    );
+
+    const resultado = await contadorRef.transaction(actual => {
+        const numero = Number(actual) || 0;
+
+        // Evitar contadores negativos sin cancelar la transacción
+        return Math.max(0, numero + delta);
+    });
+
+    if (resultado.committed) {
+        return Number(resultado.snapshot.val()) || 0;
+    }
+
+    throw new Error(
+        `No se pudo actualizar el contador ${campo}.`
+    );
+}
+
+// Aplicar una acción social al estado privado
 let bloqueandoClick = false;
 
-toggleFollow = async function() {
+async function modificarEstadoSocial(tipo) {
     if (bloqueandoClick) return;
+
     bloqueandoClick = true;
 
-    visitorActions.followed = !visitorActions.followed;
-    const delta = visitorActions.followed ? 1 : -1;
+    try {
+        const usuario = await window.xatAuthReady;
 
-    const el = document.getElementById('followers-count');
-    if (el) el.textContent = Math.max(0, (parseInt(el.textContent) || 0) + delta);
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
+        if (!usuario || !usuario.uid) {
+            throw new Error("Visitante sin autenticación.");
+        }
 
-    const nuevoTotal = await sumarRestarStatGlobal('followers', delta);
-    if (el && nuevoTotal !== null) el.textContent = nuevoTotal;
+        const db = window.xatFirebaseDb;
+        const cliente = window.xatClienteId || 'default';
+        const uid = usuario.uid;
 
-    bloqueandoClick = false;
+        const privateRef = db.ref(
+            `social_private/${cliente}/${uid}`
+        );
+
+        let deltas = {};
+
+        const resultado = await privateRef.transaction(actual => {
+            const anterior = actual || {
+                favorited: false,
+                followed: false,
+                reaction: ''
+            };
+
+            const nuevo = {
+                favorited: anterior.favorited === true,
+                followed: anterior.followed === true,
+                reaction:
+                    anterior.reaction === 'like' ||
+                    anterior.reaction === 'dislike'
+                        ? anterior.reaction
+                        : ''
+            };
+
+            deltas = {};
+
+            if (tipo === 'follow') {
+                nuevo.followed = !nuevo.followed;
+                deltas.followers = nuevo.followed ? 1 : -1;
+            }
+
+            if (tipo === 'favorite') {
+                nuevo.favorited = !nuevo.favorited;
+                deltas.favs = nuevo.favorited ? 1 : -1;
+            }
+
+            if (tipo === 'like' || tipo === 'dislike') {
+                const anteriorReaccion = nuevo.reaction;
+
+                nuevo.reaction =
+                    anteriorReaccion === tipo ? '' : tipo;
+
+                if (anteriorReaccion === 'like') {
+                    deltas.likes = -1;
+                }
+
+                if (anteriorReaccion === 'dislike') {
+                    deltas.dislikes = -1;
+                }
+
+                if (nuevo.reaction === 'like') {
+                    deltas.likes = (deltas.likes || 0) + 1;
+                }
+
+                if (nuevo.reaction === 'dislike') {
+                    deltas.dislikes = (deltas.dislikes || 0) + 1;
+                }
+            }
+
+            return nuevo;
+        });
+
+        if (!resultado.committed) {
+            throw new Error("No se pudo guardar el estado privado.");
+        }
+
+        // Actualizar el estado visual desde el registro confirmado
+        const personal = resultado.snapshot.val();
+
+        visitorActions.followed = personal.followed === true;
+        visitorActions.favorited = personal.favorited === true;
+        currentReaction = personal.reaction || null;
+
+        actualizarIconosReaccionesUI();
+
+        // Actualizar los contadores públicos
+        const elementos = {
+            followers: 'followers-count',
+            favs: 'fav-count',
+            likes: 'like-count',
+            dislikes: 'dislike-count'
+        };
+
+        for (const [campo, delta] of Object.entries(deltas)) {
+            if (!delta) continue;
+
+            const total = await actualizarContadorSocial(campo, delta);
+            const el = document.getElementById(elementos[campo]);
+
+            if (el && total !== null) {
+                el.textContent = total;
+            }
+        }
+
+    } catch (error) {
+        console.error("Error actualizando acción social:", error);
+
+        // Recuperar el estado guardado en Firebase
+        await cargarEstadoGlobalReacciones();
+
+    } finally {
+        bloqueandoClick = false;
+    }
+}
+
+// Funciones utilizadas por los botones existentes
+toggleFollow = async function() {
+    await modificarEstadoSocial('follow');
 };
 
 toggleFavorite = async function() {
-    if (bloqueandoClick) return;
-    bloqueandoClick = true;
-
-    visitorActions.favorited = !visitorActions.favorited;
-    const delta = visitorActions.favorited ? 1 : -1;
-
-    const el = document.getElementById('fav-count');
-    if (el) el.textContent = Math.max(0, (parseInt(el.textContent) || 0) + delta);
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
-
-    const nuevoTotal = await sumarRestarStatGlobal('favs', delta);
-    if (el && nuevoTotal !== null) el.textContent = nuevoTotal;
-
-    bloqueandoClick = false;
+    await modificarEstadoSocial('favorite');
 };
 
 handleReaction = async function(type) {
-    if (bloqueandoClick) return;
-    bloqueandoClick = true;
-
-    let deltaLike = 0, deltaDislike = 0;
-
-    if (type === 'like') {
-        if (currentReaction === 'like') { currentReaction = null; deltaLike = -1; }
-        else { if (currentReaction === 'dislike') deltaDislike = -1; currentReaction = 'like'; deltaLike = 1; }
-    } else {
-        if (currentReaction === 'dislike') { currentReaction = null; deltaDislike = -1; }
-        else { if (currentReaction === 'like') deltaLike = -1; currentReaction = 'dislike'; deltaDislike = 1; }
-    }
-
-    const elLike = document.getElementById('like-count');
-    const elDislike = document.getElementById('dislike-count');
-    if (elLike && deltaLike !== 0) elLike.textContent = Math.max(0, (parseInt(elLike.textContent) || 0) + deltaLike);
-    if (elDislike && deltaDislike !== 0) elDislike.textContent = Math.max(0, (parseInt(elDislike.textContent) || 0) + deltaDislike);
-
-    actualizarIconosReaccionesUI();
-    guardarMiClicLocal();
-
-    if (deltaLike !== 0) {
-        const totalL = await sumarRestarStatGlobal('likes', deltaLike);
-        if (elLike && totalL !== null) elLike.textContent = totalL;
-    }
-    if (deltaDislike !== 0) {
-        const totalD = await sumarRestarStatGlobal('dislikes', deltaDislike);
-        if (elDislike && totalD !== null) elDislike.textContent = totalD;
-    }
-
-    bloqueandoClick = false;
+    if (type !== 'like' && type !== 'dislike') return;
+    await modificarEstadoSocial(type);
 };
 
+// Cargar estado social al iniciar
 window.addEventListener('load', () => {
     setTimeout(cargarEstadoGlobalReacciones, 600);
 });
@@ -5870,55 +6198,42 @@ function crearPlantillaHojaVacia() {
     return baseVacia;
 }
 
-// 1. Al agregar una hoja nueva, crearla vacía para no repetir fotos de la Hoja #2
 addLeftModulePage = function() {
     const num = portfolioSheets.length + 2;
+
+    // Copiar los datos predeterminados de Hoja #2
+    const nuevosDatos = JSON.parse(JSON.stringify(portfolioData));
+
+    // Mantener los títulos y dejar las fotografías vacías,
+    // utilizando el fondo predeterminado de la plantilla.
+    Object.keys(nuevosDatos).forEach(categoria => {
+        const datos = nuevosDatos[categoria];
+
+        if (datos.topPhotos) {
+            datos.topPhotos = datos.topPhotos.map(foto => ({
+                ...foto,
+                bg: 'linear-gradient(to top right, #18181b, #09090b)'
+            }));
+        }
+
+        if (datos.bottomPhotos) {
+            datos.bottomPhotos = datos.bottomPhotos.map(foto => ({
+                ...foto,
+                bg: 'linear-gradient(to top right, #18181b, #09090b)'
+            }));
+        }
+    });
+
     portfolioSheets.push({
         name: "Hoja #" + num,
-        data: crearPlantillaHojaVacia()
+        data: nuevosDatos
     });
+
     renderLeftModulePagesEditor();
     switchToLeftModulePage(portfolioSheets.length);
     renderPortfolioPhotosEditor();
 };
 
-// 2. Guardar cada foto exclusivamente en la hoja activa sin mezclar hojas
-actualizarPiezaPortafolio = function(tipo, index, campo, valor) {
-    const idxHoja = Math.max(0, currentLeftModuleIndex - 1);
-    if (!portfolioSheets[idxHoja]) return;
-    const catData = portfolioSheets[idxHoja].data[categoriaEditorActiva];
-    if (!catData || !catData[tipo] || !catData[tipo][index]) return;
-
-    if (campo === 'title') {
-        catData[tipo][index].title = valor;
-    } else {
-        const val = valor.trim();
-        catData[tipo][index].bg = val ? (val.startsWith('linear-gradient') ? val : `url('${val}') center/cover no-repeat`) : 'linear-gradient(to top right, #18181b, #09090b)';
-    }
-
-    // Sincronizar con portfolioData base únicamente si estamos editando la Hoja #2 (índice 0)
-    if (idxHoja === 0 && portfolioData[categoriaEditorActiva]) {
-        portfolioData[categoriaEditorActiva][tipo][index] = JSON.parse(JSON.stringify(catData[tipo][index]));
-    }
-    renderModule();
-};
-
-// 3. Mostrar cintillo indicador de qué hoja se está editando arriba de las 5 pestañas
-const editorCompactoOriginal = renderPortfolioPhotosEditor;
-renderPortfolioPhotosEditor = function() {
-    if (editorCompactoOriginal) editorCompactoOriginal();
-    const list = document.getElementById('portfolio-photos-editor-list');
-    if (!list) return;
-
-    const numHojaActiva = Math.max(2, currentLeftModuleIndex + 1);
-    const badge = document.createElement('div');
-    badge.className = 'flex items-center justify-between bg-purple-500/15 border border-purple-500/30 px-2.5 py-1.5 rounded-lg mb-2';
-    badge.innerHTML = `
-        <span class="text-[9px] font-bold text-purple-300 uppercase tracking-wider"><i class="fa-solid fa-layer-group mr-1"></i> Editando: Hoja #${numHojaActiva}</span>
-        <span class="text-[9px] text-zinc-400">Fotos independientes</span>
-    `;
-    list.insertBefore(badge, list.firstChild);
-};
 // ==========================================
 // ANTESALA EDITORIAL ANALOG B&W (PARTE 1: CONTROLES)
 // ==========================================
@@ -6797,7 +7112,7 @@ document.addEventListener('input', function(e) {
 
     // 2. Bloquear atajos de teclado de herramientas de desarrollador y código fuente
     document.addEventListener('keydown', function(e) {
-        const tecla = e.key.toUpperCase();
+        const tecla = (e.key || '').toUpperCase();
 
         // F12
         if (e.key === 'F12') {
@@ -7173,63 +7488,12 @@ document.addEventListener('input', function(e) {
         centrarPostsImpares();
     };
 
-    // 4. Contador Global de Visitas Únicas corregido (usando api.ipify.org?format=json)
-    async function actualizarVisitasGlobalesReales() {
-        if (typeof FIREBASE_DB_URL === 'undefined' || !FIREBASE_DB_URL) return;
-        const urlBase = FIREBASE_DB_URL.trim().replace(/\/$/, "");
-        const viewsEl = document.getElementById('views-count');
-        if (!viewsEl) return;
-
-        try {
-            const hoy = new Date().toISOString().slice(0, 10);
-            let uid = localStorage.getItem('xat_uid_visita_unica');
-
-            if (!uid) {
-                try {
-                    const ipRes = await fetch('https://ipify.org');
-                    if (ipRes.ok) {
-                        const ipData = await ipRes.json();
-                        uid = 'ip_' + ipData.ip.replace(/\./g, '_');
-                    }
-                } catch (e) {}
-                if (!uid) {
-                    uid = 'dev_' + Math.random().toString(36).substring(2, 12);
-                }
-                localStorage.setItem('xat_uid_visita_unica', uid);
-            }
-
-            // Consultar si ya contó hoy en Firebase
-            const checkRes = await fetch(`${urlBase}/visitas_log/${hoy}/${uid}.json?nocache=${Date.now()}`);
-            const yaConto = checkRes.ok ? await checkRes.json() : null;
-
-            // Leer total global de Firebase
-            const totalRes = await fetch(`${urlBase}/stats/views.json?nocache=${Date.now()}`);
-            let totalGlobal = (totalRes.ok && parseInt(await totalRes.json())) || 0;
-
-            if (!yaConto) {
-                totalGlobal += 1;
-                await fetch(`${urlBase}/visitas_log/${hoy}/${uid}.json`, {
-                    method: 'PUT',
-                    body: JSON.stringify(true)
-                });
-                await fetch(`${urlBase}/stats/views.json`, {
-                    method: 'PUT',
-                    body: JSON.stringify(totalGlobal)
-                });
-            }
-
-            viewsEl.textContent = totalGlobal;
-        } catch (err) {
-            console.error("Error sincronizando visitas globales:", err);
-        }
-    }
-
     window.addEventListener('resize', reorganizarSocialMovil);
     window.addEventListener('load', () => {
         setTimeout(() => {
             reorganizarSocialMovil();
             centrarPostsImpares();
-            actualizarVisitasGlobalesReales();
+            
         }, 700);
     });
 })();
@@ -7311,48 +7575,42 @@ document.addEventListener('input', function(e) {
         };
     }
 
-    // 2. Establecer PIN inicial 102030 y permitir que cada cliente lo cambie desde su panel
-    ADMIN_PIN = "";
+    // 2. Información de seguridad y acceso del cliente
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const tabPub = document.getElementById('cfg-tab-publicidad');
 
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            try {
-                const guardado = JSON.parse(localStorage.getItem(window.STORAGE_KEY) || '{}');
-                if (guardado.pin) ADMIN_PIN = guardado.pin;
-            } catch (e) {}
+        if (tabPub && !document.getElementById('saas-pin-box')) {
+            const box = document.createElement('div');
 
-            // Inyectar campo para cambiar PIN en la pestaña Publicidad / Seguridad del panel
-            const tabPub = document.getElementById('cfg-tab-publicidad');
-            if (tabPub && !document.getElementById('saas-pin-box')) {
-                const box = document.createElement('div');
-                box.id = 'saas-pin-box';
-                box.className = 'space-y-2 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800 mt-3';
-                box.innerHTML = `
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-bold text-amber-400 uppercase tracking-wider text-[10px]">
-                            <i class="fa-solid fa-shield-halved mr-1"></i> Seguridad & Acceso
-                        </h4>
-                        <span class="text-[9px] font-mono text-zinc-400">ID: ${cliente}</span>
+            box.id = 'saas-pin-box';
+            box.className = 'space-y-2 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800 mt-3';
+
+            box.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <h4 class="font-bold text-amber-400 uppercase tracking-wider text-[10px]">
+                        <i class="fa-solid fa-shield-halved mr-1"></i> Seguridad & Acceso
+                    </h4>
+                    <span class="text-[9px] font-mono text-zinc-400">ID: ${cliente}</span>
+                </div>
+
+                <div class="mt-2 p-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 space-y-2 text-[10px]">
+                    <p class="text-zinc-300 leading-relaxed">
+                        <span class="text-emerald-400 font-semibold">● Autenticación protegida por Firebase.</span><br>
+                        Para solicitar asistencia o reportar problemas en la interfaz, contacta a soporte:
+                        <a href="https://xat.me/universo" target="_blank" class="text-purple-400 hover:underline font-medium">xat</a>
+                    </p>
+
+                    <div class="pt-1.5 border-t border-zinc-800/80 text-amber-400/90 leading-snug">
+                        <strong>IMPORTANTE:</strong> No compartas tu contraseña con nadie.
                     </div>
-                    <div class="mt-2 p-2.5 rounded-lg bg-zinc-950/90 border border-zinc-800/80 space-y-2 text-[10px]">
-    <p class="text-zinc-300 leading-relaxed">
-        <span class="text-emerald-400 font-semibold">● Sesión verificada en servidor.</span><br>
-        Para solicitar cambio de PIN o reportar problemas en la interfaz, contacta a soporte:
-        <a href="https://xat.me/universo" target="_blank" class="text-purple-400 hover:underline font-medium">xat</a>
-    </p>
-    <div class="pt-1.5 border-t border-zinc-800/80 text-amber-400/90 leading-snug">
-        <strong>IMPORTANTE:</strong> No compartas tu contraseña con nadie.
-        <input type="hidden" id="edit-cliente-pin" value="${ADMIN_PIN}">
-    </div>
-</div>
+                </div>
+            `;
 
-                `;
-                tabPub.appendChild(box);
-            }
-        }, 900);
-    });
-
-    }
+            tabPub.appendChild(box);
+        }
+    }, 900);
+});
 })();
 
 // =========================================================
@@ -7772,125 +8030,6 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
     });
 })();
 // =========================================================
-// FIX DEFINITIVO: REMOVER DE APARIENCIA Y CONECTAR EN PORTAFOLIO (HOJA #2)
-// =========================================================
-(function() {
-    let colorContenedorHoja2 = "";
-
-    function aplicarColorContenedorReal(color) {
-        if (!color || !/^#[0-9A-Fa-f]{6}$/.test(color)) return;
-        colorContenedorHoja2 = color.toUpperCase();
-
-        // Pintar el contenedor interno del módulo izquierdo y la franja detrás del menú
-        const modulo = document.getElementById('left-fixed-module');
-        const inner = modulo ? modulo.firstElementChild : null;
-        const viewPort = document.getElementById('view-portfolio');
-        const menuBar = viewPort ? viewPort.children : null;
-
-        [modulo, inner, viewPort, menuBar].forEach(el => {
-            if (el) el.style.setProperty('background-color', colorContenedorHoja2, 'important');
-        });
-    }
-
-    function limpiarAparienciaYConectarPortafolio() {
-        const tabVisual = document.getElementById('cfg-tab-visual');
-        const tabPort = document.getElementById('cfg-tab-portafolio');
-
-        // 1. Ocultar de Apariencia cualquier control sobrante del contenedor de portafolio / hoja 2
-        if (tabVisual) {
-            tabVisual.querySelectorAll('div, details').forEach(el => {
-                const txt = (el.textContent || '').toLowerCase();
-                if ((txt.includes('hoja') || txt.includes('portafolio') || txt.includes('módulo izquierdo') || txt.includes('contenedor')) &&
-                    el.querySelector('input[type="color"]') && !el.querySelector('#edit-accent-color-hex') && !el.querySelector('#edit-bg-ext-color-hex')) {
-                    el.style.display = 'none';
-                }
-            });
-        }
-
-        // 2. Localizar el selector de color dentro de la pestaña Portafolio (Hoja #2)
-        if (tabPort) {
-            const pickersPort = Array.from(tabPort.querySelectorAll('input[type="color"]'));
-            const textsPort = Array.from(tabPort.querySelectorAll('input[type="text"]')).filter(inp =>
-                inp.value.startsWith('#') || (inp.id && inp.id.toLowerCase().includes('color')) || (inp.id && inp.id.toLowerCase().includes('bg'))
-            );
-
-            // Tomar el primer selector de color de fondo dentro de Portafolio (Hoja #2)
-            const pickerHoja2 = pickersPort;
-            const hexHoja2 = textsPort;
-
-            if (pickerHoja2 && !pickerHoja2.dataset.conectadoHoja2) {
-                pickerHoja2.dataset.conectadoHoja2 = 'true';
-                pickerHoja2.addEventListener('input', () => {
-                    if (hexHoja2) hexHoja2.value = pickerHoja2.value.toUpperCase();
-                    aplicarColorContenedorReal(pickerHoja2.value);
-                });
-            }
-
-            if (hexHoja2 && !hexHoja2.dataset.conectadoHoja2) {
-                hexHoja2.dataset.conectadoHoja2 = 'true';
-                hexHoja2.addEventListener('input', () => {
-                    const val = hexHoja2.value.trim();
-                    if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
-                        if (pickerHoja2) pickerHoja2.value = val;
-                        aplicarColorContenedorReal(val);
-                    }
-                });
-            }
-
-            // Aplicar el valor que ya tenga ese campo al abrir
-            const valInicial = colorContenedorHoja2 || (hexHoja2 && hexHoja2.value) || (pickerHoja2 && pickerHoja2.value);
-            if (valInicial) {
-                if (pickerHoja2 && /^#[0-9A-Fa-f]{6}$/.test(valInicial)) pickerHoja2.value = valInicial;
-                if (hexHoja2) hexHoja2.value = valInicial;
-                aplicarColorContenedorReal(valInicial);
-            }
-        }
-    }
-
-    // 3. Persistir en Firebase al presionar "Guardar cambios"
-    const fetchPrevioContenedor = window.fetch;
-    window.fetch = function(url, opciones) {
-        if (typeof url === 'string' && url.includes('/perfil.json') && opciones && opciones.method === 'PUT' && opciones.body) {
-            try {
-                const bodyObj = JSON.parse(opciones.body);
-                if (colorContenedorHoja2) bodyObj.colorContenedorHoja2 = colorContenedorHoja2;
-                opciones.body = JSON.stringify(bodyObj);
-            } catch (e) {}
-        }
-        return fetchPrevioContenedor.apply(this, arguments);
-    };
-
-    // 4. Cargar desde Firebase al iniciar
-    async function cargarColorContenedorDesdeNube() {
-        try {
-            const params = new URLSearchParams(window.location.search);
-            const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-            const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
-                ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
-                : "https://firebaseio.com";
-            const ruta = cliente !== 'default'
-                ? `${base}/clientes/${cliente}/perfil/colorContenedorHoja2.json`
-                : `${base}/perfil/colorContenedorHoja2.json`;
-
-            const res = await fetch(`${ruta}?nocache=${Date.now()}`);
-            if (res.ok) {
-                const c = await res.json();
-                if (c) aplicarColorContenedorReal(c);
-            }
-        } catch (e) {}
-    }
-
-    window.addEventListener('load', () => {
-        cargarColorContenedorDesdeNube();
-        setTimeout(limpiarAparienciaYConectarPortafolio, 1200);
-        setTimeout(limpiarAparienciaYConectarPortafolio, 2000);
-    });
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('.fa-gear') || e.target.id === 'btn-cfg-portafolio') {
-            setTimeout(limpiarAparienciaYConectarPortafolio, 150);
-        }
-    });
-})();
 // =========================================================
 // CONTROL EXACTO PARA CONTENEDOR BASE bg-[#18181b] EN HOJA #2
 // =========================================================
@@ -7910,7 +8049,7 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
         colorContenedorBase = color.toUpperCase();
 
         // Apuntar exactamente al <div class="w-full h-full bg-[#18181b] ..."> de tu captura
-        const contenedorBase = document.querySelector('#left-fixed-module > div');
+        const contenedorBase = document.getElementById('view-portfolio')?.parentElement;
         if (contenedorBase) {
             contenedorBase.style.setProperty('background-color', colorContenedorBase, 'important');
         }
@@ -7992,28 +8131,29 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
     };
 
     // Cargar color guardado desde Firebase al iniciar
-    async function cargarContenedorBaseNube() {
-        try {
-            const params = new URLSearchParams(window.location.search);
-            const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-            const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
-                ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
-                : "https://firebaseio.com";
-            const ruta = cliente !== 'default'
-                ? `${base}/clientes/${cliente}/perfil/colorContenedorBase.json`
-                : `${base}/perfil/colorContenedorBase.json`;
+   async function cargarContenedorBaseNube() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
 
-            const res = await fetch(`${ruta}?nocache=${Date.now()}`);
-            if (res.ok) {
-                const c = await res.json();
-                pintarContenedorBase(c || '#18181b');
-            } else {
-                pintarContenedorBase('#18181b');
-            }
-        } catch (e) {
-            pintarContenedorBase('#18181b');
+        const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
+            ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
+            : "https://firebaseio.com";
+
+        const ruta = cliente !== 'default'
+            ? `${base}/clientes/${cliente}/perfil.json`
+            : `${base}/perfil.json`;
+
+        const res = await fetch(`${ruta}?nocache=${Date.now()}`);
+
+        if (res.ok) {
+            const datos = await res.json();
+            pintarContenedorBase(datos?.colorContenedorBase || '#18181b');
         }
+    } catch (e) {
+        console.error('Error cargando color del contenedor:', e);
     }
+}
 
     window.addEventListener('load', () => {
         cargarContenedorBaseNube();
@@ -8345,75 +8485,82 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 (function() {
     const params = new URLSearchParams(window.location.search);
     const cliente = (params.get('u') || 'default').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-    let pinVerificadoSesion = "";
 
     if (cliente !== 'default') {
         window.STORAGE_KEY = "xat_perfil_" + cliente;
     }
 
-    // 1. Redirigir rutas por cliente (?u=nombre) e inyectar auth_pin al guardar en Firebase
-    const fetchSeguro = window.fetch;
-    window.fetch = function(url, opciones) {
-        if (typeof url === 'string' && url.includes('://firebaseio.com')) {
-            if (cliente !== 'default' && !url.includes(`/clientes/${cliente}/`) && !url.includes('/seguridad/')) {
-                url = url.replace('://firebaseio.com', `://firebaseio.comclientes/${cliente}/`);
-            }
-            if (opciones && (opciones.method === 'PUT' || opciones.method === 'PATCH') && opciones.body) {
-                if (url.includes('/modulos_final.json') || url.includes('/modulos_portafolio.json') || url.includes('/perfil.json')) {
-                    try {
-                        const datos = JSON.parse(opciones.body);
-                        delete datos.pin;
-                        datos.auth_pin = pinVerificadoSesion;
-                        opciones.body = JSON.stringify(datos);
-                    } catch (e) {}
-                }
-            }
+    // 1. Redirigir rutas por cliente (?u=nombre)
+const fetchSeguro = window.fetch;
+
+window.fetch = function(url, opciones) {
+    if (typeof url === 'string' && url.includes('xatsapce-default-rtdb.firebaseio.com')) {
+        if (
+            cliente !== 'default' &&
+            !url.includes(`/clientes/${cliente}/`) &&
+            !url.includes('/seguridad/')
+        ) {
+            url = url.replace(
+                'xatsapce-default-rtdb.firebaseio.com/',
+                `xatsapce-default-rtdb.firebaseio.com/clientes/${cliente}/`
+            );
         }
-        return fetchSeguro.call(this, url, opciones);
-    };
+    }
+
+    return fetchSeguro.call(this, url, opciones);
+};
 
 
     // 2. Validar el PIN directamente contra las reglas privadas de Firebase
-    window.verifyPin = async function() {
-        const input = document.getElementById('pin-input');
-        const errEl = document.getElementById('pin-error');
-        const clave = (input?.value || '').trim();
-        if (!clave) return;
+    
+window.verifyPin = async function() {
+    const emailInput = document.getElementById('admin-email');
+    const passwordInput = document.getElementById('pin-input');
+    const errEl = document.getElementById('pin-error');
+    const btn = document.getElementById('pin-submit-btn');
 
-        const base = (typeof FIREBASE_DB_URL !== 'undefined' && FIREBASE_DB_URL)
-            ? FIREBASE_DB_URL.trim().replace(/\/$/, "")
-            : "https://firebaseio.com";
+    const email = (emailInput?.value || '').trim();
+    const password = passwordInput?.value || '';
 
-        const rutaTest = cliente !== 'default'
-            ? `${base}/clientes/${cliente}/modulos_final.json`
-            : `${base}/modulos_final.json`;
-
-        try {
-            const resGet = await fetchSeguro(`${rutaTest}?nocache=${Date.now()}`);
-            const actual = (resGet.ok && await resGet.json()) || {};
-            actual.auth_pin = clave;
-
-            const resPut = await fetchSeguro(rutaTest, {
-                method: 'PUT',
-                body: JSON.stringify(actual)
-            });
-
-            if (resPut.ok) {
-                pinVerificadoSesion = clave;
-                ADMIN_PIN = clave;
-                if (errEl) errEl.classList.add('hidden');
-                if (typeof closePinModal === 'function') closePinModal();
-                if (typeof openConfigDrawer === 'function') openConfigDrawer();
-            } else {
-                if (errEl) {
-                    errEl.textContent = "Acceso denegado: PIN inválido.";
-                    errEl.classList.remove('hidden');
-                }
-            }
-        } catch (e) {
-            if (errEl) errEl.classList.remove('hidden');
+    if (!email || !password) {
+        if (errEl) {
+            errEl.textContent = "Introduce tu correo y contraseña.";
+            errEl.classList.remove('hidden');
         }
-    };
+        return;
+    }
+
+    try {
+        if (btn) btn.disabled = true;
+
+        const resultado = await window.xatAdminAuth
+            .signInWithEmailAndPassword(email, password);
+
+        if (!resultado.user) {
+            throw new Error("No se pudo verificar la cuenta.");
+        }
+
+        if (errEl) errEl.classList.add('hidden');
+
+        closePinModal();
+
+        if (typeof openConfigDrawer === 'function') {
+            openConfigDrawer();
+        }
+
+        console.log("Administrador autenticado correctamente.");
+
+    } catch (error) {
+        console.error("Error de autenticación administrativa:", error);
+
+        if (errEl) {
+            errEl.textContent = "Correo o contraseña incorrectos.";
+            errEl.classList.remove('hidden');
+        }
+    } finally {
+        if (btn) btn.disabled = false;
+    }
+};
 })();
 // =========================================================
 // DISPARADOR UNIVERSAL DE GUARDADO COMPLETO (PERFIL + MÓDULOS)
@@ -8441,35 +8588,57 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 // =========================================================
 (function() {
     // 1. Reemplazar la función que guarda al escribir en las cajas del editor de fotos
-    window.actualizarPiezaPortafolio = function(tipo, index, campo, valor) {
-        const cat = typeof categoriaEditorActiva !== 'undefined' ? categoriaEditorActiva : (typeof currentCategory !== 'undefined' ? currentCategory : 'xat');
-        const idxHoja = Math.max(0, (typeof currentLeftModuleIndex !== 'undefined' ? currentLeftModuleIndex : 1) - 1);
+   
+window.actualizarPiezaPortafolio = function(categoria, tipo, index, campo, valor) {
+    const idxHoja = Math.max(
+        0,
+        (typeof currentLeftModuleIndex !== 'undefined'
+            ? currentLeftModuleIndex
+            : 1) - 1
+    );
 
-        if (!Array.isArray(portfolioSheets)) {
-            portfolioSheets = [{ name: "Hoja #2 (Principal)", data: JSON.parse(JSON.stringify(portfolioData)) }];
-        }
-        if (!portfolioSheets[idxHoja]) {
-            portfolioSheets[idxHoja] = { name: "Hoja #" + (idxHoja + 2), data: JSON.parse(JSON.stringify(portfolioData)) };
-        }
+    // Asegurar que exista el array de hojas
+    if (!Array.isArray(portfolioSheets)) {
+        portfolioSheets = [];
+    }
 
-        const catData = portfolioSheets[idxHoja].data[cat];
-        if (!catData || !catData[tipo] || !catData[tipo][index]) return;
+    // Crear la hoja correspondiente si no existe
+    if (!portfolioSheets[idxHoja]) {
+        portfolioSheets[idxHoja] = {
+            name: "Hoja #" + (idxHoja + 2),
+            data: JSON.parse(JSON.stringify(portfolioData))
+        };
+    }
 
-        if (campo === 'title') {
-            catData[tipo][index].title = valor;
-        } else {
-            const val = valor.trim();
-            catData[tipo][index].bg = val
-                ? (val.startsWith('linear-gradient') ? val : `url('${val}') center/cover no-repeat`)
-                : 'linear-gradient(to top right, #18181b, #09090b)';
-        }
+    const datosHoja = portfolioSheets[idxHoja].data;
+    const catData = datosHoja?.[categoria];
 
-        if (idxHoja === 0 && portfolioData[cat] && portfolioData[cat][tipo]) {
-            portfolioData[cat][tipo][index] = JSON.parse(JSON.stringify(catData[tipo][index]));
-        }
+    if (!catData || !catData[tipo] || !catData[tipo][index]) return;
 
-        if (typeof renderModule === 'function') renderModule();
-    };
+    // Actualizar título o fondo de la pieza
+    if (campo === 'title') {
+        catData[tipo][index].title = valor;
+    } else if (campo === 'bg') {
+        const val = valor.trim();
+
+        catData[tipo][index].bg = val
+            ? (val.startsWith('linear-gradient')
+                ? val
+                : `url('${val}') center/cover no-repeat`)
+            : 'linear-gradient(to top right, #18181b, #09090b)';
+    }
+
+    // Sincronizar portfolioData exclusivamente con Hoja #2
+    if (idxHoja === 0) {
+        portfolioData[categoria][tipo][index] =
+            JSON.parse(JSON.stringify(catData[tipo][index]));
+    }
+
+    if (typeof renderModule === 'function') {
+        renderModule();
+    }
+};
+
 
     // 2. Interceptar el envío hacia Firebase para inyectar fotos, RRSS portafolio y textos de lupa
     const fetchConTodo = window.fetch;
@@ -8479,11 +8648,19 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
                 const payload = JSON.parse(opciones.body);
 
                 // A. Sincronizar fotos del portafolio
-                if (Array.isArray(portfolioSheets) && portfolioSheets && portfolioSheets.data) {
-                    Object.assign(portfolioData, JSON.parse(JSON.stringify(portfolioSheets.data)));
-                }
-                payload.portfolioSheets = portfolioSheets;
-                payload.portfolioData = portfolioData;
+if (Array.isArray(portfolioSheets) && portfolioSheets.length > 0) {
+    // La Hoja #2 es la base de portfolioData
+    if (portfolioSheets[0]?.data) {
+        Object.assign(
+            portfolioData,
+            JSON.parse(JSON.stringify(portfolioSheets[0].data))
+        );
+    }
+}
+
+// Guardar todas las hojas independientemente
+payload.portfolioSheets = JSON.parse(JSON.stringify(portfolioSheets));
+payload.portfolioData = JSON.parse(JSON.stringify(portfolioData));
 
                 // B. Capturar Redes Sociales del Portafolio (URLs y colores)
                 payload.portRrss = {
@@ -8522,18 +8699,34 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
             try {
                 const guardado = JSON.parse(localStorage.getItem(window.STORAGE_KEY || 'xat_profile_data_v3') || '{}');
 
-                // A. Restaurar fotos del portafolio
-                if (Array.isArray(guardado.portfolioSheets) && guardado.portfolioSheets.length > 0) {
-                    portfolioSheets = guardado.portfolioSheets;
-                    if (portfolioSheets && portfolioSheets.data) {
-                        Object.assign(portfolioData, JSON.parse(JSON.stringify(portfolioSheets.data)));
-                    }
-                } else if (guardado.portfolioData) {
-                    Object.assign(portfolioData, guardado.portfolioData);
-                    if (Array.isArray(portfolioSheets) && portfolioSheets) {
-                        portfolioSheets.data = JSON.parse(JSON.stringify(guardado.portfolioData));
-                    }
-                }
+               // A. Restaurar fotos del portafolio
+if (Array.isArray(guardado.portfolioSheets) && guardado.portfolioSheets.length > 0) {
+    portfolioSheets = guardado.portfolioSheets;
+
+    // Sincronizar portfolioData únicamente con la Hoja #2
+    if (portfolioSheets[0]?.data) {
+        Object.assign(
+            portfolioData,
+            JSON.parse(JSON.stringify(portfolioSheets[0].data))
+        );
+    }
+} else if (guardado.portfolioData) {
+    // Compatibilidad con guardados antiguos
+    Object.assign(
+        portfolioData,
+        JSON.parse(JSON.stringify(guardado.portfolioData))
+    );
+
+    // Crear la Hoja #2 si todavía no existe
+    if (!Array.isArray(portfolioSheets)) {
+        portfolioSheets = [];
+    }
+
+    portfolioSheets[0] = {
+        name: "Hoja #2 (Principal)",
+        data: JSON.parse(JSON.stringify(guardado.portfolioData))
+    };
+}
                 if (typeof renderPortfolioPhotosEditor === 'function') renderPortfolioPhotosEditor();
                 if (typeof renderModule === 'function') renderModule();
 
@@ -8616,6 +8809,47 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
         }
     });
 
+// ==========================================
+// FLECHAS DINÁMICAS SEGÚN HOJAS EXISTENTES
+// ==========================================
+
+const renderSlideFinalOriginal = renderLeftModuleSlide;
+
+renderLeftModuleSlide = function() {
+
+    if (renderSlideFinalOriginal) {
+        renderSlideFinalOriginal();
+    }
+
+    const totalPaginas = portfolioSheets.length + 1;
+
+    const prev = document.getElementById('left-module-prev-btn');
+    const nextCover = document.getElementById('left-module-next-btn-cover');
+    const nextPortfolio = document.getElementById('left-module-next-btn-portfolio');
+    const nextDynamic = document.getElementById('portfolio-sheet-next-controls');
+
+    const esPortada = currentLeftModuleIndex === 0;
+    const hayAnterior = currentLeftModuleIndex > 0;
+    const haySiguiente = currentLeftModuleIndex < totalPaginas - 1;
+
+    if (prev) {
+        prev.style.display = hayAnterior ? 'flex' : 'none';
+    }
+
+    if (nextCover) {
+        nextCover.style.display = esPortada && haySiguiente ? 'flex' : 'none';
+    }
+
+    if (nextPortfolio) {
+        nextPortfolio.style.display = !esPortada && haySiguiente ? 'inline-block' : 'none';
+    }
+
+    if (nextDynamic) {
+        nextDynamic.style.display = !esPortada && haySiguiente ? 'block' : 'none';
+    }
+};
+
+
     // 3. Incluir colores y opacidad explícitamente al guardar en Firebase
     const fetchConPortada = window.fetch;
     window.fetch = function(url, opciones) {
@@ -8675,5 +8909,197 @@ if (filaHeader && filaHeader !== card && filaHeader.children.length === 0) {
 })();
 
 </script>
+
+<!-- FIREBASE SDK - XAT SPACE -->
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-database-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA2G0aNQvgjhpN4-OKhDzj8QMAumfW_fx4",
+        authDomain: "xatsapce.firebaseapp.com",
+        databaseURL: "https://xatsapce-default-rtdb.firebaseio.com",
+        projectId: "xatsapce",
+        appId: "1:511511281392:web:fb8d2e6a7ae0c3bf8c0c35"
+    };
+
+    // Inicializar Firebase
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    // Conexión de autenticación
+    window.xatFirebaseAuth = firebase.auth();
+    window.xatFirebaseDb = firebase.database();
+    // AUTENTICACIÓN INDEPENDIENTE DEL ADMINISTRADOR
+if (!firebase.apps.some(app => app.name === "xatAdminApp")) {
+    firebase.initializeApp(firebaseConfig, "xatAdminApp");
+}
+
+window.xatAdminApp = firebase.app("xatAdminApp");
+window.xatAdminAuth = window.xatAdminApp.auth();
+window.xatAdminDb = window.xatAdminApp.database();
+    // AUTENTICACIÓN ANÓNIMA DE VISITANTES
+
+// AUTENTICACIÓN AUTOMÁTICA DE VISITANTES
+window.xatAuthReady = new Promise((resolve, reject) => {
+    window.xatFirebaseAuth.onAuthStateChanged(async (user) => {
+        try {
+            if (user) {
+                console.log("Sesión Firebase existente:", user.uid);
+                resolve(user);
+                return;
+            }
+
+            const resultado = await window.xatFirebaseAuth.signInAnonymously();
+
+            console.log("Visitante autenticado:", resultado.user.uid);
+            resolve(resultado.user);
+
+        } catch (error) {
+            console.error("Error de autenticación:", error);
+            reject(error);
+        }
+    }, reject);
+});
+
+
+    console.log("Firebase Authentication preparado.");
+
+// ==========================================
+// CIERRE DEL LIGHTBOX CON ESC Y CLIC EXTERIOR
+// ==========================================
+
+(function() {
+
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    function cerrarVisor() {
+    lightbox.classList.add('hidden');
+    lightbox.style.display = '';
+}
+
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' &&
+            !lightbox.classList.contains('hidden')) {
+            cerrarVisor();
+        }
+    });
+
+    // Cerrar al hacer clic fuera del contenido
+    lightbox.addEventListener('click', function(e) {
+
+        const contenido = document.getElementById('lightbox-content');
+
+        if (contenido && !contenido.contains(e.target)) {
+            cerrarVisor();
+        }
+
+    });
+
+})();
+
+
+ // =============================================
+ // CONTROL UNIFICADO DE VISTAS Y NAVEGACIÓN
+ // =============================================
+
+renderLeftModuleSlide = function() {
+    const index = currentLeftModuleIndex;
+
+    const viewCover = document.getElementById('view-cover');
+    const viewPortfolio = document.getElementById('view-portfolio');
+    const viewPage2 = document.getElementById('view-page2');
+
+    function configurarVista(elemento, visible, desplazamiento) {
+        if (!elemento) return;
+
+        elemento.classList.toggle('hidden', !visible);
+        elemento.style.display = visible ? 'flex' : 'none';
+        elemento.style.transform = `translateX(${desplazamiento}%)`;
+    }
+
+    // PORTADA
+    configurarVista(viewCover, index === 0, index === 0 ? 0 : -100);
+
+    // TODAS LAS HOJAS DE CONTENIDO USAN LA MISMA PLANTILLA
+    configurarVista(
+        viewPortfolio,
+        index > 0,
+        index > 0 ? 0 : 100
+    );
+
+    // LA VISTA ESPECIAL DE HOJA #3 YA NO SE UTILIZA
+    configurarVista(viewPage2, false, 100);
+
+    // UNA SOLA FLECHA PARA TODAS LAS HOJAS
+    const flechaPortfolio = document.getElementById('left-module-next-btn-portfolio');
+    const haySiguiente = index > 0 && index < portfolioSheets.length;
+
+    if (flechaPortfolio) {
+        flechaPortfolio.style.display = haySiguiente ? 'flex' : 'none';
+    }
+
+    // OCULTAR LA ANTIGUA FLECHA EXCLUSIVA DE HOJA #3
+    const flechaHoja3 = document.getElementById('page3-next-btn');
+
+    if (flechaHoja3) {
+        flechaHoja3.style.display = 'none';
+    }
+
+    // EVITAR FLECHA DUPLICADA
+    const flechaDuplicada = document.getElementById('portfolio-sheet-next-controls');
+
+    if (flechaDuplicada) {
+        flechaDuplicada.style.display = 'none';
+    }
+};
+switchToLeftModulePage = function(pageIndex) {
+    const totalPaginas = portfolioSheets.length + 1;
+
+    pageIndex = Math.max(0, Math.min(pageIndex, totalPaginas - 1));
+
+    window.__categoriaPorHoja = window.__categoriaPorHoja || {};
+
+    // Guardar categoría de la hoja anterior
+    if (currentLeftModuleIndex > 0) {
+        window.__categoriaPorHoja[currentLeftModuleIndex] = currentCategory;
+    }
+
+    // Cambiar de hoja
+    currentLeftModuleIndex = pageIndex;
+
+    // Recuperar categoría de la hoja seleccionada
+    if (pageIndex > 0) {
+        currentCategory = window.__categoriaPorHoja[pageIndex] || 'xat';
+    }
+
+    topPhotoIndex = 0;
+    bottomPhotoIndex = 0;
+
+    renderLeftModuleSlide();
+
+    if (pageIndex > 0) {
+        renderModule();
+        renderPortfolioMenu();
+    }
+};
+
+nextLeftModuleSlide = function() {
+    if (currentLeftModuleIndex < portfolioSheets.length) {
+        switchToLeftModulePage(currentLeftModuleIndex + 1);
+    }
+};
+
+prevLeftModuleSlide = function() {
+    if (currentLeftModuleIndex > 0) {
+        switchToLeftModulePage(currentLeftModuleIndex - 1);
+    }
+};
+
+</script>
+<!-- FIN FIREBASE SDK -->
 
 <!-- ... existing code --></body></html>
