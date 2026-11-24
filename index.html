@@ -92,6 +92,43 @@ body {
     background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
     background-size: 12px 12px;
 }
+
+@media (min-width: 1280px) {
+body.mlbb-split-mode #mlbb-blur-overlay {
+    display: block;
+}
+
+#mlbb-blur-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
+}
+    body.mlbb-split-mode #right-fixed-module {
+        display: flex !important;
+        position: fixed !important;
+        right: 384px !important;
+        left: auto !important;
+        top: 50% !important;
+        width: 320px !important;
+        height: 670px !important;
+        transform: translateY(-50%) !important;
+        z-index: 39 !important;
+        transition: none !important;
+    }
+
+    body.mlbb-split-mode #right-fixed-module .mlbb-outer-frame {
+        transform: scale(0.85);
+        transform-origin: center center;
+    }
+
+    body.mlbb-split-mode #config-drawer > button:first-child {
+        left: -360px !important;
+    }
+}
 </style>
 
 <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-x-0{left:0px;right:0px}.left-\[calc\(45\%-547px\)\]{left:calc(45% - 547px)}.right-2{right:0.5rem}.top-2{top:0.5rem}.top-\[calc\(50\%\+2px\)\]{top:calc(50% + 2px)}.-left-10{left:-2.5rem}.-top-6{top:-1.5rem}.bottom-0{bottom:0px}.bottom-3{bottom:0.75rem}.left-1\/2{left:50%}.left-4{left:1rem}.left-\[calc\(45\%-547px\+320px\)\]{left:calc(45% - 547px + 320px)}.right-0{right:0px}.right-3\.5{right:0.875rem}.right-4{right:1rem}.top-0{top:0px}.top-1\/2{top:50%}.top-3\.5{top:0.875rem}.-left-6{left:-1.5rem}.-right-6{right:-1.5rem}.left-1\.5{left:0.375rem}.right-1\.5{right:0.375rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.col-span-2{grid-column:span 2 / span 2}.mx-auto{margin-left:auto;margin-right:auto}.my-auto{margin-top:auto;margin-bottom:auto}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-2{margin-top:0.5rem}.mt-auto{margin-top:auto}.-mt-16{margin-top:-4rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mr-1{margin-right:0.25rem}.mt-3{margin-top:0.75rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.contents{display:contents}.hidden{display:none}.h-2\.5{height:0.625rem}.h-24{height:6rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[210px\]{height:210px}.h-\[40px\]{height:40px}.h-\[670px\]{height:670px}.h-full{height:100%}.h-12{height:3rem}.h-28{height:7rem}.h-44{height:11rem}.h-5{height:1.25rem}.h-9{height:2.25rem}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-7{height:1.75rem}.h-\[190px\]{height:190px}.max-h-\[85vh\]{max-height:85vh}.max-h-60{max-height:15rem}.max-h-\[90vh\]{max-height:90vh}.min-h-screen{min-height:100vh}.w-2\.5{width:0.625rem}.w-8{width:2rem}.w-80{width:20rem}.w-auto{width:auto}.w-full{width:100%}.w-12{width:3rem}.w-28{width:7rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-9{width:2.25rem}.w-10{width:2.5rem}.w-20{width:5rem}.w-24{width:6rem}.w-7{width:1.75rem}.min-w-0{min-width:0px}.max-w-\[100px\]{max-width:100px}.max-w-md{max-width:28rem}.max-w-\[140px\]{max-width:140px}.max-w-sm{max-width:24rem}.max-w-xs{max-width:20rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.shrink-0{flex-shrink:0}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-full{--tw-translate-x:-100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.cursor-text{cursor:text}.cursor-default{cursor:default}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-items-center{justify-items:center}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.justify-self-start{justify-self:start}.justify-self-end{justify-self:end}.justify-self-center{justify-self:center}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.overflow-x-hidden{overflow-x:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-words{overflow-wrap:break-word}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-none{border-radius:0px}.rounded-b-2xl{border-bottom-right-radius:1rem;border-bottom-left-radius:1rem}.rounded-b-\[22px\]{border-bottom-right-radius:22px;border-bottom-left-radius:22px}.rounded-t-2xl{border-top-left-radius:1rem;border-top-right-radius:1rem}.rounded-t-\[22px\]{border-top-left-radius:22px;border-top-right-radius:22px}.rounded-l-xl{border-top-left-radius:0.75rem;border-bottom-left-radius:0.75rem}.border{border-width:1px}.border-0{border-width:0px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-zinc-800{--tw-border-opacity:1;border-color:rgb(39 39 42 / var(--tw-border-opacity, 1))}.border-zinc-800\/80{border-color:rgb(39 39 42 / 0.8)}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-purple-500\/20{border-color:rgb(168 85 247 / 0.2)}.border-purple-500\/30{border-color:rgb(168 85 247 / 0.3)}.border-transparent{border-color:transparent}.border-zinc-800\/85{border-color:rgb(39 39 42 / 0.85)}.border-zinc-900{--tw-border-opacity:1;border-color:rgb(24 24 27 / var(--tw-border-opacity, 1))}.bg-\[\#18181b\]{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity, 1))}.bg-zinc-950{--tw-bg-opacity:1;background-color:rgb(9 9 11 / var(--tw-bg-opacity, 1))}.bg-zinc-950\/80{background-color:rgb(9 9 11 / 0.8)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-purple-500\/10{background-color:rgb(168 85 247 / 0.1)}.bg-purple-500\/20{background-color:rgb(168 85 247 / 0.2)}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}.bg-purple-950{--tw-bg-opacity:1;background-color:rgb(59 7 100 / var(--tw-bg-opacity, 1))}.bg-zinc-800{--tw-bg-opacity:1;background-color:rgb(39 39 42 / var(--tw-bg-opacity, 1))}.bg-zinc-900\/60{background-color:rgb(24 24 27 / 0.6)}.bg-zinc-900\/70{background-color:rgb(24 24 27 / 0.7)}.bg-zinc-900\/80{background-color:rgb(24 24 27 / 0.8)}.bg-zinc-900\/95{background-color:rgb(24 24 27 / 0.95)}.bg-zinc-950\/50{background-color:rgb(9 9 11 / 0.5)}.bg-zinc-950\/60{background-color:rgb(9 9 11 / 0.6)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.bg-\[radial-gradient\(\#a855f7_1px\2c transparent_1px\)\]{background-image:radial-gradient(#a855f7 1px,transparent 1px)}.from-cyan-950{--tw-gradient-from:#083344 var(--tw-gradient-from-position);--tw-gradient-to:rgb(8 51 68 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-purple-950{--tw-gradient-to:rgb(59 7 100 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #3b0764 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-indigo-950{--tw-gradient-to:#1e1b4b var(--tw-gradient-to-position)}.bg-cover{background-size:cover}.bg-center{background-position:center}.fill-current{fill:currentColor}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-0{padding:0px}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-5{padding:1.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-0\.5{padding-left:0.125rem;padding-right:0.125rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.pb-1{padding-bottom:0.25rem}.pb-5{padding-bottom:1.25rem}.pt-2{padding-top:0.5rem}.pt-5{padding-top:1.25rem}.pb-2{padding-bottom:0.5rem}.pb-4{padding-bottom:1rem}.pt-0{padding-top:0px}.pt-1{padding-top:0.25rem}.pt-10{padding-top:2.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[7\.5px\]{font-size:7.5px}.text-\[8\.5px\]{font-size:8.5px}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-semibold{font-weight:600}.font-medium{font-weight:500}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.tracking-wide{letter-spacing:0.025em}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/70{color:rgb(255 255 255 / 0.7)}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.text-zinc-100{--tw-text-opacity:1;color:rgb(244 244 245 / var(--tw-text-opacity, 1))}.text-zinc-300{--tw-text-opacity:1;color:rgb(212 212 216 / var(--tw-text-opacity, 1))}.text-zinc-400{--tw-text-opacity:1;color:rgb(161 161 170 / var(--tw-text-opacity, 1))}.text-zinc-500{--tw-text-opacity:1;color:rgb(113 113 122 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-pink-400{--tw-text-opacity:1;color:rgb(244 114 182 / var(--tw-text-opacity, 1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-zinc-200{--tw-text-opacity:1;color:rgb(228 228 231 / var(--tw-text-opacity, 1))}.text-zinc-400\/80{color:rgb(161 161 170 / 0.8)}.text-zinc-600{--tw-text-opacity:1;color:rgb(82 82 91 / var(--tw-text-opacity, 1))}.text-zinc-700{--tw-text-opacity:1;color:rgb(63 63 70 / var(--tw-text-opacity, 1))}.no-underline{-webkit-text-decoration-line:none;text-decoration-line:none}.opacity-30{opacity:0.3}.opacity-40{opacity:0.4}.opacity-60{opacity:0.6}.opacity-25{opacity:0.25}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-purple-900\/40{--tw-shadow-color:rgb(88 28 135 / 0.4);--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-purple-500\/50{--tw-ring-color:rgb(168 85 247 / 0.5)}.blur-\[14px\]{--tw-blur:blur(14px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.brightness-75{--tw-brightness:brightness(.75);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_1px_2px_rgba\(0\2c 0\2c 0\2c 0\.9\)\]{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0,0,0,0.9));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_2px_4px_rgba\(0\2c 0\2c 0\2c 0\.8\)\]{--tw-drop-shadow:drop-shadow(0 2px 4px rgba(0,0,0,0.8));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_2px_4px_rgba\(0\2c 0\2c 0\2c 0\.9\)\]{--tw-drop-shadow:drop-shadow(0 2px 4px rgba(0,0,0,0.9));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_1px_2px_rgba\(0\2c 0\2c 0\2c 0\.8\)\]{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0,0,0,0.8));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_1px_3px_rgba\(0\2c 0\2c 0\2c 0\.8\)\]{--tw-drop-shadow:drop-shadow(0 1px 3px rgba(0,0,0,0.8));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.\[background-size\:16px_16px\]{background-size:16px 16px}.hover\:rotate-45:hover{--tw-rotate:45deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-125:hover{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-purple-400:hover{--tw-border-opacity:1;border-color:rgb(192 132 252 / var(--tw-border-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:bg-zinc-800\/40:hover{background-color:rgb(39 39 42 / 0.4)}.hover\:bg-purple-500:hover{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-900:hover{--tw-bg-opacity:1;background-color:rgb(88 28 135 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-950:hover{--tw-bg-opacity:1;background-color:rgb(59 7 100 / var(--tw-bg-opacity, 1))}.hover\:bg-zinc-700:hover{--tw-bg-opacity:1;background-color:rgb(63 63 70 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-950\/60:hover{background-color:rgb(59 7 100 / 0.6)}.hover\:text-purple-300:hover{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-amber-400:hover{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.hover\:text-purple-100:hover{--tw-text-opacity:1;color:rgb(243 232 255 / var(--tw-text-opacity, 1))}.hover\:text-purple-400:hover{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.hover\:text-zinc-200:hover{--tw-text-opacity:1;color:rgb(228 228 231 / var(--tw-text-opacity, 1))}.hover\:text-opacity-85:hover{--tw-text-opacity:0.85}.hover\:opacity-80:hover{opacity:0.8}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-purple-500:focus{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group\/avatar:hover .group-hover\/avatar\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group\/banner:hover .group-hover\/banner\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group\/edit:hover .group-hover\/edit\:opacity-100{opacity:1}.group\/banner:hover .group-hover\/banner\:opacity-80{opacity:0.8}.group:hover .group-hover\:opacity-100{opacity:1}.group\/avatar:hover .group-hover\/avatar\:shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group\/avatar:hover .group-hover\/avatar\:ring-4{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}@media (min-width: 640px){.sm\:-left-10{left:-2.5rem}.sm\:-right-10{right:-2.5rem}.sm\:w-96{width:24rem}.sm\:gap-3{gap:0.75rem}.sm\:p-6{padding:1.5rem}.sm\:p-3{padding:0.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:flex{display:flex}.xl\:gap-10{gap:2.5rem}}</style>
@@ -229,27 +266,604 @@ transform: translateY(5px);
     font-weight: 400 !important;
 }
 
+
 /* MÓVILES */
 @media (max-width: 640px) {
     #profile-dialog-bubble {
-        width: 165px;
-        min-width: 165px;
-        max-width: 165px;
+        position: absolute !important;
+        left: 291px !important;
+        top: 175px !important; 
+
+        width: min(165px, 50vw);
+	min-width: min(165px, 50vw);
+	max-width: min(165px, 50vw);
+
+        margin: -24px 12px 8px auto;
+        z-index: 20;
     }
 
-    .dialog-bubble-shape {
+    #profile-dialog-bubble .dialog-bubble-shape {
         font-size: 10px;
         padding: 38px 26px;
     }
 }
-</style></head>
+
+
+/* ===== MLBB: FONDO Y CABECERA ===== */
+
+#right-fixed-module .mlbb-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 1;
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 48%,
+        rgba(0, 0, 0, 0.75) 68%,
+        rgba(0, 0, 0, 0.25) 86%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 48%,
+        rgba(0, 0, 0, 0.75) 68%,
+        rgba(0, 0, 0, 0.25) 86%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+#right-fixed-module .mlbb-bg.is-changing {
+    opacity: 0;
+    transform: scale(1.04);
+}
+
+#right-fixed-module .mlbb-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--mlbb-gradient-color, #212224) 2%, transparent) 0%,
+        color-mix(in srgb, var(--mlbb-gradient-color, #212224) 8%, transparent) 28%,
+        color-mix(in srgb, var(--mlbb-gradient-color, #212224) 38%, transparent) 42%,
+        color-mix(in srgb, var(--mlbb-gradient-color, #212224) 74%, transparent) 54%,
+        color-mix(in srgb, var(--mlbb-gradient-color, #212224) 94%, transparent) 64%,
+        var(--mlbb-gradient-color, #212224) 73%,
+        var(--mlbb-gradient-color, #212224) 100%
+    );
+}
+#right-fixed-module .mlbb-header {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px 0;
+}
+
+#right-fixed-module .mlbb-logo {
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+#right-fixed-module .mlbb-dot {
+    appearance: none;
+    border: none;
+    outline: none;
+    height: 7px;
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.25s ease,
+                transform 0.15s ease;
+}
+
+#right-fixed-module .mlbb-dot:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    transform: scaleY(1.15);
+}
+
+#right-fixed-module .mlbb-dot:active {
+    transform: scale(0.92);
+}
+
+#right-fixed-module .mlbb-dot.active {
+    width: 26px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+#right-fixed-module .mlbb-dots {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ===== MÓDULO MLBB: MARCO Y TARJETA ===== */
+
+#right-fixed-module .mlbb-outer-frame {
+    width: 310px;
+    height: 515px;
+    flex-shrink: 0;
+    border: 1.5px solid #222222;
+    border-radius: 26px;
+    padding: 4px;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#right-fixed-module .mlbb-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 21px;
+    overflow: hidden;
+    background-color: #212224;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+}
+
+/* ===== MLBB: CONTENIDO CENTRAL ===== */
+
+#right-fixed-module .mlbb-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 18px 20px;
+    margin-top: auto;
+    transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#right-fixed-module .mlbb-content.slide-out-left {
+    opacity: 0;
+    transform: translateX(-14px);
+}
+
+#right-fixed-module .mlbb-content.slide-out-right {
+    opacity: 0;
+    transform: translateX(14px);
+}
+
+#right-fixed-module .mlbb-content.slide-out-right {
+    opacity: 0;
+    transform: translateX(25px);
+}
+
+#right-fixed-module .mlbb-role-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#right-fixed-module .mlbb-role-icons svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* ===== MLBB: EDICIÓN INLINE ===== */
+
+#right-fixed-module .mlbb-inline-edit {
+    position: absolute;
+    top: -8px;
+    right: -22px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+    padding: 0;
+    pointer-events: none;
+}
+
+body.mlbb-edit-mode #right-fixed-module .mlbb-inline-edit {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#right-fixed-module .mlbb-inline-edit i {
+    pointer-events: none;
+}
+
+#right-fixed-module .mlbb-hero-name {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #e4e5e7;
+    margin-bottom: 6px;
+}
+
+#right-fixed-module .mlbb-hero-role {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #9fa2a8;
+    margin-bottom: 18px;
+}
+
+#right-fixed-module .mlbb-player-id {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+    color: #b8bbc0;
+    margin-bottom: 22px;
+}
+
+/* ===== MLBB: ESTADÍSTICAS ===== */
+
+#right-fixed-module .mlbb-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    margin-bottom: 24px;
+}
+
+#right-fixed-module .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+}
+
+#right-fixed-module .stat-value {
+    font-size: 12.5px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #d5d7db;
+    margin-bottom: 4px;
+}
+
+#right-fixed-module .stat-label {
+    font-size: 8.5px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: #7c8087;
+}
+
+/* ===== MLBB: HABILIDADES ===== */
+
+#right-fixed-module .mlbb-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+#right-fixed-module .skill-circle {
+    appearance: none;
+    border: 2.5px solid #c6a46a;
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #362c1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
+    cursor: pointer;
+}
+
+#right-fixed-module .skill-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 224, 140, 0.45);
+}
+
+#right-fixed-module .skill-circle:active {
+    transform: scale(0.95);
+}
+
+#right-fixed-module .skill-circle img,
+#right-fixed-module .skill-circle svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+}
+
+#right-fixed-module .skill-circle img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#right-fixed-module .mlbb-footer-label {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: max-content;
+    margin: 0 auto;
+    white-space: nowrap;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #777b82;
+}
+
+#right-fixed-module .mlbb-favorites-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ===== MLBB: VENTANA DE HABILIDADES ===== */
+
+#right-fixed-module .skill-modal {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(
+        180deg,
+        rgba(38, 36, 37, 0.86) 0%,
+        rgba(33, 34, 36, 0.94) 45%,
+        rgba(28, 29, 31, 0.98) 100%
+    );
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px 22px 18px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(14px) scale(0.98);
+    transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#right-fixed-module .skill-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+#right-fixed-module .modal-close-btn span {
+    display: block;
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    font-size: 11px;
+    transform: translate(-1px, 1px);
+}
+
+#right-fixed-module .modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+#right-fixed-module .modal-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+}
+
+#right-fixed-module .modal-close-btn:active {
+    transform: scale(0.9);
+}
+
+#right-fixed-module .modal-quote-icon {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    fill: #ffffff;
+    width: 22px;
+    height: 18px;
+}
+
+#right-fixed-module .modal-hero-quote {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 1.3px;
+    color: #c2c5ca;
+    max-width: 245px;
+    margin-bottom: 18px;
+}
+
+#right-fixed-module .modal-skill-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+#right-fixed-module .modal-skill-icon svg,
+#right-fixed-module .modal-skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+}
+
+#right-fixed-module .modal-skill-title {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: #dcdfe4;
+    margin-bottom: 8px;
+}
+
+#right-fixed-module .modal-skill-tag {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #212224;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    padding: 2.5px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+
+#right-fixed-module .modal-divider {
+    width: 88%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.22);
+    border: none;
+    margin: 0 auto 12px;
+}
+
+#right-fixed-module .modal-skill-desc {
+    font-size: 8.6px;
+    font-weight: 300;
+    line-height: 1.48;
+    letter-spacing: 0.55px;
+    color: #a9adb4;
+    max-width: 252px;
+    margin-bottom: 12px;
+}
+
+#right-fixed-module .modal-priority-title {
+    font-size: 9.5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9da1a8;
+    margin-bottom: 7px;
+}
+
+#right-fixed-module .modal-priority-desc {
+    font-size: 8.4px;
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 0.45px;
+    color: #8f939a;
+    max-width: 245px;
+    margin-bottom: auto;
+}
+
+#right-fixed-module .modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#right-fixed-module .modal-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#right-fixed-module .modal-dot {
+    appearance: none;
+    border: none;
+    outline: none;
+    height: 6px;
+    width: 9px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.25s ease,
+                transform 0.15s ease;
+}
+
+#right-fixed-module .modal-dot:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    transform: scaleY(1.15);
+}
+
+#right-fixed-module .modal-dot:active {
+    transform: scale(0.92);
+}
+
+#right-fixed-module .modal-dot.active {
+    width: 26px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+/* ===== MLBB: VISTA PREVIA INTEGRADA AL PANEL ===== */
+
+@media (min-width: 1280px) {
+
+    /* La tarjeta se incorpora al lado izquierdo del panel */
+   
+
+    /* La X pasa al extremo izquierdo de la composición */
+    
+
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
 <body id="main-body" class="min-h-screen text-zinc-100 flex items-center justify-center p-3 sm:p-6 bg-slate-950 relative overflow-x-hidden gap-6 xl:gap-10" style="font-family: Inter, sans-serif; background-color: rgb(2, 6, 23);">
 
 <!-- FONDO DE PANTALLA EXTERIOR OPCIONAL -->
 <div id="ext-bg-image" class="fixed inset-0 bg-cover bg-center opacity-30 pointer-events-none transition-all duration-500" style="background-image: none; display: none;"></div>
 
+<!-- CAPA DE DESENFOQUE DE LA INTERFAZ -->
+<div id="mlbb-blur-overlay"></div>
+
 <!-- MÓDULO FIJO LATERAL IZQUIERDO (PORTAFOLIO) -->
-<div id="left-fixed-module" class="fixed left-[calc(45%-547px)] top-[calc(50%+2px)] -translate-y-1/2 w-80 h-[670px] max-h-[85vh] bg-zinc-900  rounded-2xl shadow-2xl z-30 overflow-hidden transition-all duration-300 hidden xl:flex flex-col justify-between backdrop-blur-md">
+<div id="left-fixed-module" class="fixed left-[calc(45%-547px)] top-[calc(50%+2px)] -translate-y-1/2 w-80 h-[670px] max-h-[85vh] bg-zinc-900  rounded-2xl shadow-2xl z-30 overflow-hidden transition-all duration-300 hiddenflex flex-col justify-between backdrop-blur-md">
     
     <!-- CONTENEDOR PRINCIPAL FIJO QUE CONTIENE LAS VISTAS DE TU PORTAFOLIO -->
     <div class="w-full h-full bg-[#18181b] rounded-2xl shadow-2xl relative overflow-hidden flex flex-col">
@@ -555,8 +1169,119 @@ transform: translateY(5px);
 </div>
 </div>
 
+<!-- ================= MÓDULO FIJO LATERAL DERECHO (HÉROES MLBB) ================= -->
+<div id="right-fixed-module" class="fixed right-[calc(45%-547px)] top-[calc(50%+2px)] -translate-y-1/2 w-80 h-[670px] max-h-[85vh] bg-transparent rounded-2xl z-10 overflow-visible transition-all duration-300 hidden xl:flex items-center justify-center">
+
+    
+<div class="mlbb-outer-frame">
+    <div class="mlbb-card" id="mlbb-card">
+
+        <!-- Splash Art -->
+        <img class="mlbb-bg" id="mlbb-hero-bg" src="" alt="Hero Splash Art">
+        <div class="mlbb-gradient"></div>
+
+        <!-- Cabecera: logo y selector de héroes -->
+<div class="mlbb-header">
+    <div class="mlbb-logo">
+        <!-- Medida exacta del logo: 78 × 22 px -->
+        <img
+    id="mlbb-header-logo"
+    src="https://xatimg.com/image/tfwgr2UDnM6i.png"
+    alt="Mobile Legends"
+    style="width: 78px; height: 22px; object-fit: contain;"
+>
+    </div>
+
+    <div class="mlbb-dots" role="tablist" aria-label="3 Héroes favoritos">
+        <button type="button" class="mlbb-dot active" data-index="0" aria-label="Rafaela"></button>
+        <button type="button" class="mlbb-dot" data-index="1" aria-label="Kagura"></button>
+        <button type="button" class="mlbb-dot" data-index="2" aria-label="Ling"></button>
+    </div>
+</div>
+
+        <!-- Información principal del héroe -->
+        <div class="mlbb-content" id="mlbb-hero-content">
+            <div class="mlbb-role-icons" id="mlbb-hero-icons"></div>
+            <h2 class="mlbb-hero-name" id="mlbb-hero-name">RAFAELA</h2>
+            <p class="mlbb-hero-role" id="mlbb-hero-role">Support</p>
+            <div class="mlbb-player-id" id="mlbb-player-id">D0nk ID. 1045652860 (5326)</div>
+
+            <div class="mlbb-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="mlbb-stat-win">64.9%</span>
+                    <span class="stat-label">Win Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="mlbb-stat-pick">0.75%</span>
+                    <span class="stat-label">Pick Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="mlbb-stat-ban">9.95%</span>
+                    <span class="stat-label">Ban Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="mlbb-stat-matches">94</span>
+                    <span class="stat-label">Partidas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="mlbb-stat-power">3620</span>
+                    <span class="stat-label">Poder</span>
+                </div>
+            </div>
+
+            <!-- Habilidades -->
+            <div class="mlbb-skills" id="mlbb-hero-skills"></div>
+            <div class="mlbb-footer-label" id="mlbb-favorites-label">
+    <img
+        src="https://akmweb.youngjoygame.com/web/gms/image/a973a80946a30c3040d7127b7ff34e24.svg"
+        alt=""
+        class="mlbb-favorites-icon"
+    >
+    <span>HEROES FAVORITOS</span>
+</div>
+        </div>
+
+        <!-- Ventana de detalle de habilidades -->
+        <div class="skill-modal" id="mlbb-skill-modal" aria-hidden="true">
+            <button type="button" class="modal-close-btn" id="mlbb-close-modal" aria-label="Cerrar detalle"><span>✕</span></button>
+
+            <svg class="modal-quote-icon" viewBox="0 0 24 20">
+                <path d="M9.5 0L5.5 20H0L4 0H9.5ZM22 0L18 20H12.5L16.5 0H22Z"/>
+            </svg>
+
+            <p class="modal-hero-quote" id="mlbb-modal-quote"></p>
+            <div class="modal-skill-icon" id="mlbb-modal-skill-icon"></div>
+            <h3 class="modal-skill-title" id="mlbb-modal-skill-title"></h3>
+            <span class="modal-skill-tag" id="mlbb-modal-skill-tag"></span>
+
+            <hr class="modal-divider">
+            <p class="modal-skill-desc" id="mlbb-modal-skill-desc"></p>
+            <hr class="modal-divider">
+
+            <h4 class="modal-priority-title">SKILLS PRIORITY</h4>
+            <p class="modal-priority-desc" id="mlbb-modal-priority-desc"></p>
+
+            <div class="modal-footer">
+                <!-- Medida exacta del logo inferior: 74 × 20 px -->
+<img
+    id="mlbb-modal-logo"
+    src="https://xatimg.com/image/tfwgr2UDnM6i.png"
+    alt="Mobile Legends"
+    style="width: 74px; height: 20px; object-fit: contain;"
+>
+
+                <div class="modal-dots" id="mlbb-modal-dots"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+
 <!-- CONTENEDOR PRINCIPAL QUE AGRUPA EL BANNER PUBLICITARIO Y EL PERFIL -->
-<div class="w-full max-w-md mx-auto flex flex-col items-center z-10 relative">
+<div class="w-full max-w-md mx-auto flex flex-col items-center z-10 relative xl:translate-x-[22px]">
 
     <!-- MÓDULO BANNER PUBLICITARIO (SUPERIOR) -->
     <a id="promo-banner-link" href="#" target="_blank" class="block w-full no-underline" style="pointer-events: none;">
@@ -642,7 +1367,7 @@ transform: translateY(5px);
         </div>
 
         <!-- BURBUJA DE DIÁLOGO DEL PERFIL -->
-        <div id="profile-dialog-bubble" class="absolute z-30 hidden pointer-events-none">
+        <div id="profile-dialog-bubble" class="absolute hidden pointer-events-none">
 <div id="profile-dialog-shape" class="dialog-bubble-shape organico">
 
     <svg
@@ -1707,6 +2432,111 @@ transform: translateY(5px);
             </div>
         </div>
 
+<!-- GRUPO 5: TARJETA MLBB -->
+<div id="cfg-tab-publicidad" class="space-y-4 hidden">
+
+    <div class="space-y-3 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800">
+        <h4 class="font-bold text-purple-400 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+            <i class="fa-solid fa-gamepad"></i> Configuración de Tarjeta MLBB
+        </h4>
+
+        <p class="text-[9px] text-zinc-400">
+            Personaliza el contenido y los elementos de los tres héroes de la tarjeta.
+        </p>
+
+        
+<div id="mlbb-config-editor" class="space-y-4">
+
+    <!-- SELECTOR DE HÉROE -->
+    <div class="space-y-2">
+        <label class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
+            Personaje que deseas editar
+        </label>
+        <div class="grid grid-cols-3 gap-2">
+            <button type="button" class="mlbb-editor-hero active" data-hero="0">Héroe 1</button>
+            <button type="button" class="mlbb-editor-hero" data-hero="1">Héroe 2</button>
+            <button type="button" class="mlbb-editor-hero" data-hero="2">Héroe 3</button>
+        </div>
+    </div>
+
+    <!-- DATOS DEL PERSONAJE -->
+    <div class="space-y-3 border border-zinc-800 rounded-xl p-3">
+        <h5 class="text-[10px] font-bold text-purple-400 uppercase">01 · Personaje</h5>
+
+        <label class="block text-[10px] text-zinc-400">Nombre del héroe</label>
+        <input id="mlbb-edit-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs" type="text">
+
+        <label class="block text-[10px] text-zinc-400">Rol</label>
+        <input id="mlbb-edit-role" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs" type="text">
+
+        <label class="block text-[10px] text-zinc-400">ID del jugador</label>
+        <input id="mlbb-edit-player-id" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs" type="text">
+
+        <label class="block text-[10px] text-zinc-400">URL del fondo del personaje</label>
+        <input id="mlbb-edit-bg" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs" type="url">
+
+        <label class="block text-[10px] text-zinc-400">URL de iconos de rol</label>
+        <input id="mlbb-edit-icons" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs" type="text">
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="space-y-3 border border-zinc-800 rounded-xl p-3">
+        <h5 class="text-[10px] font-bold text-purple-400 uppercase">02 · Estadísticas</h5>
+
+        <div class="grid grid-cols-2 gap-2">
+            <input id="mlbb-edit-win" placeholder="Win Rate" class="bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+            <input id="mlbb-edit-pick" placeholder="Pick Rate" class="bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+            <input id="mlbb-edit-ban" placeholder="Ban Rate" class="bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+            <input id="mlbb-edit-matches" placeholder="Partidas" class="bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+            <input id="mlbb-edit-power" placeholder="Poder" class="bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+        </div>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="space-y-3 border border-zinc-800 rounded-xl p-3">
+        <h5 class="text-[10px] font-bold text-purple-400 uppercase">03 · Habilidades</h5>
+        <div id="mlbb-editor-skills" class="space-y-3"></div>
+    </div>
+
+    <!-- APARIENCIA GLOBAL -->
+    <div class="space-y-3 border border-zinc-800 rounded-xl p-3">
+        <h5 class="text-[10px] font-bold text-purple-400 uppercase">04 · Apariencia global</h5>
+        <p class="text-[9px] text-zinc-500">Estos ajustes se aplicarán a los tres héroes.</p>
+
+        <label class="block text-[10px] text-zinc-400">Fondo de tarjeta</label>
+        <input id="mlbb-edit-card-bg" type="text" placeholder="#000000 o URL" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 text-xs">
+
+<label class="block text-[10px] text-zinc-400">Color del degradado</label>
+<input id="mlbb-edit-gradient-color" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Color de texto principal</label>
+        <input id="mlbb-edit-text-primary" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Color de texto secundario</label>
+        <input id="mlbb-edit-text-secondary" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Borde del marco</label>
+        <input id="mlbb-edit-frame-border" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Borde de habilidades</label>
+        <input id="mlbb-edit-skill-border" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Fondo de habilidades</label>
+        <input id="mlbb-edit-skill-bg" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Color de acento</label>
+        <input id="mlbb-edit-accent" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+
+        <label class="block text-[10px] text-zinc-400">Fondo del modal</label>
+        <input id="mlbb-edit-modal-bg" type="color" class="w-full h-9 bg-zinc-900 rounded-lg">
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
         <!-- GRUPO 2: CONTENIDO -->
 
         <div id="cfg-tab-contenido" class="space-y-4 hidden">
@@ -1998,30 +2828,28 @@ transform: translateY(5px);
                 <button type="button" onclick="hobbiesList.splice(3,1); renderHobbies();" class="text-rose-400 p-1 cursor-pointer"><i class="fa-solid fa-trash text-[10px]"></i></button>
             </div>
         </div>
-            </div>
-        </div>
 
-        <!-- GRUPO 3: PUBLICIDAD -->
-        <div id="cfg-tab-publicidad" class="space-y-4 hidden">
-            <div class="space-y-3 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800">
-                <div class="flex items-center justify-between">
-                    <h4 class="font-bold text-purple-400 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
-                        <i class="fa-solid fa-rectangle-ad"></i> Banner Publicitario
-                    </h4>
-                    <button type="button" id="visibility-btn-promo" onclick="togglePromoVisibility()" class="text-zinc-400 hover:text-purple-400 text-xs transition-colors cursor-pointer flex items-center gap-1 font-semibold">
-                        <i id="visibility-icon-promo" class="fa-solid fa-eye" style="color: rgb(168, 85, 247);"></i>
-                        <span id="visibility-text-promo">Visible</span>
-                    </button>
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-[9px] text-zinc-400">URL Imagen de Fondo (800 x 200 px)</label>
-                    <input type="text" id="edit-promo-img" value="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" oninput="document.getElementById('promo-banner-img').src = this.value; saveProfileToLocalStorage();" class="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1 text-white text-xs">
-                </div>
-                <div class="space-y-1.5 pt-1">
-                    <label class="text-[9px] text-zinc-400">URL de Enlace</label>
-                    <input type="text" id="edit-promo-url" value="" oninput="liveUpdateContent()" placeholder="https://ejemplo.com" class="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1 text-white text-xs">
-                </div>
             </div>
+<!-- GRUPO 3: PUBLICIDAD -->
+<div class="space-y-3 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800">
+    <div class="flex items-center justify-between">
+        <h4 class="font-bold text-purple-400 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+            <i class="fa-solid fa-rectangle-ad"></i> Banner Publicitario
+        </h4>
+        <button type="button" id="visibility-btn-promo" onclick="togglePromoVisibility()" class="text-zinc-400 hover:text-purple-400 text-xs transition-colors cursor-pointer flex items-center gap-1 font-semibold">
+            <i id="visibility-icon-promo" class="fa-solid fa-eye" style="color: rgb(168, 85, 247);"></i>
+            <span id="visibility-text-promo">Visible</span>
+        </button>
+    </div>
+    <div class="space-y-1.5">
+        <label class="text-[9px] text-zinc-400">URL Imagen de Fondo (800 x 200 px)</label>
+        <input type="text" id="edit-promo-img" value="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" oninput="document.getElementById('promo-banner-img').src = this.value; saveProfileToLocalStorage();" class="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1 text-white text-xs">
+    </div>
+    <div class="space-y-1.5 pt-1">
+        <label class="text-[9px] text-zinc-400">URL de Enlace</label>
+        <input type="text" id="edit-promo-url" value="" oninput="liveUpdateContent()" placeholder="https://ejemplo.com" class="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1 text-white text-xs">
+    </div>
+</div>
         </div>
 
         <!-- GRUPO 4: PORTAFOLIO -->
@@ -2606,7 +3434,7 @@ transform: translateY(5px);
                                 <input type="text" oninput="portfolioData['arte'].bottomPhotos[4].title=this.value; renderModule();" value="Exhibition Concept Art" placeholder="Texto / Título Módulo Inferior #5" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
                                 <input type="text" oninput="const val=this.value.trim(); portfolioData['arte'].bottomPhotos[4].bg=val ? (val.startsWith('linear-gradient') ? val : 'url(\''+val+'\') center/cover no-repeat') : ''; renderModule();" value="" placeholder="URL Imagen Módulo Inferior #5" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1 text-white text-[10px]">
                             </div>
-                        
+           
                     </div>
                 </div>
             </div>
@@ -3768,6 +4596,7 @@ async function openPinModal() {
 
    function saveProfileToLocalStorage() {
     const data = {
+heroesData: JSON.parse(JSON.stringify(heroesData)),
         fontFamily: document.getElementById('edit-font-family')?.value,
         dialogText: document.getElementById('edit-dialog-text')?.value || '',
         dialogSymbolLeft: document.getElementById('edit-dialog-symbol-left')?.value || '',
@@ -3838,6 +4667,15 @@ async function openPinModal() {
         if (!saved) return;
         try {
             const data = JSON.parse(saved);
+if (Array.isArray(data.heroesData) && typeof heroesData !== 'undefined') {
+    heroesData.splice(
+        0,
+        heroesData.length,
+        ...JSON.parse(JSON.stringify(data.heroesData))
+    );
+
+    document.dispatchEvent(new CustomEvent('mlbb-data-updated'));
+}
             if (document.getElementById('edit-dialog-text')) {
                 document.getElementById('edit-dialog-text').value = data.dialogText || '';
             }
@@ -4155,8 +4993,18 @@ if (dialogSymbolColorInput) {
         });
     }
 
+
+
+let mlbbEditorLayoutState = null;
+
+
     function switchConfigTab(tabName) {
         const accentHex = document.getElementById('edit-accent-color-hex')?.value || '#a855f7';
+document.body.classList.toggle(
+    'mlbb-split-mode',
+    tabName === 'publicidad'
+);
+
         const vBtn = document.getElementById('btn-cfg-visual');
         const cBtn = document.getElementById('btn-cfg-contenido');
         const portBtn = document.getElementById('btn-cfg-portafolio');
@@ -4203,14 +5051,16 @@ if (dialogSymbolColorInput) {
         dialogFontInput.value = savedDialogFont;
     }
         configSnapshot = JSON.stringify({
+            ...JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'),
+            heroesData: JSON.parse(JSON.stringify(heroesData)),
             fontFamily: document.getElementById('edit-font-family')?.value,
             dialogText: document.getElementById('edit-dialog-text')?.value || '',
             dialogSymbolLeft: document.getElementById('edit-dialog-symbol-left')?.value || '',
             dialogSymbolRight: document.getElementById('edit-dialog-symbol-right')?.value || '',
             dialogStyle: 'organico',
-dialogFont: document.getElementById('edit-dialog-font')?.value || 'citrustime',
-dialogTextColor: document.getElementById('edit-dialog-text-color')?.value || '#171717',
-dialogSymbolColor: document.getElementById('edit-dialog-symbol-color')?.value || '#171717',
+            dialogFont: document.getElementById('edit-dialog-font')?.value || 'citrustime',
+	    dialogTextColor: document.getElementById('edit-dialog-text-color')?.value || '#171717',
+	    dialogSymbolColor: document.getElementById('edit-dialog-symbol-color')?.value || '#171717',
             accentColorHex: document.getElementById('edit-accent-color-hex')?.value,
             interiorBg: document.getElementById('edit-interior-bg')?.value,
             interiorColorHex: document.getElementById('edit-interior-color-hex')?.value,
@@ -4274,6 +5124,7 @@ dialogSymbolColor: document.getElementById('edit-dialog-symbol-color')?.value ||
 
         const drawer = document.getElementById('config-drawer');
         drawer.classList.remove('hidden');
+document.body.classList.add('mlbb-edit-mode');
         renderFriendsEditor();
         renderTracksEditor();
         renderLeftModulePagesEditor();
@@ -4288,6 +5139,35 @@ dialogSymbolColor: document.getElementById('edit-dialog-symbol-color')?.value ||
         if (configSnapshot) {
             try {
                 const data = JSON.parse(configSnapshot);
+// Restaurar campos de la antesala sin guardar los cambios
+const camposAntesala = {
+    'edit-antesala-titulo': data.antesalaTitulo ?? 'SIDA',
+    'edit-antesala-bg': data.antesalaBg ?? '',
+    'edit-antesala-btn': data.antesalaBtn ?? 'ENTRAR',
+    'edit-antesala-logo': data.antesalaLogo ?? '',
+    'edit-antesala-creditos': data.antesalaCreditos ?? ''
+};
+
+Object.entries(camposAntesala).forEach(([id, valor]) => {
+    const campo = document.getElementById(id);
+    if (campo) campo.value = valor;
+});
+
+// Actualizar también la vista de la antesala
+const cajaAntesala = document.getElementById('cfg-antesala-box');
+if (cajaAntesala) {
+    cajaAntesala.dispatchEvent(new Event('input', { bubbles: true }));
+}
+// Restaurar datos originales de la tarjeta MLBB
+if (Array.isArray(data.heroesData)) {
+    heroesData.splice(
+        0,
+        heroesData.length,
+        ...JSON.parse(JSON.stringify(data.heroesData))
+    );
+
+    document.dispatchEvent(new CustomEvent('mlbb-data-updated'));
+}
                 if (document.getElementById('edit-dialog-text')) {
                     document.getElementById('edit-dialog-text').value = data.dialogText || '';
                 }
@@ -4325,7 +5205,6 @@ console.log('DIAGNÓSTICO COLORES DIÁLOGO:', {
     valorFraseEnEseMomento: document.getElementById('edit-dialog-text-color')?.value,
     valorSimbolosEnEseMomento: document.getElementById('edit-dialog-symbol-color')?.value
 });
-                localStorage.setItem(STORAGE_KEY, configSnapshot);
                 
                 if (data.fontFamily && document.getElementById('edit-font-family')) document.getElementById('edit-font-family').value = data.fontFamily;
                 if (data.accentColorHex) {
@@ -4440,7 +5319,10 @@ if (Array.isArray(data.portfolioSheets)) portfolioSheets = data.portfolioSheets;
             } catch (e) {
                 console.error("Error al restaurar cambios:", e);
             }
-        }
+                }
+
+        document.body.classList.remove('mlbb-split-mode');
+
         closeConfigDrawer();
     }
 
@@ -4468,7 +5350,8 @@ if (Array.isArray(data.portfolioSheets)) portfolioSheets = data.portfolioSheets;
         renderMusicPlayer();
         saveProfileToLocalStorage();
         configSnapshot = null;
-        closeConfigDrawer();
+	document.body.classList.remove('mlbb-split-mode');
+	closeConfigDrawer();
     }
 
     function enableEditingMode(enable) {
@@ -5294,6 +6177,7 @@ burbujaReal.style.top =
 
     function closeConfigDrawer() {
         document.getElementById('config-drawer').classList.add('hidden');
+document.body.classList.remove('mlbb-edit-mode');
         enableEditingMode(false);
     }
 
@@ -5549,6 +6433,7 @@ dialogSymbolColor: document.getElementById('edit-dialog-symbol-color')?.value ||
         carouselGroups,
         standardPostsList,
         tracksData,
+	heroesData: JSON.parse(JSON.stringify(heroesData)),
         portfolioData,
 portfolioSheets: JSON.parse(JSON.stringify(portfolioSheets)),
 categoriasPorHoja: JSON.parse(JSON.stringify(window.__categoriaPorHoja || {})),
@@ -5604,6 +6489,9 @@ saveAndCloseConfigDrawer = async function() {
 
 const onloadOriginal = window.onload;
 window.onload = async function() {
+
+    if (onloadOriginal) onloadOriginal();
+
     const urlLimpia = FIREBASE_DB_URL.trim().replace(/\/$/, "");
     try {
         const res = await fetch(`${urlLimpia}/perfil.json?nocache=${Date.now()}`);
@@ -5623,8 +6511,19 @@ window.onload = async function() {
                 hobbiesList = datosNube.hobbiesList;
                 badgesList = datosNube.badgesList;
                 tracksData = datosNube.tracksData;
+if (Array.isArray(datosNube.heroesData)) {
+    heroesData.splice(
+        0,
+        heroesData.length,
+        ...JSON.parse(JSON.stringify(datosNube.heroesData))
+    );
+}
+document.dispatchEvent(new CustomEvent('mlbb-data-updated'));
+document.dispatchEvent(new CustomEvent('mlbb-data-loaded'));
 
                 try { localStorage.setItem(STORAGE_KEY, JSON.stringify(datosNube)); } catch (e) {}
+		
+
                 if (datosNube.portfolioData) Object.assign(portfolioData, datosNube.portfolioData);
 if (datosNube.portfolioSheets && Array.isArray(datosNube.portfolioSheets)) {
     portfolioSheets = datosNube.portfolioSheets;
@@ -5639,7 +6538,6 @@ window.__categoriaPorHoja = datosNube.categoriasPorHoja || {};
     } catch (e) {
         console.error("Error leyendo Firebase:", e);
     }
-    if (onloadOriginal) onloadOriginal();
 };
 // ==========================================
 // COLORES PERSONALIZADOS PARA FAV, LIKE Y DISLIKE
@@ -5963,39 +6861,55 @@ function obtenerHojaActivaData() {
     return portfolioSheets[idxHoja].data;
 }
 
-// Conectar renderModule para que lea los datos de la hoja activa (#2, #3, #4...)
 renderModule = function() {
     const sheetData = obtenerHojaActivaData();
-    const data = sheetData[currentCategory];
+    const data = sheetData?.[currentCategory];
     if (!data) return;
+
+    const topPhotos = Array.isArray(data.topPhotos) ? data.topPhotos : [];
+    const bottomPhotos = Array.isArray(data.bottomPhotos) ? data.bottomPhotos : [];
+
+    if (!topPhotos[topPhotoIndex]) topPhotoIndex = 0;
+    if (!bottomPhotos[bottomPhotoIndex]) bottomPhotoIndex = 0;
+
+    const topPhoto = topPhotos[topPhotoIndex] || topPhotos.find(Boolean) || {
+        title: 'Portafolio',
+        bg: 'linear-gradient(135deg, #09090b, #27272a, #3f3f46)'
+    };
+
+    const bottomPhoto = bottomPhotos[bottomPhotoIndex] || bottomPhotos.find(Boolean) || {
+        title: 'Portafolio',
+        bg: 'linear-gradient(135deg, #09090b, #27272a, #3f3f46)'
+    };
 
     const topTag = document.getElementById('top-tag');
     const topTitle = document.getElementById('top-title');
     const topCounter = document.getElementById('top-counter');
     const colorTop = document.getElementById('edit-color-top-title')?.value;
-    if (topTag) topTag.textContent = data.tag;
+
+    if (topTag) topTag.textContent = data.tag || '';
     if (topTitle) {
-        topTitle.textContent = data.topPhotos[topPhotoIndex].title;
+        topTitle.textContent = topPhoto.title || '';
         if (colorTop) topTitle.style.color = colorTop;
     }
-    if (topCounter) topCounter.textContent = `${topPhotoIndex + 1} / ${MAX_PHOTOS}`;
-    if (bgTopLayer) bgTopLayer.style.background = data.topPhotos[topPhotoIndex].bg;
+    if (topCounter) topCounter.textContent = `${topPhotoIndex + 1} / ${Math.max(topPhotos.length, 1)}`;
+    if (bgTopLayer) bgTopLayer.style.background = topPhoto.bg || '#18181b';
 
     const bottomTag = document.getElementById('bottom-tag');
     const bottomTitle = document.getElementById('bottom-title');
     const bottomCounter = document.getElementById('bottom-counter');
     const colorBottom = document.getElementById('edit-color-bottom-title')?.value;
-    if (bottomTag) bottomTag.textContent = data.tag;
+
+    if (bottomTag) bottomTag.textContent = data.tag || '';
     if (bottomTitle) {
-        bottomTitle.textContent = data.bottomPhotos[bottomPhotoIndex].title;
+        bottomTitle.textContent = bottomPhoto.title || '';
         if (colorBottom) bottomTitle.style.color = colorBottom;
     }
-    if (bottomCounter) bottomCounter.textContent = `${bottomPhotoIndex + 1} / ${MAX_PHOTOS}`;
-    if (bgBottomLayer) bgBottomLayer.style.background = data.bottomPhotos[bottomPhotoIndex].bg;
+    if (bottomCounter) bottomCounter.textContent = `${bottomPhotoIndex + 1} / ${Math.max(bottomPhotos.length, 1)}`;
+    if (bgBottomLayer) bgBottomLayer.style.background = bottomPhoto.bg || '#18181b';
 
     if (typeof aplicarAcentoGlobal === 'function') aplicarAcentoGlobal();
 };
-
 // Conectar Lightbox para abrir las fotos de la hoja activa
 updateLightboxView = function() {
     const sheetData = obtenerHojaActivaData();
@@ -7516,7 +8430,9 @@ document.addEventListener('input', function(e) {
             ? portfolioSheets[idxHoja].data
             : portfolioData;
 
-        const data = fuente[currentCategory];
+        if (!fuente || typeof fuente !== 'object') return [];
+
+const data = fuente[currentCategory];
         const lista = (data && Array.isArray(data[tipo])) ? data[tipo] : [];
         if (lista.length === 0) return [];
 
@@ -7566,7 +8482,9 @@ document.addEventListener('input', function(e) {
 
         const topList = obtenerListaFiltradaP8('topPhotos');
         if (topList.length > 0) {
-            if (topPhotoIndex >= topList.length) topPhotoIndex = 0;
+            if (!Number.isInteger(topPhotoIndex) || topPhotoIndex < 0 || topPhotoIndex >= topList.length) {
+    topPhotoIndex = 0;
+}
             if (document.getElementById('top-title')) document.getElementById('top-title').textContent = topList[topPhotoIndex].title;
             if (document.getElementById('top-counter')) document.getElementById('top-counter').textContent = `${topPhotoIndex + 1} / ${topList.length}`;
             if (document.getElementById('bg-top-layer')) document.getElementById('bg-top-layer').style.background = topList[topPhotoIndex].bg;
@@ -7574,7 +8492,9 @@ document.addEventListener('input', function(e) {
 
         const botList = obtenerListaFiltradaP8('bottomPhotos');
         if (botList.length > 0) {
-            if (bottomPhotoIndex >= botList.length) bottomPhotoIndex = 0;
+            if (!Number.isInteger(bottomPhotoIndex) || bottomPhotoIndex < 0 || bottomPhotoIndex >= botList.length) {
+    bottomPhotoIndex = 0;
+}
             if (document.getElementById('bottom-title')) document.getElementById('bottom-title').textContent = botList[bottomPhotoIndex].title;
             if (document.getElementById('bottom-counter')) document.getElementById('bottom-counter').textContent = `${bottomPhotoIndex + 1} / ${botList.length}`;
             if (document.getElementById('bg-bottom-layer')) document.getElementById('bg-bottom-layer').style.background = botList[bottomPhotoIndex].bg;
@@ -7601,7 +8521,16 @@ document.addEventListener('input', function(e) {
         if (total === 0) return;
 
         let actualIdx = activeLightboxPosition === 'top' ? topPhotoIndex : bottomPhotoIndex;
-        if (actualIdx >= total) actualIdx = 0;
+
+if (!Number.isInteger(actualIdx) || actualIdx < 0 || actualIdx >= total) {
+    actualIdx = 0;
+
+    if (activeLightboxPosition === 'top') {
+        topPhotoIndex = 0;
+    } else {
+        bottomPhotoIndex = 0;
+    }
+}
 
         const prevIdx = (actualIdx - 1 + total) % total;
         const nextIdx = (actualIdx + 1) % total;
@@ -7974,6 +8903,269 @@ document.addEventListener('input', function(e) {
     const estiloMovilPro = document.createElement('style');
     estiloMovilPro.textContent = `
         @media (max-width: 1279px) {
+            /* ===== AJUSTES INTERNOS MLBB PARA MÓVIL ===== */
+
+            /* Información principal */
+            #right-fixed-module .mlbb-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px 12px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+           /* Estadísticas: cinco columnas en una sola fila */
+#right-fixed-module .mlbb-stats {
+    width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    margin-bottom: 12px;
+}
+
+#right-fixed-module .stat-item {
+    min-width: 0;
+    padding: 0;
+}
+
+#right-fixed-module .stat-value {
+    font-size: clamp(9px, 2.7vw, 12px);
+    letter-spacing: 0;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+
+#right-fixed-module .stat-label {
+    font-size: clamp(6px, 1.9vw, 8px);
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+            #right-fixed-module .stat-item {
+                min-width: 0;
+                padding: 0 1px;
+            }
+
+            #right-fixed-module .stat-value {
+                font-size: clamp(9px, 2.7vw, 12px);
+                letter-spacing: 0;
+                white-space: nowrap;
+            }
+
+            #right-fixed-module .stat-label {
+                font-size: clamp(6px, 1.9vw, 8px);
+                letter-spacing: 0;
+                white-space: nowrap;
+            }
+
+            /* Habilidades: siempre en una sola línea */
+            #right-fixed-module .mlbb-skills {
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: clamp(3px, 1.5vw, 8px);
+                margin-bottom: 18px;
+            }
+
+            #right-fixed-module .skill-circle {
+    width: auto;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 36px;
+}
+
+           /* ===== MODAL DE HABILIDADES: COMPOSICIÓN COMPACTA MÓVIL ===== */
+
+#right-fixed-module .skill-modal {
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 24px 12px 10px;
+    gap: 0;
+}
+
+#right-fixed-module .skill-modal.is-open {
+    overflow: hidden;
+}
+
+#right-fixed-module .modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    align-self: auto;
+    flex-shrink: 0;
+    z-index: 5;
+}
+
+/* Cita decorativa */
+#right-fixed-module .modal-quote-icon {
+    width: 16px;
+    height: 13px;
+    margin: 0 0 4px;
+    flex-shrink: 0;
+}
+
+#right-fixed-module .modal-hero-quote {
+    font-size: 8px;
+    line-height: 1.25;
+    letter-spacing: 0.6px;
+    margin-bottom: 7px;
+}
+
+/* Icono de habilidad */
+#right-fixed-module .modal-skill-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+/* Nombre y etiqueta */
+#right-fixed-module .modal-skill-title {
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+#right-fixed-module .modal-skill-tag {
+    font-size: 7px;
+    padding: 2px 7px;
+    margin-bottom: 6px;
+}
+
+/* Separadores */
+#right-fixed-module .modal-divider {
+    width: 82%;
+    margin: 3px auto 5px;
+    flex-shrink: 0;
+}
+
+/* Descripción */
+#right-fixed-module .modal-skill-desc {
+    font-size: 7.5px;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    flex-shrink: 1;
+}
+
+/* Prioridad */
+#right-fixed-module .modal-priority-title {
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    flex-shrink: 0;
+}
+
+#right-fixed-module .modal-priority-desc {
+    font-size: 7.5px;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+/* Pie de ventana */
+#right-fixed-module .modal-footer {
+    flex-shrink: 1;
+    margin-top: 5px;
+    padding-bottom: 2px;
+    gap: 5px;
+}
+
+            /* Ventana móvil de la tarjeta completa MLBB */
+            #backdrop-heroes-mlbb-movil {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.82);
+                z-index: 10000;
+            }
+
+            #backdrop-heroes-mlbb-movil.activo {
+                display: block;
+            }
+
+            #right-fixed-module.abierto-mlbb-movil {
+                display: flex !important;
+                position: fixed !important;
+                inset: 0 !important;
+                width: 100vw !important;
+                height: 100dvh !important;
+                max-height: none !important;
+                transform: none !important;
+                z-index: 10001 !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: transparent !important;
+                overflow: visible !important;
+                pointer-events: none;
+            }
+
+            #right-fixed-module.abierto-mlbb-movil .mlbb-outer-frame {
+                width: min(310px, calc(92vw - 16px), calc(82vh * 310 / 515));
+                height: auto;
+                aspect-ratio: 310 / 515;
+                flex-shrink: 1;
+                pointer-events: auto;
+            }
+/* ===== COMPACTACIÓN VERTICAL MLBB MÓVIL ===== */
+
+#right-fixed-module .mlbb-role-icons {
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+#right-fixed-module .mlbb-hero-name {
+    font-size: clamp(16px, 5vw, 20px);
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+}
+
+#right-fixed-module .mlbb-hero-role {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+#right-fixed-module .mlbb-player-id {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#right-fixed-module .mlbb-skills {
+    margin-bottom: 10px;
+}
+
+#right-fixed-module .mlbb-footer-label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    vertical-align: middle;
+}
+
+#right-fixed-module .mlbb-favorites-icon {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
             /* 1. Evitar que los iconos de redes sociales choquen con el avatar en móvil */
             #banner-container > div.bottom-3.right-4 {
                 top: 14px !important;
@@ -8038,6 +9230,15 @@ document.addEventListener('input', function(e) {
                 touch-action: pan-y;
             }
 
+/* Ocultar Portafolio lateral en móvil, salvo cuando se abra */
+#left-fixed-module:not(.abierto-movil) {
+    display: none !important;
+}
+
+#left-fixed-module.abierto-movil {
+    display: flex !important;
+}
+
             /* Ocultar flechas de cambio de hoja en móvil para priorizar el deslizamiento táctil */
             #left-fixed-module.abierto-movil #left-module-next-btn-cover,
             #left-fixed-module.abierto-movil #left-module-prev-btn,
@@ -8069,6 +9270,7 @@ document.addEventListener('input', function(e) {
     function inicializarExperienciaMovil() {
         const modulo = document.getElementById('left-fixed-module');
         if (!modulo) return;
+        const moduloHeroes = document.getElementById('right-fixed-module');
 
         // 1. Crear fondo oscuro (Backdrop)
         let backdrop = document.getElementById('backdrop-portafolio-movil');
@@ -8076,6 +9278,15 @@ document.addEventListener('input', function(e) {
             backdrop = document.createElement('div');
             backdrop.id = 'backdrop-portafolio-movil';
             document.body.appendChild(backdrop);
+        }
+
+        // Fondo oscuro exclusivo para la tarjeta MLBB
+        let backdropHeroes = document.getElementById('backdrop-heroes-mlbb-movil');
+
+        if (!backdropHeroes) {
+            backdropHeroes = document.createElement('div');
+            backdropHeroes.id = 'backdrop-heroes-mlbb-movil';
+            document.body.appendChild(backdropHeroes);
         }
 
         // 2. Ubicar el botón estratégicamente justo debajo de la frase de estado en la tarjeta de perfil
@@ -8094,6 +9305,39 @@ document.addEventListener('input', function(e) {
             }
         }
 
+        // Crear botón móvil para abrir la tarjeta completa de héroes MLBB
+        let btnHeroes = document.getElementById('btn-toggle-heroes-mlbb-movil');
+
+        if (!btnHeroes) {
+            btnHeroes = document.createElement('button');
+            btnHeroes.id = 'btn-toggle-heroes-mlbb-movil';
+            btnHeroes.type = 'button';
+            btnHeroes.innerHTML = '<i class="fa-solid fa-gamepad"></i><span>HÉROES MLBB</span>';
+
+            btnHeroes.className = 'inline-flex xl:hidden items-center justify-center gap-2 mt-2 px-5 py-2 rounded-full text-white text-[10px] font-extrabold tracking-[0.18em] uppercase cursor-pointer';
+
+            btnHeroes.style.backgroundColor = 'rgba(168, 85, 247, 0.16)';
+            btnHeroes.style.border = '1px solid rgba(168, 85, 247, 0.45)';
+
+            btn.insertAdjacentElement('afterend', btnHeroes);
+        }
+
+        // Abrir y cerrar la tarjeta MLBB en móvil
+        if (moduloHeroes) {
+            const alternarModalHeroes = () => {
+                const abierto = moduloHeroes.classList.toggle('abierto-mlbb-movil');
+                backdropHeroes.classList.toggle('activo', abierto);
+            };
+
+            btnHeroes.onclick = alternarModalHeroes;
+
+            backdropHeroes.onclick = () => {
+                moduloHeroes.classList.remove('abierto-mlbb-movil');
+                backdropHeroes.classList.remove('activo');
+            };
+        }
+
+
         // Sincronizar color del botón con el color de acento del usuario
         const sincronizarColorBoton = () => {
             const accent = document.getElementById('edit-accent-color-hex')?.value || '#a855f7';
@@ -8102,6 +9346,7 @@ document.addEventListener('input', function(e) {
             const icono = btn.querySelector('i');
             if (icono) icono.style.color = accent;
         };
+
         sincronizarColorBoton();
         setTimeout(sincronizarColorBoton, 1000);
 
@@ -8399,7 +9644,7 @@ document.addEventListener('input', function(e) {
     // 2. Información de seguridad y acceso del cliente
 window.addEventListener('load', () => {
     setTimeout(() => {
-        const tabPub = document.getElementById('cfg-tab-publicidad');
+        const tabPub = document.getElementById('cfg-tab-visual');
 
         if (tabPub && !document.getElementById('saas-pin-box')) {
             const box = document.createElement('div');
@@ -8513,7 +9758,7 @@ window.addEventListener('load', () => {
     function aplicarAcordeonesShopify() {
         const btnSeg = document.getElementById('btn-cfg-publicidad');
         if (btnSeg && btnSeg.textContent.trim().toLowerCase() === 'publicidad') {
-            btnSeg.textContent = 'Seguridad';
+            btnSeg.textContent = 'Tarjeta MLBB';
         }
 
         ['cfg-tab-visual', 'cfg-tab-contenido', 'cfg-tab-portafolio', 'cfg-tab-publicidad'].forEach(tabId => {
@@ -9921,6 +11166,1345 @@ prevLeftModuleSlide = function() {
 };
 
 </script>
-<!-- FIN FIREBASE SDK -->
+<!-- ... existing code -->
+<script>
+<!-- ================= JAVASCRIPT MÓDULO MLBB ================= -->
+ const heroesData = [
+      // TARJETA 1: RAFAELA
+      {
+        name: "RAFAELA",
+        role: "Support",
+        quote: "An angel loved and respected by the people of this world.",
+        priority: "Upgrade Skill 1 at Level 1 and prioritize upgrading Skill 1 with Skill 2 as backup. Upgrade the Ultimate whenever it is available.",
+        playerId: "D0nk ID. 1045652860 (5326)",
+        winRate: "64.9%",
+        pickRate: "0.75%",
+        banRate: "9.95%",
+        matches: "94",
+        power: "3620",
+        bg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 380'><defs><radialGradient id='sky' cx='50%25' cy='30%25' r='70%25'><stop offset='0%25' stop-color='%23fff6d6'/><stop offset='40%25' stop-color='%23e8c598'/><stop offset='75%25' stop-color='%239b7e86'/><stop offset='100%25' stop-color='%23433b47'/></radialGradient><linearGradient id='wings' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23ffdf85'/><stop offset='100%25' stop-color='%23c47f27'/></linearGradient></defs><rect width='300' height='380' fill='url(%23sky)'/><circle cx='150' cy='105' r='68' fill='%23ffffff' opacity='0.45'/><path d='M150 155 C90 120, 20 85, 0 110 C25 160, 75 190, 145 195 Z' fill='url(%23wings)' opacity='0.85'/><path d='M150 155 C210 120, 280 85, 300 110 C275 160, 225 190, 155 195 Z' fill='url(%23wings)' opacity='0.85'/><path d='M120 42 L135 28 L150 38 L165 28 L180 42 L172 52 L128 52 Z' fill='%23e5a93c'/><circle cx='150' cy='92' r='34' fill='%23f7d8c6'/><path d='M112 95 C112 48, 188 48, 188 95 C195 145, 205 185, 190 210 C175 170, 175 120, 150 115 C125 120, 125 170, 110 210 C95 185, 105 145, 112 95 Z' fill='%23e9cfb8'/><path d='M105 165 Q150 135 195 165 L215 320 L85 320 Z' fill='%23d7e3ee'/><polygon points='150,152 162,166 150,180 138,166' fill='%232c8a8a'/></svg>",
+                assignedLineIcon: `<svg viewBox="0 0 24 24" aria-label="Roaming"><path d="M4 4h11l-3 3H7v4l-3 3V4zm16 16H9l3-3h5v-4l3-3v10zM9.5 12.5l5-5 1.5 1.5-5 5-1.5-1.5z"/></svg>`,
 
-<!-- ... existing code --></body></html>
+        heroRoleIcon: `<svg viewBox="0 0 24 24" aria-label="Support"><path d="M12 2L9.5 7H14.5L12 2ZM12 22L14.5 17H9.5L12 22ZM2 12L7 14.5V9.5L2 12ZM22 12L17 9.5V14.5L22 12ZM10.5 10.5H13.5V13.5H10.5V10.5Z"/></svg>`,
+        skills: [
+          {
+            title: "DIVINE<br>RESURRECTION",
+            tag: "Buff",
+            desc: "Rafaela can cast a special skill every 10s. After channeling for 2.5s, she instantly resurrects an ally and increases their Movement Speed by 30% for 5s (taking damage from heroes and Legend Creeps interrupts channeling and puts the skill on base cooldown).",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#c96e22"/><path d="M25 36 C16 32 10 22 12 14 C18 20 22 25 25 28 C28 25 32 20 38 14 C40 22 34 32 25 36 Z" fill="#fffbe0"/></svg>`
+          },
+          {
+            title: "LIGHT OF<br>RETRIBUTION",
+            tag: "Damage",
+            desc: "Rafaela strikes the 3 nearest enemies with Holy Light, dealing Magic Damage, briefly revealing their positions, and slowing them by 40% for 1.5s.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#a84c18"/><polygon points="25,8 28,20 40,23 28,26 25,38 22,26 10,23 22,20" fill="#fff9d2"/></svg>`
+          },
+          {
+            title: "HOLY<br>HEALING",
+            tag: "Heal",
+            desc: "Rafaela summons Holy Light to restore HP to herself and the most injured nearby ally, while increasing nearby allies' Movement Speed by 50% for 1.5s.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#d98726"/><rect x="21" y="6" width="8" height="38" fill="#fffce3"/><ellipse cx="25" cy="36" rx="14" ry="6" fill="none" stroke="#fff6bf" stroke-width="2.5"/></svg>`
+          },
+          {
+            title: "HOLY<br>BAPTISM",
+            tag: "CC",
+            desc: "Rafaela unleashes the true power of Holy Light in the target direction, dealing Magic Damage to enemies in a line and stunning them for 1.2s.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#8f3614"/><polygon points="14,8 44,24 34,42 14,8" fill="#fff3b8"/></svg>`
+          }
+        ]
+      },
+
+      
+      // TARJETA 2: ALUCARD
+      {
+        name: "ALUCARD",
+        role: "Fighter / Assassin",
+        quote: "Nothing lasts forever. We can change the future.",
+        priority: "Prioritize Groundsplitter (Skill 1) for mobility and damage. Upgrade Whirling Smash (Skill 2) next. Upgrade Fission Wave whenever available.",
+        playerId: "D0nk ID. 1045652860 (5326)",
+        winRate: "—",
+        pickRate: "—",
+        banRate: "—",
+        matches: "—",
+        power: "—",
+        bg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 380'><defs><radialGradient id='a' cx='50%25' cy='25%25' r='75%25'><stop offset='0%25' stop-color='%23d99b68'/><stop offset='45%25' stop-color='%237c342b'/><stop offset='100%25' stop-color='%231b1118'/></radialGradient></defs><rect width='300' height='380' fill='url(%23a)'/><circle cx='150' cy='115' r='90' fill='%23e7a76c' opacity='.12'/><path d='M35 320 L150 75 L265 320 Z' fill='%232b171c' opacity='.6'/><path d='M150 40 L158 180 L150 220 L142 180 Z' fill='%23f3c18b' opacity='.6'/></svg>",
+
+                  assignedLineIcon: `<svg viewBox="0 0 24 24" aria-label="Jungle"><path d="M12 2C8 7 6 11 6 15a6 6 0 0 0 12 0c0-4-2-8-6-13zm0 16a3 3 0 0 1-3-3c0-2 1-4 3-7 2 3 3 5 3 7a3 3 0 0 1-3 3z"/></svg>`,
+
+        heroRoleIcon: `<svg viewBox="0 0 24 24" aria-label="Assassin"><path d="M19.5 3.5L14 5L5 14L3.5 19.5L9 18L18 9L19.5 3.5ZM8.5 16.5L6.5 14.5L14.5 6.5L16.5 8.5L8.5 16.5Z"/></svg>`,
+        skills: [
+          {
+            title: "PURSUIT",
+            tag: "Passive",
+            desc: "After casting a skill, Alucard's next Basic Attack lets him dash toward the target and deal additional Physical Damage. This passive helps him chase enemies and maintain pressure.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#713c2b"/><path d="M8 34L22 20L18 20L35 7L29 24L26 20L12 42Z" fill="#ffe0a5"/></svg>`
+          },
+          {
+            title: "GROUNDSPLITTER",
+            tag: "Mobility / Damage",
+            desc: "Alucard leaps toward the target location and slams his blade into the ground, dealing Physical Damage to enemies hit and slowing them.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#8d492b"/><path d="M25 6L30 22L43 28L28 30L20 44L20 28L7 21L22 20Z" fill="#ffe0a5"/></svg>`
+          },
+          {
+            title: "WHIRLING SMASH",
+            tag: "AOE / Damage",
+            desc: "Alucard performs a powerful spinning slash, dealing Physical Damage to nearby enemies.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#693525"/><path d="M25 7A18 18 0 1 1 8 20" fill="none" stroke="#ffe0a5" stroke-width="4" stroke-linecap="round"/><path d="M7 10L8 23L20 18Z" fill="#ffe0a5"/></svg>`
+          },
+          {
+            title: "FISSION WAVE",
+            tag: "Ultimate / Burst",
+            desc: "Passive: Alucard gains additional Hybrid Lifesteal. Active: he absorbs energy from enemies in the target area, reducing their Movement Speed and Hybrid Defense. He can then release a powerful shockwave in the target direction.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#51251f"/><circle cx="25" cy="25" r="16" fill="none" stroke="#ffe0a5" stroke-width="3"/><path d="M25 5L29 21L45 25L29 29L25 45L21 29L5 25L21 21Z" fill="#ffe0a5"/></svg>`
+          }
+        ]
+      },
+
+      // TARJETA 3: SUN
+      {
+        name: "SUN",
+        role: "Fighter",
+        quote: "No one can tell what's false and what's real.",
+        priority: "Prioritize Endless Variety and Swift Exchange together, as they share their upgrade and cooldown. Upgrade Instantaneous Move for additional damage and mobility. Upgrade Clone Techniques whenever available.",
+        playerId: "D0nk ID. 1045652860 (5326)",
+        winRate: "—",
+        pickRate: "—",
+        banRate: "—",
+        matches: "—",
+        power: "—",
+        bg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 380'><defs><radialGradient id='s' cx='50%25' cy='25%25' r='75%25'><stop offset='0%25' stop-color='%23e8c27d'/><stop offset='45%25' stop-color='%238d642d'/><stop offset='100%25' stop-color='%23251d18'/></radialGradient></defs><rect width='300' height='380' fill='url(%23s)'/><circle cx='150' cy='110' r='88' fill='%23ffe4a1' opacity='.16'/><path d='M0 300L95 145L150 235L220 125L300 300Z' fill='%233b3524' opacity='.75'/><path d='M150 30L155 180L150 260L145 180Z' fill='%23ffe0a0' opacity='.5'/></svg>",
+                assignedLineIcon: `<svg viewBox="0 0 24 24" aria-label="EXP Lane"><path d="M3 19L12 3L21 19H3ZM12 9L8 17H16L12 9Z"/></svg>`,
+
+        heroRoleIcon: `<svg viewBox="0 0 24 24" aria-label="Fighter"><path d="M12 2L14.5 8.5L22 12L14.5 15.5L12 22L9.5 15.5L2 12L9.5 8.5Z"/></svg>`,
+        skills: [
+          {
+            title: "SIMIAN GOD",
+            tag: "Passive",
+            desc: "Sun and his Doppelgangers reduce the Physical Defense of enemies they hit. Sun also recovers HP when his Doppelgangers deal damage. His basic attacks deal additional damage to Creeps.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#80602b"/><circle cx="25" cy="25" r="15" fill="none" stroke="#ffe5a1" stroke-width="3"/><circle cx="25" cy="25" r="5" fill="#ffe5a1"/></svg>`
+          },
+          {
+            title: "ENDLESS VARIETY",
+            tag: "Summon / Damage",
+            desc: "Sun throws his Golden Staff in the target direction, dealing Physical Damage to enemies along its path. The staff transforms into a Doppelganger when it hits an enemy hero or Creep, or reaches its maximum range.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#99702e"/><path d="M8 36L37 7L42 12L13 41Z" fill="#ffe5a1"/><circle cx="36" cy="13" r="5" fill="#fff1c9"/></svg>`
+          },
+          {
+            title: "SWIFT EXCHANGE",
+            tag: "Mobility / Summon",
+            desc: "Sun throws his Golden Staff forward and creates a Doppelganger at his original location. He conceals himself and moves along with the staff. This skill shares its cooldown and upgrade progression with Endless Variety.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#745124"/><path d="M7 25H37M28 15L39 25L28 35" fill="none" stroke="#ffe5a1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="25" r="5" fill="#fff1c9"/></svg>`
+          },
+          {
+            title: "INSTANTANEOUS MOVE",
+            tag: "Burst / Mobility",
+            desc: "Sun commands his Doppelgangers to attack the target enemy together with him, dealing Physical Damage and slowing the target and enemies behind it.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#65451f"/><path d="M7 33L19 21L25 27L43 9M32 9H43V20" fill="none" stroke="#ffe5a1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+          },
+          {
+            title: "CLONE TECHNIQUES",
+            tag: "Ultimate / Summon",
+            desc: "Sun summons a powerful Doppelganger that fights alongside him for a limited time. The clone inherits a portion of Sun's attributes and can deal damage to enemies.",
+            icon: `<svg viewBox="0 0 50 50"><rect width="50" height="50" fill="#49321c"/><circle cx="18" cy="22" r="9" fill="none" stroke="#ffe5a1" stroke-width="3"/><circle cx="32" cy="28" r="9" fill="none" stroke="#ffe5a1" stroke-width="3"/><path d="M18 13L18 31M32 19L32 37" stroke="#fff1c9" stroke-width="2"/></svg>`
+          }
+        ]
+      }
+    ];
+
+
+
+(() => {
+    const root = document.getElementById('right-fixed-module');
+    if (!root || !Array.isArray(heroesData) || !heroesData.length) return;
+
+    let currentHeroIndex = 0;
+let isAnimating = false;
+let currentModalSkillIndex = 0;
+
+    const $ = (id) => root.querySelector(`#${id}`);
+
+    const dotsContainer = root.querySelector('.mlbb-dots');
+    const heroBg = $('mlbb-hero-bg');
+    const heroContent = $('mlbb-hero-content');
+    const heroIcons = $('mlbb-hero-icons');
+    const heroName = $('mlbb-hero-name');
+    const heroRole = $('mlbb-hero-role');
+    const playerId = $('mlbb-player-id');
+
+    const statWin = $('mlbb-stat-win');
+    const statPick = $('mlbb-stat-pick');
+    const statBan = $('mlbb-stat-ban');
+    const statMatches = $('mlbb-stat-matches');
+    const statPower = $('mlbb-stat-power');
+
+    const heroSkills = $('mlbb-hero-skills');
+    const skillModal = $('mlbb-skill-modal');
+    const closeModalBtn = $('mlbb-close-modal');
+
+    const modalQuote = $('mlbb-modal-quote');
+    const modalSkillIcon = $('mlbb-modal-skill-icon');
+    const modalSkillTitle = $('mlbb-modal-skill-title');
+    const modalSkillTag = $('mlbb-modal-skill-tag');
+    const modalSkillDesc = $('mlbb-modal-skill-desc');
+    const modalPriorityDesc = $('mlbb-modal-priority-desc');
+const modalPriorityTitle = document.querySelector('.modal-priority-title');
+    const modalDots = $('mlbb-modal-dots');
+
+    const elementos = [
+        heroBg, heroContent, heroIcons, heroName, heroRole,
+        playerId, statWin, statPick, statBan, statMatches,
+        statPower, heroSkills, skillModal, closeModalBtn,
+        modalQuote, modalSkillIcon, modalSkillTitle,
+        modalSkillTag, modalSkillDesc, modalPriorityDesc,
+        modalDots
+    ];
+
+    if (elementos.some(elemento => !elemento)) {
+        console.error('MLBB: falta uno o más elementos HTML del módulo.');
+        return;
+    }
+
+    function updateHeroDots() {
+        if (!dotsContainer) return;
+
+        dotsContainer.innerHTML = '';
+
+        dotsContainer.setAttribute(
+            'aria-label',
+            `${heroesData.length} Héroes favoritos`
+        );
+
+        heroesData.forEach((hero, index) => {
+            const dot = document.createElement('button');
+
+            dot.type = 'button';
+            dot.className =
+                'mlbb-dot' + (index === currentHeroIndex ? ' active' : '');
+
+            dot.dataset.index = index;
+
+            dot.setAttribute(
+                'aria-label',
+                hero.name || `Héroe ${index + 1}`
+            );
+
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute(
+                'aria-selected',
+                index === currentHeroIndex ? 'true' : 'false'
+            );
+
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+
+    function renderHero(index, animate = true) {
+    if ((isAnimating && animate) || !heroesData[index]) return;
+
+    const hero = heroesData[index];
+
+    if (!animate) {
+        currentHeroIndex = index;
+        applyData(hero);
+        updateHeroDots();
+        return;
+    }
+
+    isAnimating = true;
+
+    const directionClass = index > currentHeroIndex
+        ? 'slide-out-left'
+        : 'slide-out-right';
+
+    heroBg.classList.add('is-changing');
+    heroContent.classList.add(directionClass);
+
+    setTimeout(() => {
+        applyData(hero);
+
+        heroContent.classList.remove(directionClass);
+        heroBg.classList.remove('is-changing');
+
+        currentHeroIndex = index;
+        updateHeroDots();
+
+        isAnimating = false;
+    }, 240);
+}
+
+function prepararEdicionInline(elemento, clave) {
+    if (!elemento || elemento.dataset.inlineEditReady) return;
+
+    elemento.dataset.inlineEditReady = 'true';
+
+    const wrapper = document.createElement('span');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+
+    elemento.parentNode.insertBefore(wrapper, elemento);
+    wrapper.appendChild(elemento);
+
+    const pluma = document.createElement('button');
+    pluma.type = 'button';
+    pluma.className = 'mlbb-inline-edit';
+    pluma.innerHTML = '<i class="fa-solid fa-feather"></i>';
+    pluma.title = 'Editar texto';
+
+    wrapper.appendChild(pluma);
+
+pluma.addEventListener('click', (e) => {
+if (!document.body.classList.contains('mlbb-edit-mode')) return;
+
+    e.stopPropagation();
+
+    elemento.contentEditable = 'true';
+    elemento.focus();
+
+    elemento.style.outline = '1px dashed rgba(255,255,255,0.5)';
+});
+
+function prepararEdicionModal(elemento, clave, esSkill = false, guardarHTML = false) {
+    if (!elemento || elemento.dataset.inlineEditReady) return;
+
+    elemento.dataset.inlineEditReady = 'true';
+
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+    wrapper.style.maxWidth = '100%';
+
+    elemento.parentNode.insertBefore(wrapper, elemento);
+    wrapper.appendChild(elemento);
+
+    const pluma = document.createElement('button');
+    pluma.type = 'button';
+    pluma.className = 'mlbb-inline-edit';
+    pluma.innerHTML = '<i class="fa-solid fa-feather"></i>';
+    pluma.title = 'Editar texto';
+
+    wrapper.appendChild(pluma);
+
+    pluma.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('mlbb-edit-mode')) return;
+
+        e.stopPropagation();
+
+        elemento.contentEditable = 'true';
+        elemento.focus();
+
+        elemento.style.outline = '1px dashed rgba(255,255,255,0.5)';
+    });
+
+    elemento.addEventListener('blur', () => {
+        if (!elemento.isContentEditable) return;
+
+        elemento.contentEditable = 'false';
+        elemento.style.outline = '';
+
+        const heroActivo = heroesData[currentHeroIndex];
+
+        if (!heroActivo) return;
+
+        const valor = guardarHTML
+            ? elemento.innerHTML.trim()
+            : elemento.textContent.trim();
+
+        if (esSkill) {
+            const skillActiva = heroActivo.skills[currentModalSkillIndex];
+
+            if (skillActiva) {
+                skillActiva[clave] = valor;
+            }
+        } else {
+            heroActivo[clave] = valor;
+        }
+
+               notifyCard();
+        saveProfileToLocalStorage();
+    });
+}
+
+elemento.addEventListener('blur', () => {
+    if (!elemento.isContentEditable) return;
+
+    elemento.contentEditable = 'false';
+    elemento.style.outline = '';
+
+    const heroActivo = heroesData[currentHeroIndex];
+
+    if (heroActivo) {
+        heroActivo[clave] = elemento.textContent.trim();
+        notifyCard();
+    }
+});
+
+elemento.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        elemento.blur();
+    }
+
+    if (e.key === 'Escape') {
+        elemento.contentEditable = 'false';
+        elemento.style.outline = '';
+        applyData(heroesData[currentHeroIndex]);
+    }
+});
+
+}
+
+function prepararEdicionModal(elemento, clave, tipo) {
+    if (!elemento || elemento.dataset.inlineEditReady) return;
+
+    elemento.dataset.inlineEditReady = 'true';
+
+    const wrapper = document.createElement('span');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+
+    elemento.parentNode.insertBefore(wrapper, elemento);
+    wrapper.appendChild(elemento);
+
+    const pluma = document.createElement('button');
+    pluma.type = 'button';
+    pluma.className = 'mlbb-inline-edit';
+    pluma.innerHTML = '<i class="fa-solid fa-feather"></i>';
+    pluma.title = 'Editar texto';
+
+    wrapper.appendChild(pluma);
+
+    let contenidoOriginal = '';
+
+    pluma.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('mlbb-edit-mode')) return;
+
+        e.stopPropagation();
+
+        contenidoOriginal = elemento.innerHTML;
+
+        elemento.contentEditable = 'true';
+        elemento.focus();
+
+        elemento.style.outline = '1px dashed rgba(255,255,255,0.5)';
+    });
+
+    elemento.addEventListener('blur', () => {
+        if (!elemento.isContentEditable) return;
+
+        elemento.contentEditable = 'false';
+        elemento.style.outline = '';
+
+        const heroActivo = heroesData[currentHeroIndex];
+
+        if (!heroActivo) return;
+
+        if (clave === 'priority' || clave === 'priorityTitle' || clave === 'quote' || tipo === 'hero') {
+    // Skills priority y su título pertenecen al héroe.
+    heroActivo[clave] = elemento.textContent.trim();
+} else {
+    const skillActiva = heroActivo.skills[currentModalSkillIndex];
+
+    if (skillActiva) {
+        skillActiva[clave] = clave === 'title'
+            ? elemento.innerHTML.trim()
+            : elemento.textContent.trim();
+    }
+}
+
+        notifyCard();
+    });
+
+    elemento.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && clave !== 'title') {
+            e.preventDefault();
+            elemento.blur();
+        }
+
+        if (e.key === 'Escape') {
+            elemento.contentEditable = 'false';
+            elemento.style.outline = '';
+            elemento.innerHTML = contenidoOriginal;
+        }
+    });
+}
+
+    function applyData(hero) {
+    // ==========================================
+    // FONDO E ICONOS DE ROL
+    // ==========================================
+
+    heroBg.src = hero.bg || '';
+
+    heroIcons.innerHTML = '';
+
+    const roleIcons = Array.isArray(hero.heroRoleIcons)
+    ? hero.heroRoleIcons
+    : [hero.heroRoleIcon || ''];
+
+const allHeroIcons = [
+    hero.assignedLineIcon || '',
+    ...roleIcons
+];
+
+allHeroIcons.forEach((iconValue, index) => {
+    if (!iconValue || !iconValue.trim()) return;
+
+    if (/^https?:\/\/\S+$/i.test(iconValue.trim())) {
+        const img = document.createElement('img');
+        img.src = iconValue.trim();
+        img.alt = index === 0 ? 'Línea asignada' : 'Icono de rol';
+        img.style.width = '22px';
+        img.style.height = '22px';
+        img.style.objectFit = 'contain';
+        heroIcons.appendChild(img);
+    } else {
+        const wrapper = document.createElement('span');
+        wrapper.innerHTML = iconValue;
+        heroIcons.appendChild(wrapper);
+    }
+});
+
+    // ==========================================
+    // DATOS DEL HEROE
+    // ==========================================
+
+    heroName.textContent = hero.name;
+    heroRole.textContent = hero.role;
+root.querySelector('#mlbb-favorites-label').querySelector('span').textContent = hero.favoritesLabel || 'HEROES FAVORITOS';
+    playerId.textContent = hero.playerId;
+
+    statWin.textContent = hero.winRate;
+    statPick.textContent = hero.pickRate;
+    statBan.textContent = hero.banRate;
+    statMatches.textContent = hero.matches;
+    statPower.textContent = hero.power;
+// Preparar textos para edición inline
+prepararEdicionInline(heroName, 'name');
+prepararEdicionInline(heroRole, 'role');
+prepararEdicionInline(root.querySelector('#mlbb-favorites-label'), 'favoritesLabel');
+prepararEdicionInline(playerId, 'playerId');
+prepararEdicionInline(statWin, 'winRate');
+prepararEdicionInline(statPick, 'pickRate');
+prepararEdicionInline(statBan, 'banRate');
+prepararEdicionInline(statMatches, 'matches');
+prepararEdicionInline(statPower, 'power');
+
+    // ==========================================
+    // ICONOS DE HABILIDADES
+    // ==========================================
+
+    heroSkills.innerHTML = '';
+
+    hero.skills.forEach((skill, skillIdx) => {
+        const btn = document.createElement('button');
+
+        btn.type = 'button';
+        btn.className = 'skill-circle';
+
+const totalSkills = hero.skills.length;
+
+if (totalSkills > 5) {
+    const iconScale = Math.max(0.55, 5 / totalSkills);
+
+    btn.style.width = `${40 * iconScale}px`;
+    btn.style.height = `${40 * iconScale}px`;
+    btn.style.minWidth = `${40 * iconScale}px`;
+    btn.style.aspectRatio = '1 / 1';
+    btn.style.flexShrink = '0';
+    btn.style.borderRadius = '50%';
+}
+        btn.setAttribute(
+            'aria-label',
+            (skill.title || '').replace(/<br\s*\/?>/gi, ' ')
+        );
+
+        if (
+            typeof skill.icon === 'string' &&
+            /^https?:\/\/\S+$/i.test(skill.icon.trim())
+        ) {
+            const img = document.createElement('img');
+
+            img.src = skill.icon.trim();
+            img.alt = '';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'contain';
+
+            btn.appendChild(img);
+        } else {
+            btn.innerHTML = skill.icon || '';
+        }
+
+        btn.addEventListener('click', () => {
+            openSkillModal(skillIdx);
+        });
+
+        heroSkills.appendChild(btn);
+    });
+
+    // ==========================================
+    // APARIENCIA GENERAL
+    // ==========================================
+
+    const appearance = heroesData[0]?.appearance || {};
+const headerLogo = document.getElementById('mlbb-header-logo');
+const modalLogo = document.getElementById('mlbb-modal-logo');
+
+const logoPredeterminado = 'https://xatimg.com/image/tfwgr2UDnM6i.png';
+
+if (headerLogo) {
+    headerLogo.src = appearance.headerLogoUrl || appearance.logoUrl || logoPredeterminado;
+    headerLogo.style.width = `${Number(appearance.headerLogoWidth) || 78}px`;
+    headerLogo.style.height = `${Number(appearance.headerLogoHeight) || 22}px`;
+}
+
+if (modalLogo) {
+    modalLogo.src = appearance.modalLogoUrl || appearance.logoUrl || logoPredeterminado;
+    modalLogo.style.width = `${Number(appearance.modalLogoWidth) || 74}px`;
+    modalLogo.style.height = `${Number(appearance.modalLogoHeight) || 20}px`;
+}
+    const card = document.getElementById('mlbb-card');
+    const frame = document.querySelector(
+        '#right-fixed-module .mlbb-outer-frame'
+    );
+
+    if (card) {
+        if (appearance.cardBg) {
+            card.style.backgroundColor = appearance.cardBg;
+        }
+
+const gradient = document.querySelector(
+    '#right-fixed-module .mlbb-gradient'
+);
+
+if (gradient && appearance.gradientColor) {
+    gradient.style.setProperty(
+        '--mlbb-gradient-color',
+        appearance.gradientColor
+    );
+}
+
+
+        if (appearance.textPrimary) {
+            card.style.color = appearance.textPrimary;
+        }
+
+        const nameEl = document.querySelector('.mlbb-hero-name');
+        const roleEl = document.querySelector('.mlbb-hero-role');
+        const playerEl = document.querySelector('.mlbb-player-id');
+
+        if (nameEl && appearance.textPrimary) {
+            nameEl.style.color = appearance.textPrimary;
+        }
+
+        if (roleEl && appearance.textSecondary) {
+            roleEl.style.color = appearance.textSecondary;
+        }
+
+        if (playerEl && appearance.textSecondary) {
+            playerEl.style.color = appearance.textSecondary;
+        }
+
+        const skillButtons = card.querySelectorAll('.skill-circle');
+
+        skillButtons.forEach(btn => {
+            if (appearance.skillBorder) {
+                btn.style.borderColor = appearance.skillBorder;
+            }
+
+            if (appearance.skillBg) {
+                btn.style.backgroundColor = appearance.skillBg;
+            }
+        });
+    }
+
+    if (frame && appearance.frameBorder) {
+        frame.style.borderColor = appearance.frameBorder;
+    }
+
+    // ==========================================
+    // ACTUALIZAR MODAL
+    // ==========================================
+
+    const modal = document.getElementById('mlbb-skill-modal');
+
+    if (modal && appearance.modalBg) {
+        modal.style.backgroundColor = appearance.modalBg;
+    }
+
+    if (appearance.accent) {
+        const skillCircles = document.querySelectorAll(
+            '#right-fixed-module .skill-circle'
+        );
+
+        skillCircles.forEach(btn => {
+            btn.style.borderColor = appearance.accent;
+        });
+    }
+}
+
+    function openSkillModal(skillIndex) {
+        currentModalSkillIndex = skillIndex;
+
+        const hero = heroesData[currentHeroIndex];
+        const skill = hero?.skills[skillIndex];
+
+        if (!skill) return;
+
+        modalQuote.textContent = hero.quote;
+        prepararEdicionModal(modalQuote, 'quote');
+        modalSkillIcon.innerHTML = '';
+
+if (
+    typeof skill.icon === 'string' &&
+    /^https?:\/\/\S+$/i.test(skill.icon.trim())
+) {
+    const img = document.createElement('img');
+    img.src = skill.icon.trim();
+    img.alt = '';
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'contain';
+
+    modalSkillIcon.appendChild(img);
+} else {
+    modalSkillIcon.innerHTML = skill.icon || '';
+}
+        modalSkillTitle.innerHTML = skill.title;
+        prepararEdicionModal(modalSkillTitle, 'title', true, true);
+        modalSkillTag.textContent = skill.tag;
+prepararEdicionModal(modalSkillTag, 'tag', true);
+        modalSkillDesc.textContent = skill.desc;
+prepararEdicionModal(modalSkillDesc, 'desc', true);
+        modalPriorityDesc.textContent = hero.priority;
+prepararEdicionModal(modalPriorityDesc, 'priority');
+modalPriorityTitle.textContent = hero.priorityTitle || 'SKILLS PRIORITY';
+prepararEdicionModal(modalPriorityTitle, 'priorityTitle');
+
+        modalDots.innerHTML = '';
+
+        hero.skills.forEach((_, idx) => {
+            const dot = document.createElement('button');
+
+            dot.type = 'button';
+            dot.className = 'modal-dot' +
+                (idx === skillIndex ? ' active' : '');
+
+            dot.setAttribute('aria-label', `Ver habilidad ${idx + 1}`);
+
+            dot.addEventListener('click', () => {
+                openSkillModal(idx);
+            });
+
+            modalDots.appendChild(dot);
+        });
+
+        skillModal.classList.add('is-open');
+        skillModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeSkillModal() {
+        skillModal.classList.remove('is-open');
+        skillModal.setAttribute('aria-hidden', 'true');
+    }
+
+    closeModalBtn.addEventListener('click', closeSkillModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (
+            e.key === 'Escape' &&
+            skillModal.classList.contains('is-open')
+        ) {
+            closeSkillModal();
+        }
+    });
+
+    if (dotsContainer) {
+    dotsContainer.addEventListener('click', (event) => {
+        const dot = event.target.closest('.mlbb-dot');
+
+        if (!dot || !dotsContainer.contains(dot)) return;
+
+        const targetIndex = Number(dot.dataset.index);
+
+        if (
+            !Number.isInteger(targetIndex) ||
+            targetIndex < 0 ||
+            targetIndex >= heroesData.length ||
+            targetIndex === currentHeroIndex ||
+            isAnimating
+        ) return;
+
+        renderHero(targetIndex, true);
+    });
+}
+
+    // Permite que el panel de control actualice la tarjeta MLBB
+    document.addEventListener('mlbb-data-updated', () => {
+        const index = Math.min(currentHeroIndex, heroesData.length - 1);
+        renderHero(Math.max(0, index), false);
+    });
+
+
+    renderHero(0, false);
+})();
+
+// EDITOR DE CONFIGURACIÓN DE TARJETA MLBB
+(function () {
+    function iniciarEditorMLBB() {
+        const editor = document.getElementById('mlbb-config-editor');
+
+        if (!editor || !Array.isArray(heroesData)) {
+            console.error('MLBB: no se encontró el editor o heroesData.');
+            return;
+        }
+
+        const labels = {
+            name: 'Nombre del héroe',
+            role: 'Rol',
+            playerId: 'ID del jugador',
+            quote: 'Frase del héroe',
+            priority: 'Descripción de prioridad',
+            winRate: 'Win Rate (%)',
+            pickRate: 'Pick Rate (%)',
+            banRate: 'Ban Rate (%)',
+            matches: 'Partidas',
+            power: 'Poder'
+        };
+
+        function notifyCard() {
+            document.dispatchEvent(
+                new CustomEvent('mlbb-data-updated')
+            );
+        }
+
+        function createButton(label, color = 'purple') {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = label;
+            button.className =
+                `w-full border border-${color}-500/40 bg-${color}-500/10 hover:bg-${color}-500/20 text-${color}-300 rounded-lg px-3 py-2 text-xs font-semibold transition`;
+            return button;
+        }
+
+        function createField(container, object, key, label, options = {}) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'space-y-1';
+
+            const title = document.createElement('label');
+            title.className = 'block text-[10px] text-zinc-400';
+            title.textContent = label;
+
+            const field = document.createElement(
+                options.textarea ? 'textarea' : 'input'
+            );
+
+            field.className =
+                'w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-2 text-white text-xs';
+
+            if (options.textarea) {
+                field.rows = options.rows || 3;
+            }
+
+            field.value = object[key] ?? '';
+
+            field.addEventListener('input', () => {
+                object[key] = field.value;
+
+                if (options.onInput) {
+                    options.onInput(field.value);
+                }
+
+                notifyCard();
+            });
+
+            wrapper.appendChild(title);
+            wrapper.appendChild(field);
+            container.appendChild(wrapper);
+
+            return field;
+        }
+
+        function createColorField(container, object, key, label) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'space-y-1';
+
+            const title = document.createElement('label');
+            title.className = 'block text-[10px] text-zinc-400';
+            title.textContent = label;
+
+            const row = document.createElement('div');
+            row.className = 'flex items-center gap-2';
+
+            const color = document.createElement('input');
+            color.type = 'color';
+            color.className =
+                'w-10 h-9 bg-zinc-950 border border-zinc-800 rounded cursor-pointer';
+
+            const text = document.createElement('input');
+            text.type = 'text';
+            text.className =
+                'flex-1 bg-zinc-950 border border-zinc-800 rounded px-2.5 py-2 text-white text-xs';
+
+            color.value = /^#[0-9a-f]{6}$/i.test(object[key] || '')
+                ? object[key]
+                : '#222222';
+
+            text.value = object[key] || '';
+
+            function update(value) {
+                if (!/^#[0-9a-f]{6}$/i.test(value)) return;
+
+                object[key] = value;
+                color.value = value;
+                text.value = value;
+                notifyCard();
+            }
+
+            color.addEventListener('input', () => update(color.value));
+            text.addEventListener('input', () => update(text.value));
+
+            row.appendChild(color);
+            row.appendChild(text);
+            wrapper.appendChild(title);
+            wrapper.appendChild(row);
+            container.appendChild(wrapper);
+        }
+
+        function createImageDimensions(container, text) {
+            const indicator = document.createElement('p');
+
+            indicator.className =
+                'text-[9px] text-zinc-500 mt-1 leading-relaxed';
+
+            indicator.textContent = text;
+
+            container.appendChild(indicator);
+        }
+
+
+        function createSection(title, colorClass = 'text-purple-400') {
+            const section = document.createElement('details');
+
+            section.className =
+                'bg-zinc-900/70 border border-zinc-800 rounded-xl p-3';
+
+            section.open = false;
+
+            const heading = document.createElement('summary');
+            heading.className =
+                `cursor-pointer text-xs font-bold uppercase tracking-wider ${colorClass}`;
+            heading.textContent = title;
+
+            const content = document.createElement('div');
+            content.className = 'space-y-3 pt-3';
+
+            section.appendChild(heading);
+            section.appendChild(content);
+
+            return {
+                section,
+                content,
+                heading
+            };
+        }
+
+        
+function createEmptyHero(templateHero = heroesData[0]) {
+    if (!templateHero) {
+        return {
+            name: '',
+            role: '',
+            quote: '',
+            priority: '',
+            playerId: '',
+            winRate: '',
+            pickRate: '',
+            banRate: '',
+            matches: '',
+            power: '',
+            bg: '',
+            assignedLineIcon: '',
+            heroRoleIcon: '',
+            skills: []
+        };
+    }
+
+    // Copiar todos los datos e imágenes del héroe de referencia
+    const newHero = JSON.parse(JSON.stringify(templateHero));
+
+    // La apariencia general sigue siendo compartida
+    delete newHero.appearance;
+
+    // Identificar la nueva tarjeta como copia editable
+    newHero.name = `${templateHero.name || 'Héroe'} (copia)`;
+
+    return newHero;
+}
+
+
+        function createEmptySkill() {
+            return {
+                title: '',
+                tag: '',
+                desc: '',
+                icon: ''
+            };
+        }
+
+        function renderEditor() {
+            editor.innerHTML = '';
+
+            if (!Array.isArray(heroesData[0].appearance)) {
+                if (
+                    !heroesData[0].appearance ||
+                    typeof heroesData[0].appearance !== 'object'
+                ) {
+                    heroesData[0].appearance = {};
+                }
+            }
+
+            const appearance = heroesData[0].appearance;
+
+            // ==========================================
+            // 1. CONFIGURACIÓN GENERAL
+            // ==========================================
+
+            const general = createSection(
+                'Configuración general y apariencia'
+            );
+
+            const description = document.createElement('p');
+            description.className = 'text-[10px] text-zinc-400';
+            description.textContent =
+                'Estos ajustes visuales se comparten entre todos los héroes.';
+            general.content.appendChild(description);
+
+            [
+                ['cardBg', 'Color de fondo de la tarjeta'],
+		['gradientColor', 'Color del degradado inferior'],
+                ['frameBorder', 'Color del borde exterior'],
+                ['accent', 'Color de acento'],
+                ['textPrimary', 'Color del texto principal'],
+                ['textSecondary', 'Color del texto secundario'],
+                ['skillBorder', 'Color del borde de habilidades'],
+                ['skillBg', 'Color de fondo de habilidades'],
+                ['modalBg', 'Color base del modal']
+            ].forEach(([key, label]) => {
+                createColorField(
+                    general.content,
+                    appearance,
+                    key,
+                    label
+                );
+            });
+
+            editor.appendChild(general.section);
+
+// ==========================================
+// LOGOS DE MOBILE LEGENDS
+// ==========================================
+
+const logoPredeterminado = 'https://xatimg.com/image/tfwgr2UDnM6i.png';
+
+appearance.headerLogoUrl = appearance.headerLogoUrl || appearance.logoUrl || logoPredeterminado;
+appearance.modalLogoUrl = appearance.modalLogoUrl || appearance.logoUrl || logoPredeterminado;
+
+appearance.headerLogoWidth = appearance.headerLogoWidth ?? 78;
+appearance.headerLogoHeight = appearance.headerLogoHeight ?? 22;
+appearance.modalLogoWidth = appearance.modalLogoWidth ?? 74;
+appearance.modalLogoHeight = appearance.modalLogoHeight ?? 20;
+
+const logos = createSection('Logos de Mobile Legends');
+
+const logosDescription = document.createElement('p');
+logosDescription.className = 'text-[10px] text-zinc-400';
+logosDescription.textContent = 'Configura cada logo de forma independiente.';
+logos.content.appendChild(logosDescription);
+
+// LOGO SUPERIOR
+createField(logos.content, appearance, 'headerLogoUrl', 'URL del logo superior');
+
+createField(logos.content, appearance, 'headerLogoWidth', 'Ancho del logo superior (px)');
+createField(logos.content, appearance, 'headerLogoHeight', 'Alto del logo superior (px)');
+
+createImageDimensions(logos.content, 'Medida inicial: 78 × 22 px.');
+
+// LOGO INFERIOR
+createField(logos.content, appearance, 'modalLogoUrl', 'URL del logo inferior');
+
+createField(logos.content, appearance, 'modalLogoWidth', 'Ancho del logo inferior (px)');
+createField(logos.content, appearance, 'modalLogoHeight', 'Alto del logo inferior (px)');
+
+createImageDimensions(logos.content, 'Medida inicial: 74 × 20 px.');
+
+editor.appendChild(logos.section);
+            // ==========================================
+            // 2. HÉROES
+            // ==========================================
+
+            heroesData.forEach((hero, heroIndex) => {
+                if (!Array.isArray(hero.skills)) {
+                    hero.skills = [];
+                }
+
+                const heroSection = createSection(
+                    hero.name || `Héroe ${heroIndex + 1}`,
+                    'text-white'
+                );
+
+                                // Fondo
+                createField(
+                    heroSection.content,
+                    hero,
+                    'bg',
+                    'Imagen de fondo (URL o imagen)',
+                    { textarea: true, rows: 2 }
+                );
+
+createImageDimensions(
+    heroSection.content,
+    'Fondo: 100% del ancho × 76% de la altura de la tarjeta. Ajuste: cover; posición: center center.'
+);
+
+                                // Icono de línea asignada
+                createField(
+                    heroSection.content,
+                    hero,
+                    'assignedLineIcon',
+                    'Icono de línea asignada (URL o código SVG)',
+                    { textarea: true, rows: 4 }
+                );
+
+                
+// ICONOS DE ROL DEL HÉROE
+if (!Array.isArray(hero.heroRoleIcons)) {
+    hero.heroRoleIcons = hero.heroRoleIcon
+        ? [hero.heroRoleIcon]
+        : [];
+}
+
+const roleIconsContainer = document.createElement('div');
+roleIconsContainer.className = 'space-y-2 mt-3';
+
+const roleIconsTitle = document.createElement('label');
+roleIconsTitle.className = 'block text-[10px] text-zinc-400';
+roleIconsTitle.textContent = 'Iconos de rol del héroe';
+
+roleIconsContainer.appendChild(roleIconsTitle);
+
+function renderRoleIconsEditor() {
+    roleIconsContainer.querySelectorAll('.role-icon-row').forEach(el => el.remove());
+
+    hero.heroRoleIcons.forEach((iconValue, iconIndex) => {
+        const row = document.createElement('div');
+        row.className = 'role-icon-row flex items-start gap-2';
+
+        const field = document.createElement('textarea');
+        field.rows = 3;
+        field.value = iconValue || '';
+        field.placeholder = 'URL o código SVG del icono';
+        field.className = 'flex-1 min-w-0 bg-zinc-950 border border-zinc-800 rounded px-2.5 py-2 text-white text-xs';
+
+        field.addEventListener('input', () => {
+            hero.heroRoleIcons[iconIndex] = field.value;
+            hero.heroRoleIcon = hero.heroRoleIcons[0] || '';
+            notifyCard();
+        });
+
+        const removeButton = document.createElement('button');
+        removeButton.type = 'button';
+        removeButton.textContent = '✕';
+        removeButton.className = 'text-red-400 hover:text-red-300 px-2 py-2 text-xs';
+
+        removeButton.addEventListener('click', () => {
+            hero.heroRoleIcons.splice(iconIndex, 1);
+            hero.heroRoleIcon = hero.heroRoleIcons[0] || '';
+            renderRoleIconsEditor();
+            notifyCard();
+        });
+
+        row.appendChild(field);
+        row.appendChild(removeButton);
+        roleIconsContainer.appendChild(row);
+    });
+}
+
+const addRoleIconButton = createButton('+ Agregar icono de rol');
+addRoleIconButton.addEventListener('click', () => {
+    hero.heroRoleIcons.push('');
+    renderRoleIconsEditor();
+    notifyCard();
+});
+
+roleIconsContainer.appendChild(addRoleIconButton);
+heroSection.content.appendChild(roleIconsContainer);
+
+renderRoleIconsEditor();
+
+
+createImageDimensions(
+    heroSection.content,
+    'Cada icono: 22 × 22 px. Puedes usar una URL o código SVG independiente.'
+);
+
+                // ======================================
+                // 3. HABILIDADES INDIVIDUALES
+                // ======================================
+
+                const skillsTitle = document.createElement('h6');
+                skillsTitle.className =
+                    'text-[10px] font-bold text-purple-400 uppercase pt-3';
+                skillsTitle.textContent =
+                    `Habilidades (${hero.skills.length})`;
+
+                heroSection.content.appendChild(skillsTitle);
+
+                hero.skills.forEach((skill, skillIndex) => {
+                    const skillSection = createSection(
+                        skill.title
+                            ? `Habilidad ${skillIndex + 1}: ${skill.title.replace(/<br\s*\/?>/gi, ' ')}`
+                            : `Habilidad ${skillIndex + 1}`,
+                        'text-purple-300'
+                    );
+
+                    
+                    createField(
+    skillSection.content,
+    skill,
+    'icon',
+    'Icono (URL o código SVG)',
+    { textarea: true, rows: 3 }
+);
+
+createImageDimensions(
+    skillSection.content,
+    'Imagen: 42 × 42 px (con 5 habilidades o menos). Ajuste: contain. El tamaño se reduce automáticamente si agregas más de 5 habilidades.'
+);
+
+// ELIMINAR HABILIDAD
+const deleteSkillButton = createButton('🗑 Eliminar habilidad');
+
+deleteSkillButton.className +=
+    ' mt-2 border-red-500/40 bg-red-500/10 hover:bg-red-500/20 text-red-300';
+
+deleteSkillButton.addEventListener('click', () => {
+    const confirmed = confirm(
+        `¿Eliminar la habilidad ${skill.title || skillIndex + 1}?`
+    );
+
+    if (!confirmed) return;
+
+    hero.skills.splice(skillIndex, 1);
+
+    renderEditor();
+    notifyCard();
+});
+
+skillSection.content.appendChild(deleteSkillButton);
+
+                    heroSection.content.appendChild(
+                        skillSection.section
+                    );
+                });
+
+                // Añadir habilidad
+                const addSkillButton = createButton(
+                    '+ Añadir habilidad'
+                );
+
+                addSkillButton.addEventListener('click', () => {
+                    hero.skills.push(createEmptySkill());
+                    renderEditor();
+                    notifyCard();
+                });
+
+                
+heroSection.content.appendChild(addSkillButton);
+
+// ELIMINAR HÉROE
+const deleteHeroButton = createButton('🗑 Eliminar este héroe');
+
+deleteHeroButton.className +=
+    ' mt-3 border-red-500/40 bg-red-500/10 hover:bg-red-500/20 text-red-300';
+
+deleteHeroButton.addEventListener('click', () => {
+    if (heroesData.length <= 1) {
+        alert('Debes conservar al menos un héroe.');
+        return;
+    }
+
+    const confirmed = confirm(
+        `¿Eliminar la tarjeta de ${hero.name || `Héroe ${heroIndex + 1}`}?`
+    );
+
+    if (!confirmed) return;
+
+    heroesData.splice(heroIndex, 1);
+
+    renderEditor();
+    notifyCard();
+});
+
+heroSection.content.appendChild(deleteHeroButton);
+
+editor.appendChild(heroSection.section);
+
+            });
+
+            // ==========================================
+            // 4. AÑADIR HÉROE
+            // ==========================================
+
+            const addHeroButton = createButton(
+                '+ Añadir héroe'
+            );
+
+            addHeroButton.className +=
+                ' mt-2 border-green-500/40 bg-green-500/10 hover:bg-green-500/20 text-green-300';
+
+            addHeroButton.addEventListener('click', () => {
+                heroesData.push(createEmptyHero());
+
+                renderEditor();
+
+                notifyCard();
+
+                const sections = editor.querySelectorAll(':scope > details');
+                const newHeroSection = sections[sections.length - 1];
+
+                if (newHeroSection) {
+                    newHeroSection.open = true;
+                    newHeroSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                }
+            });
+
+            editor.appendChild(addHeroButton);
+        }
+
+        document.addEventListener(
+            'mlbb-data-loaded',
+            renderEditor
+        );
+
+        renderEditor();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener(
+            'DOMContentLoaded',
+            iniciarEditorMLBB,
+            { once: true }
+        );
+    } else {
+        iniciarEditorMLBB();
+    }
+})();
+
+</script>
+</body>
+</html>
